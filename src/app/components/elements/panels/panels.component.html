@@ -1,0 +1,427 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Panels</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-server mr-2 fs-14"></i>Elements</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Panels</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Simple Panels</h3>
+            </div>
+            <div class="card-body">
+                <div class="expanel expanel-default m-0">
+                    <div class="expanel-body">
+                        Basic panel example
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav1="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html1" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts1" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav1"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Panel with heading</h3>
+            </div>
+            <div class="card-body">
+                <div class="row mt-4">
+                    <div class="col-lg-6">
+                        <div class="expanel expanel-default">
+                            <div class="expanel-heading">Panel heading without title</div>
+                            <div class="expanel-body">
+                                Panel content
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="expanel expanel-default">
+                            <div class="expanel-heading">
+                                <h3 class="expanel-title">Panel title</h3>
+                            </div>
+                            <div class="expanel-body">
+                                Panel content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav2="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html2"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html2" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts2"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts2" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav2"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Panel with footer</h3>
+            </div>
+            <div class="card-body">
+                <div class="expanel expanel-default m-0">
+                    <div class="expanel-body">
+                        Panel content
+                    </div>
+                    <div class="expanel-footer">Panel footer</div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav3="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html3" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts3" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav3"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!--End  Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Panel with color header</h3>
+            </div>
+            <div class="card-body">
+                <div class="row mt-4">
+                    <div class="col-lg-6">
+                        <div class="expanel expanel-primary">
+                            <div class="expanel-heading">
+                                <h3 class="expanel-title">Panel title</h3>
+                            </div>
+                            <div class="expanel-body">
+                                Panel content
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="expanel expanel-secondary">
+                            <div class="expanel-heading">
+                                <h3 class="expanel-title">Panel title</h3>
+                            </div>
+                            <div class="expanel-body">
+                                Panel content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="expanel expanel-success">
+                            <div class="expanel-heading">
+                                <h3 class="expanel-title">Panel title</h3>
+                            </div>
+                            <div class="expanel-body">
+                                Panel content
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="expanel expanel-danger">
+                            <div class="expanel-heading">
+                                <h3 class="expanel-title">Panel title</h3>
+                            </div>
+                            <div class="expanel-body">
+                                Panel content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav4="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html5" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts5" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav4"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!--End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Panel tabs</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="expanel expanel-primary overflow-hidden br-7 border-0 shadow-none">
+                            <div class="expanel-heading clearfix d-flex">
+                                <div class="mt-2">Panel title (with paragraphs inside)</div>
+                                <div class="float-right ml-auto">
+                                    <button class="btn btn-sm btn-primary" type="button" (click)="panelToggle1()" 
+                                            [attr.aria-expanded]="!isCollapsed1">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="expanel-body" id="collapse01" *ngIf="isCollapsed1">
+                                <p>Paragraphs</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.
+                                    Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur
+                                    ante hendrerit.
+                                    Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae
+                                    augue.
+                                    Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
+                            </div>
+                        </div>
+                        <div class="expanel expanel-info overflow-hidden br-7 border-0 shadow-none">
+                            <div class="expanel-heading clearfix d-flex">
+                                <div class="mt-2">Panel title (with list-group inside)</div>
+                                <div class="float-right ml-auto">
+                                    <button class="btn btn-sm btn-light" type="button" (click)="panelToggle2()"
+                                        [attr.aria-expanded]="!isCollapsed2"> 
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="expanel-body" id="collapse02" *ngIf="isCollapsed2">
+                                <p>Notice the padding inside.</p>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><a href="javascript:void(0)" role="button"
+                                            class="btn btn-default btn-block">Some action</a></li>
+                                    <li class="list-group-item"><a href="javascript:void(0)" role="button"
+                                            class="btn btn-default btn-block">Another action</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="expanel expanel-default overflow-hidden br-7 border-0 shadow-none">
+                            <div class="expanel-heading clearfix d-flex">
+                                <div class="mt-2">Panel title (with paragraphs)</div>
+                                <div class="float-right ml-auto">
+                                    <button class="btn btn-sm btn-info" type="button" (click)="panelToggle3()"
+                                    [attr.aria-expanded]="!isCollapsed3">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="expanel-body" id="collapse06" *ngIf="isCollapsed3">
+                                <p>Paragraphs</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.
+                                    Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur
+                                    ante hendrerit.
+                                    Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae
+                                    augue.
+                                    Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="expanel expanel-success overflow-hidden br-7 border-0 shadow-none">
+                            <div class="expanel-heading clearfix d-flex">
+                                <div class="mt-2">Panel title (with table inside)</div>
+                                <div class="float-right ml-auto">
+                                    <button class="btn btn-sm btn-success" type="button" (click)="panelToggle4()"
+                                    [attr.aria-expanded]="!isCollapsed4">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="expanel-body" id="collapse03" *ngIf="isCollapsed4">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Username</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="expanel expanel-warning overflow-hidden br-7 border-0 shadow-none">
+                            <div class="expanel-heading clearfix d-flex">
+                                <div class="mt-2">Panel title (with paragraphs)</div>
+                                <div class="float-right ml-auto">
+                                    <button class="btn btn-sm btn-warning" type="button" (click)="panelToggle5()"
+                                    [attr.aria-expanded]="!isCollapsed5">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="expanel-body" id="collapse04" *ngIf="isCollapsed5">
+                                <p>Paragraphs</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.
+                                    Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur
+                                    ante hendrerit.
+                                    Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae
+                                    augue.
+                                    Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
+                            </div>
+                        </div>
+                        <div class="expanel expanel-danger overflow-hidden br-7 border-0 shadow-none">
+                            <div class="expanel-heading clearfix d-flex">
+                                <div class="mt-2">Panel title (with paragraphs)</div>
+                                <div class="float-right ml-auto">
+                                    <button class="btn btn-sm btn-danger" type="button" (click)="panelToggle6()"
+                                    [attr.aria-expanded]="!isCollapsed6">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="expanel-body" id="collapse05" *ngIf="isCollapsed6">
+                                <p>Paragraphs</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.
+                                    Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur
+                                    ante hendrerit.
+                                    Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae
+                                    augue.
+                                    Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav5="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html5"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html5" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts5"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts5" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav5"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!--End Row -->

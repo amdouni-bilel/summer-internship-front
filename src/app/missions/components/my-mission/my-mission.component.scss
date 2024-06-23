@@ -1,0 +1,86 @@
+.table-striped {
+  tbody {
+    tr:nth-child(odd) {
+      background-color: #f8f9fa;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(21, 19, 19, 0.07);
+    }
+  }
+}
+
+table.table-bordered td {
+  height: 50px;
+  vertical-align: middle;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: bold;
+}
+
+.custom-button {
+  background-color: #705ec8;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #5a4bcf;
+}
+
+.button-cell {
+  text-align: center;
+  width: 80pt;
+}
+
+.row-even {
+  background-color: #f0f0f0;
+}
+
+.row-odd {
+  background-color: #ffffff;
+}
+
+.search-input {
+  float: right;
+  margin-bottom: 10px;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table th,
+.table td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  font-size: 14px;
+}
+
+.table th,
+.table td {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pagination .page-link {
+  padding: 0.25rem 0.5rem;
+}
+
+.table th {
+  background-color: #424858;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ffffff;
+  font-family: -apple-system;
+}

@@ -1,0 +1,107 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Invoice List</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layers mr-2 fs-14"></i>Pages</a>
+            </li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Invoice</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Invoice List</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <a href="javascript:void(0)" class="btn btn-primary"><i class="fe fe-plus"></i> Add New
+                            Invoice</a>
+                    </div>
+                    <div class="col-md-6 col-auto">
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+                                    <i class="fe fe-search"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Search Invoice">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="e-table">
+                    <div class="table-responsive table-lg">
+                        <table class="table card-table table-vcenter text-nowrap border mb-0" id="example1">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Invoice</th>
+                                    <th>Amount</th>
+                                    <th>Generate Date</th>
+                                    <th>Due Date</th>
+                                    <th>Bill to</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let invoice of invoiceList">
+                                    <td class="align-middle w-5">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="example-checkbox2"
+                                                value="option2">
+                                            <span class="custom-control-label"></span>
+                                        </label>
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex">
+                                            <img src="{{invoice.img}}" alt="img" class="w-5 h-5 mr-2">
+                                            <div class="mt-1">
+                                                <a class="btn-link" href="javascript:void(0)">INVOICE
+                                                    #{{invoice.invoiceId}}</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap align-middle"><span
+                                            class="font-weight-bold">{{invoice.amount}}</span></td>
+                                    <td class="text-nowrap align-middle"><span>{{invoice.Gendate}}</span></td>
+                                    <td class="text-nowrap align-middle">{{invoice.Billdate}}</td>
+                                    <td class="text-nowrap align-middle">{{invoice.Billto}}</td>
+                                    <td>
+                                        <div class="btn-group" ngbDropdown container="body">
+                                            <a href="javascript:void(0)" class="btn btn-light btn-sm"
+                                                ngbDropdownToggle>Options
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <div ngbDropdownMenu>
+                                                <a ngbDropdownItem href="javascript:void(0)"><i
+                                                        class="fe fe-eye mr-2"></i> View</a>
+                                                <a ngbDropdownItem href="javascript:void(0)"><i
+                                                        class="fe fe-share mr-2"></i> Send</a>
+                                                <a ngbDropdownItem href="javascript:void(0)"><i
+                                                        class="fe fe-edit mr-2"></i> Edit</a>
+                                                <a ngbDropdownItem href="javascript:void(0)"><i
+                                                        class="fe fe-trash mr-2"></i> Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->

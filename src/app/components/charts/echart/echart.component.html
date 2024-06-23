@@ -1,0 +1,119 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Echarts</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i
+                        class="fe fe-bar-chart-2 mr-2 fs-14"></i>Charts</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Echarts</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Combination of Line & Bar chart</h3>
+            </div>
+            <div class="card-body">
+                <div echarts class="chartsh" [options]="echartLineBarOption"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Line chart</h3>
+            </div>
+            <div class="card-body">
+                <div echarts class="chartsh" [options]="echartLineOption"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Vertical Combination of Line & Bar chart</h3>
+            </div>
+            <div class="card-body">
+                <div echarts class="chartsh" [options]="echartVerticalLineBarChart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Vertical Line Chart</h3>
+            </div>
+            <div class="card-body">
+                <div echarts class="chartsh" [options]="echartVerticalLineChart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End  Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Bar Chart</h3>
+            </div>
+            <div class="card-body">
+                <div echarts class="chartsh" [options]="echartBarChart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Horizontal Bar Chart</h3>
+            </div>
+            <div class="card-body">
+                <div echarts class="chartsh" [options]="echartHorizontalbarChart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Single line chart</h3>
+            </div>
+            <div class="card-body">
+                <div echarts class="chartsh" [options]="echartSingleLineChart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Single smooth line chart</h3>
+            </div>
+            <div class="card-body">
+                <div echarts class="chartsh" [options]="echartSingleSmoothLineChart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row -->

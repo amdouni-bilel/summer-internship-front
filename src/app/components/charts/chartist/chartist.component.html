@@ -1,0 +1,149 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Chartist Chart</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i
+                        class="fe fe-bar-chart-2 mr-2 fs-14"></i>Charts</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Chartist Chart</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row row-deck">
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Advanced SMIL Animations</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart1.type" [data]="chart1.data" [options]="chart1.options"
+                    [events]="chart1.events"></x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">SVG Path animation</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart2.type" [data]="chart2.data" [options]="chart2.options"
+                    [events]="chart2.events"></x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Animating a Donut with Svg.animate</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart3.type" [data]="chart3.data" [options]="chart3.options"
+                    [events]="chart3.events"></x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Bi-polar Line chart with area only</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart4.type" [data]="chart4.data" [options]="chart4.options"></x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Line chart with area</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart5.type" [data]="chart5.data" [options]="chart5.options"></x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Bi-polar bar chart</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart6.type" [data]="chart6.data" [options]="chart6.options"></x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Stacked bar chart</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart7.type" [data]="chart7.data" [options]="chart7.options"></x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Horizontal bar chart</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart8.type" [data]="chart8.data" [options]="chart8.options"></x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Extreme responsive configuration</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart9.type" [data]="chart9.data" [options]="chart9.options"
+                    [responsiveOptions]="chart9.responsiveOptions">
+                </x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Simple line chart</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart10.type" [data]="chart10.data" [options]="chart10.options"></x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Holes in data</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart11.type" [data]="chart11.data" [options]="chart11.options"></x-chartist>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Filled holes in data</div>
+            </div>
+            <div class="card-body">
+                <x-chartist [type]="chart12.type" [data]="chart12.data" [options]="chart12.options"></x-chartist>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Row -->

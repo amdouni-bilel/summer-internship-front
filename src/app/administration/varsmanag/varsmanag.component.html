@@ -1,0 +1,172 @@
+<div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Ajouter des variables</h4>
+        </div>
+        <div class="card-body">
+          <div *ngFor="let group of formGroups; let i = index">
+            <form [formGroup]="itemFormGroup">
+              <table>
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <label class="form-label">Nom: </label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="bic"
+                        formControlName="nom"
+                      />
+                      <div
+                        *ngIf="
+                          itemFormGroup.get('nom').invalid &&
+                          itemFormGroup.get('nom').touched
+                        "
+                      >
+                        <div
+                          *ngIf="itemFormGroup.get('nom').hasError('required')"
+                        >
+                          Nom is required.
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  &nbsp;&nbsp;
+                  <td>
+                    <div class="form-group">
+                      <label class="form-label">Type: </label>
+                      <ng-select
+                        [ngStyle]="{ 'width.px': 100 }"
+                        placeholder="--Select--"
+                        formControlName="type"
+                      >
+                        <ng-option formControlName="type" value="text">
+                          text
+                        </ng-option>
+                        <ng-option formControlName="type" value="date">
+                          date
+                        </ng-option>
+                      </ng-select>
+                      <div
+                        *ngIf="
+                          itemFormGroup.get('type').invalid &&
+                          itemFormGroup.get('type').touched
+                        "
+                      >
+                        <div
+                          *ngIf="itemFormGroup.get('type').hasError('required')"
+                        >
+                          Type is required.
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  &nbsp;&nbsp;
+                  <td>
+                    <div class="form-group">
+                      <label class="form-label">Description: </label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="bic"
+                        formControlName="description"
+                      />
+                      <div
+                        *ngIf="
+                          itemFormGroup.get('description').invalid &&
+                          itemFormGroup.get('description').touched
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            itemFormGroup.get('description').hasError('required')
+                          "
+                        >
+                          Description is required.
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="mt-3 text-center">
+                      <button
+                        (click)="deleteFormGroup(i)"
+                        class="btn btn-danger profile-button"
+                        type="button"
+                      >
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          <div class="card-footer">
+              <button
+                (click)="createFormGroup()"
+                class="btn btn-primary profile-button"
+                type="button"
+              >
+                New +
+              </button>
+              <button
+                (click)="submitAllForms()"
+                [disabled]="formGroups.length === 0"
+                class="btn btn-success profile-button"
+                type="button"
+              >
+                Save
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Parcourir les variables</h4>
+        </div>
+        <div class="datatable-container">
+  
+      <ngx-datatable
+        class="bootstrap"
+        [rows]="variables"
+        [loadingIndicator]="loadingIndicator"
+        [columnMode]="'force'"
+        [headerHeight]="40"
+        [summaryRow]="true"
+        [summaryPosition]="'bottom'"
+        [footerHeight]="40"
+        [rowHeight]="'auto'"
+        [reorderable]="reorderable"
+      >
+        <ngx-datatable-column name="Nom" prop="nom">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <span>{{ row.nom }}</span>
+          </ng-template>
+        </ngx-datatable-column>
+  
+        <ngx-datatable-column name="Type" prop="type">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <span>{{ row.type }}</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Description" prop="description">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <span>{{ row.description }}</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Action" prop="Action">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <button class="btn btn-danger" (click)="deleteVar(row)">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+        </div>
+      </div>
+    </div>
+  </div>

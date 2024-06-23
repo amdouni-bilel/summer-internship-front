@@ -1,0 +1,30 @@
+::ng-deep {
+    .accordion .card-header {
+        box-shadow: none;
+        display: block;
+        padding: 0px;
+        background-color: #f0f0f2;
+        min-height: 0;
+        border-radius: 0;
+        border:0
+    }
+    .accordion .card {
+        box-shadow: none;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+    .accordion .card-header::before {
+        display: none;
+    }
+    .accordion .btn {
+        padding: 15px;
+        text-decoration: none;
+        width: 100%;
+        text-align: left;
+        color: #1a1630;
+        font-weight: 500;
+        font-size: 17px;
+        border:0;
+        line-height: initial;
+    }
+}

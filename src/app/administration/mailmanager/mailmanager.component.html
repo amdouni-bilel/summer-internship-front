@@ -1,0 +1,210 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <form [formGroup]="coordonneeUser">
+          <div class="card">
+            <div class="card-header">
+              <h5>Affecter un utilisateur à un groupe</h5>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label class="form-label">Email(s)</label>
+                <angular2-multiselect
+                  [data]="emailDropDown"
+                  [settings]="emailSearchSettings"
+                  name="emails"
+                  [formControl]="coordonneeUser.controls.emails"
+                  (onSelect)="onEmailSelect($event)"
+                  (onDeSelect)="onEmailDeselect($event)"
+                ></angular2-multiselect>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Groupes</label>
+                <angular2-multiselect
+                  [data]="dropdownList"
+                  [settings]="searchSettings"
+                  name="groupes"
+                  [formControl]="coordonneeUser.controls.groupes"
+                  (onSelect)="onItemSelect($event)"
+                  (onDeSelect)="onItemDeselect($event)"
+                ></angular2-multiselect>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary" (click)="saveByEmail()">
+                  <i class="fe fe-check mr-2"></i>
+                  Affecter
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Groupes et Membres</h5>
+          </div>
+          <div class="card-body">
+            <div id="treeBasic">
+              <ngx-treeview
+                [config]="expandConfig"
+                [items]="myGroupItems"
+              ></ngx-treeview>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <form [formGroup]="coordonneeGroup">
+          <div class="card">
+            <div class="card-header">
+              <h5>Ajouter un groupe</h5>
+            </div>
+            <div class="card-body">
+              <div id="treeBasic">
+                <div class="form-group">
+                  <label class="form-label">Nom du groupe:</label>
+                  <div>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="nom"
+                      formControlName="nom"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Description: </label>
+                  <div>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="description"
+                      formControlName="description"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="savegroupe()"
+              >
+                <i class="fe fe-plus mr-2"></i>
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Liste des Groupes</h5>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="myTable1">
+                <thead style="text-align: center" class="border-top">
+                  <tr>
+                    <th>NOM</th>
+                    <th>DESCRIPTION</th>
+                    <th>ACTION</th>
+                  </tr>
+                </thead>
+                <tbody style="text-align: center">
+                  <tr *ngFor="let group of tab">
+                    <td>{{ group.nom }}</td>
+                    <td>{{ group.description }}</td>
+                    <td>
+                      <button
+                        class="btn btn-icon btn-primary"
+                        (click)="openModal(group, mymodal)"
+                      >
+                        <i class="fe fe-edit-2"></i>
+                      </button>
+                      <button
+                        class="btn btn-icon btn-danger"
+                        (click)="deleteGroup(group)"
+                      >
+                        <i class="fe fe-trash"></i>
+                      </button>
+                      <!--MODAL HERE-->
+                      <div id="mymodal">
+                        <ng-template #mymodal let-modal>
+                          <div class="modal-body p-4">
+                            <button
+                              type="button"
+                              class="close"
+                              aria-label="Close"
+                              (click)="modal.dismiss('Cross click')"
+                            >
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <form [formGroup]="updatingGroup">
+                              <div class="card">
+                                <div class="card-header">
+                                  <h5>Modifier un groupe</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                      <label class="form-label"
+                                        >Nom du groupe:</label
+                                      >
+                                      <div>
+                                        <input
+                                          class="form-control"
+                                          type="text"
+                                          name="nom"
+                                          formControlName="nom"
+                                        />
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="form-label"
+                                        >Description:
+                                      </label>
+                                      <div>
+                                        <input
+                                          class="form-control"
+                                          type="text"
+                                          name="description"
+                                          formControlName="description"
+                                        />
+                                      </div>
+                                    </div>
+  
+                                </div>
+                                <div class="card-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-success pd-x-25 mr-0"
+                                    ngbTooltip="Tooltip on top"
+                                    (click)="updateAndClose(group)"
+                                  >
+                                    Sauvegarder
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </ng-template>
+                      </div>
+                      <!--END MODAL-->
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

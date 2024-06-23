@@ -1,0 +1,109 @@
+<!-- Page SideBar Start -->
+<aside class="app-sidebar" [ngClass]="sidenavtoggled1" (mouseover)="hoverEffect($event)"
+       (mouseout)="hoverEffect($event)">
+  <div class="app-sidebar__logo">
+    <a class="header-brand" routerLink="/dashboard">
+      <img src="../../assets/images/brand/logo.png"  width="240px" height="68px" class="header-brand-img desktop-lgo" alt="Admintro logo">
+      <img src="../../assets/images/brand/logo1.png" class="header-brand-img dark-logo" alt="Admintro logo">
+      <img src="../../assets/images/brand/favicon.png" class="header-brand-img mobile-logo" alt="Admintro logo">
+      <img src="../../assets/images/brand/favicon1.png" class="header-brand-img darkmobile-logo" alt="Admintro logo">
+    </a>
+  </div>
+  <div class="app-sidebar__user">
+    <div class="dropdown user-pro-body text-center">
+      <div class="user-pic">
+        <img src="../../assets/images/users/avatar.png" alt="user-img" class="avatar-xl rounded-circle mb-1">
+      </div>
+      <div class="user-info">
+        <h5 class=" mb-1"> <i class="ion-checkmark-circled  text-success fs-12"></i></h5>
+        <span class="text-muted app-sidebar__user-name text-sm">Bienvenue <strong>{{ fullNameUser }}</strong></span>
+
+      </div>
+    </div>
+    <div class="sidebar-navs">
+      <ul class="nav nav-pills-circle">
+        <li class="nav-item" placement="top" ngbTooltip="Support">
+          <a class="icon" href="#">
+            <i class="las la-life-ring header-icons"></i>
+          </a>
+        </li>
+        <li class="nav-item" placement="top" ngbTooltip="Documentation">
+          <a class="icon" href="#">
+            <i class="las  la-file-alt header-icons"></i>
+          </a>
+        </li>
+        <li class="nav-item" placement="top" ngbTooltip="Projects">
+          <a href="#" class="icon">
+            <i class="las la-project-diagram header-icons"></i>
+          </a>
+        </li>
+        <li class="nav-item" placement="top" ngbTooltip="Settings">
+          <a class="icon" href="#">
+            <i class="las la-cog header-icons"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ul class="side-menu app-sidebar3">
+    <li class="slide side-item-category" *ngFor="let menuItem of menuItems" [ngClass]="{active: menuItem.active}">
+      <h4 class="headtitle mt-4">{{menuItem.headTitle}}</h4>
+      <!-- Sub -->
+      <a href="javascript:void(0)" class="side-menu__item" [ngClass]="{active: menuItem.active}"
+         *ngIf="menuItem.type === 'sub'" (click)="toggleNavActive(menuItem)">
+        <div class="side-menu__icon">
+          <i class="material-icons-outlined">{{menuItem.icon}}</i>
+        </div>
+        <span class="side-menu__label">{{menuItem.title}}</span>
+        <span class="badge badge-{{menuItem.badgeType}} side-badge mr-2"
+              *ngIf="menuItem.badgeType && menuItem.badgeValue">{{menuItem.badgeValue}}</span>
+        <!-- <i class="angle fa fa-angle-{{menuItem.active ? 'down' : 'right'}}" *ngIf="menuItem.children"></i> -->
+        <i class="angle fa fa-angle-{{menuItem.active ? 'down' : 'right'}}" *ngIf="menuItem.children"></i>
+
+      </a>
+      <!-- link -->
+      <a [routerLink]="!menuItem.type ? null : [menuItem.path]" routerLinkActive="active" class="side-menu__item"
+         [ngClass]="{active: menuItem.active}" *ngIf="menuItem.type === 'link'">
+        <div class="side-menu__icon">
+          <i class="material-icons-outlined">{{menuItem.icon}}</i>
+        </div>
+        <span class="side-menu__label">{{menuItem.title}}</span>
+        <span class="badge badge-{{menuItem.badgeType}} side-badge"
+              *ngIf="menuItem.badgeType && menuItem.badgeValue">{{menuItem.badgeValue}}</span>
+      </a>
+
+      <!-- 2nd level menu -->
+      <ul class="slide-menu" [ngClass]="{active: menuItem.active}" *ngIf="menuItem.children">
+        <li class="sub-slide" *ngFor="let childrenItem of menuItem.children"
+            [ngClass]="{active: childrenItem.active}">
+          <!-- Sub -->
+          <a href="javascript:void(0)" class="sub-side-menu__item" *ngIf="childrenItem.type === 'sub'"
+             (click)="toggleNavActive(childrenItem)">
+            <span class="sub-side-menu__label">{{childrenItem.title}}</span>
+            <i class="sub-angle fe fe-chevron-{{menuItem.active ? 'down' : 'right'}}"
+               *ngIf="menuItem.children"></i>
+          </a>
+          <!-- Link -->
+          <a [routerLink]="!childrenItem.type ? null : [childrenItem.path]" class="slide-item"
+             *ngIf="childrenItem.type === 'link'" routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact: true}">
+            <span>{{childrenItem.title}}</span>
+          </a>
+          <ul class="sub-slide-menu" *ngIf="childrenItem.children" [ngClass]="{active: childrenItem.active}">
+            <li *ngFor="let childrenSubItem of childrenItem.children"
+                [ngClass]="{active: childrenSubItem.active}">
+              <!-- link -->
+              <a class="sub-slide-item"
+                 [routerLink]="!childrenSubItem.type ? null : [childrenSubItem.path]"
+                 *ngIf="childrenSubItem.type === 'link'" routerLinkActive="active"
+                 [routerLinkActiveOptions]="{exact : true}">
+                <span>{{childrenSubItem.title}}</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</aside>

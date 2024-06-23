@@ -1,0 +1,33 @@
+:host ::ng-deep ngx-treeview-item .form-check-input {
+    display: none;
+}
+::ng-deep {
+    .treeview-item{
+        background: #f3f4f7;
+        padding: 0.5em 1em 0.2em 1em;
+        border: 1px solid #ebecf1;
+        border-radius: 5px;
+    }
+    .treeview-item .form-inline{
+        padding: 0.5em 1em 0.2em 1em;
+        font-size: 15px;
+    }
+    .treeview-item  .treeview-item{
+        border:0;
+        padding: 0;
+    }
+    .treeview-item .treeview-item {
+        background: #fff;
+        padding: 0.5em 1em 0.2em 1em;
+        line-height: 30px;
+        border: 1px solid #ebecf1;
+        border-radius: 5px;
+        margin: 10px 0;
+    }
+    .treeview-item .treeview-item .treeview-item{
+        padding: 0;
+    }
+    .dropdown-divider{
+        border-top: 0;
+    }
+}

@@ -1,0 +1,219 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Chartjs Chart</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i
+                        class="fe fe-bar-chart-2 mr-2 fs-14"></i>Charts</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Chartjs Chart</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-xl-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Bar Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chart-wrapper" id="chartBar1" class="h-300">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType"
+                        [colors]="barChartColors">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-xl-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Transparency Bar Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chart-wrapper" id="chartBar2" class="h-300">
+                    <canvas baseChart [datasets]="transparentBarData" [labels]="transparentBarLabels"
+                        [options]="transparentBarOptions" [plugins]="transparentBarPlugins"
+                        [legend]="transparentBarLegend" [chartType]="transparentBarType"
+                        [colors]="transparentBarColors">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-xl-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Gradient Bar Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chart-wrapper" id="chartBar3" class="h-300">
+                    <canvas id=Canvas #Canvas></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- / Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Horizontal Bar Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <div id="chartBar4" class="h-300">
+                        <canvas baseChart [datasets]="HorizontalBarData" [labels]="HorizontalBarLabels"
+                            [options]="HorizontalBarOptions" [plugins]="HorizontalBarPlugins"
+                            [legend]="HorizontalBarLegend" [chartType]="HorizontalBarType"
+                            [colors]="HorizontalBarColors">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-6 -->
+    <div class="col-sm-12 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Horizontal Bar Chart Style2</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <div id="chartBar5" class="h-300">
+                        <canvas baseChart [datasets]="Horizontal2Data" [labels]="Horizontal2Labels"
+                            [options]="Horizontal2Options" [plugins]="Horizontal2Plugins" [legend]="Horizontal2Legend"
+                            [chartType]="Horizontal2Type" [colors]="Horizontal2Colors">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-6 -->
+</div>
+<!-- /Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Vertical Stacked Bar Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <div id="chartStacked1" class="h-300">
+                        <canvas baseChart [datasets]="verticalStackData" [labels]="verticalStackLabels"
+                            [options]="verticalStackOptions" [legend]="verticalStackLegend"
+                            [chartType]="verticalStackType" [colors]="verticalStackColors">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-6 -->
+    <div class="col-sm-12 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Horizontal Stacked Bar Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <div id="chartStacked2" class="h-300">
+                        <canvas baseChart [datasets]="horizontalStackData" [labels]="horizontalStackLabels"
+                            [options]="horizontalStackOptions" [legend]="horizontalStackLegend"
+                            [chartType]="horizontalStackType" [colors]="horizontalStackColors">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-6 -->
+</div>
+<!-- /Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Line Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <div id="chartLine1" class="h-300">
+                        <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels"
+                            [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                            [chartType]="lineChartType">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-6 -->
+    <div class="col-sm-12 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Area Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <div id="chartArea1" class="h-300">
+                        <canvas id=myCanvas #myCanvas></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-6 -->
+</div>
+<!-- /Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Donut Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <div id="chartPie" class="h-300">
+                        <canvas baseChart [datasets]="PieChartData" [labels]="PieChartLabels"
+                            [options]="PieChartOptions" [chartType]="DoughnutChartType">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-6 -->
+    <div class="col-sm-12 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Pie Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <div id="chartPie" class="h-300">
+                        <canvas baseChart [datasets]="PieChartData" [labels]="PieChartLabels"
+                            [options]="PieChartOptions" [chartType]="PieChartType">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-6 -->
+</div>
+<!-- /Row -->

@@ -1,0 +1,150 @@
+<ngx-datatable
+  [rows]="variables"
+  class="bootstrap"
+  [loadingIndicator]="loadingIndicator"
+  [columnMode]="'force'"
+  [headerHeight]="40"
+  [summaryRow]="true"
+  [summaryPosition]="'bottom'"
+  [footerHeight]="40"
+  [rowHeight]="'auto'"
+  [reorderable]="reorderable"
+>
+  <ngx-datatable-column name="Name">
+    <ng-template let-row="row" ngx-datatable-cell-template>{{
+      row.nom
+    }}</ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Valeur">
+    <ng-template let-row="row" ngx-datatable-cell-template>{{
+      row.textval
+    }}</ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Type">
+    <ng-template let-row="row" ngx-datatable-cell-template>{{
+      row.type
+    }}</ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Description">
+    <ng-template let-row="row" ngx-datatable-cell-template>{{
+      row.description
+    }}</ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Prefix">
+    <ng-template let-row="row" ngx-datatable-cell-template>{{
+      row.prefix
+    }}</ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="sufix">
+    <ng-template let-row="row" ngx-datatable-cell-template>{{
+      row.sufix
+    }}</ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Date">
+    <ng-template let-row="row" ngx-datatable-cell-template
+      ><div *ngIf="row.type !== 'date'">-</div>
+      <div *ngIf="row.type == 'date'">{{ row.date }}</div></ng-template
+    >
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Format">
+    <ng-template let-row="row" ngx-datatable-cell-template
+      ><div *ngIf="row.type !== 'date'">-</div>
+      <div *ngIf="row.type == 'date'">{{ row.format }}</div></ng-template
+    >
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Actions">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <button
+        (click)="openUpdateModal(basicmodal, row)"
+        class="btn btn-sm btn-secondary"
+      >
+      <i class="fa fa-edit"></i>
+
+      </button>
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
+
+<ng-template #basicmodal let-modal>
+  <!-- BASIC MODAL -->
+  <div class="modal-header">
+    <h6 class="modal-title" id="modal-basic-title">Modifier Variable : {{selectedVariable.nom}}</h6>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form (ngSubmit)="updateVariable()" #updateForm="ngForm">
+      <div class="form-group">
+        <label>Prefix</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="selectedVariable.prefix"
+          name="prefix"
+        />
+      </div>
+      <div class="form-group">
+        <label>Sufix</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="selectedVariable.sufix"
+          name="sufix"
+        />
+      </div>
+      <div class="form-group">
+        <label>Valeur</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="selectedVariable.textval"
+          name="valeur"
+        />
+      </div>
+      <div *ngIf="selectedVariable.type == 'date'">
+        <table class="w-100">
+          <tr>
+            <td class="w-50">
+              <label class="form-label">Date</label>
+              <ng-select
+              [ngModelOptions]="{standalone: true}"
+               placeholder="--Select--"
+                [items]="options"
+                [(ngModel)]="selectedVariable.date"
+              >
+              </ng-select>
+            </td>
+            <td>
+              <label class="form-label">Format</label>
+              <ng-select
+              [ngModelOptions]="{standalone: true}"
+                placeholder="--Select--"
+                [items]="options2"
+                [(ngModel)]="selectedVariable.format"
+              >
+              </ng-select>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-4 mr-2 float-right">Update</button>
+
+    </form>
+    <button
+      type="button"
+      class="btn btn-secondary mt-4 mr-2 float-right"
+      (click)="modal.close('Close click')"
+    >
+      Close
+    </button>
+  </div>
+
+</ng-template>

@@ -1,0 +1,38 @@
+
+
+<div *ngFor="let item of items" class="container3">
+  
+  <div class="left-section3">
+    <h3 class="title3">{{ item.title }}</h3>
+    <p class="date">Date: {{ item.date }}</p>
+  </div>
+  <div class="divider"></div>
+  <div class="divider-content">
+    <h3 class="">-</h3>
+    <p class="date">{{ item.dividerText }}</p>
+  </div>
+  <div class="right-section3">
+    <div class="icons-container" style="width: 150px;">
+      <img class="iconplus-icon" src="./assets/images/facture/clip.png" (click)="downloadImage(item)" alt="Clip Icon">
+      <img class="iconplus-icon" src="./assets/images/facture/img.png" (click)="openImagePopup(item)" alt="Image Icon">
+    </div>
+   
+    <div class="price-container">
+      <h3 class="price-title">{{ item.price }} $</h3>
+      <p class="tva">{{ item.tva }}%</p>
+    </div>
+  
+    <button class="button-1" >
+      <img class="plus-icon" src="./assets/images/facture/pen.png" (click)=" openEdit(item)" alt="Pen Icon">
+    </button>
+    <p></p>
+    <button class="button-1">
+      <img class="plus-icon" (click)="deleteItem(item)" src="./assets/images/facture/delete.png" alt="Delete Icon">
+    </button>
+  </div>
+
+</div>
+
+
+
+

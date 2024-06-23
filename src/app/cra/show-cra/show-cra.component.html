@@ -1,0 +1,131 @@
+<!--row open-->
+<!--Page header-->
+<div class="page-header">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">Feuille de temps - {{currentMonthName}}</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layout mr-2 fs-14"></i>Cra</a>
+      </li>
+      <li aria-current="page" class="breadcrumb-item active"><a href="javascript:void(0)">Liste des CRA</a></li>
+    </ol>
+  </div>
+
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+  <div class="col-md-12 col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <table width="100%">
+          <tr>
+            <td>
+              <h3 class="card-title">Liste des CRA</h3>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+
+<br>
+      <div class="table-responsive">
+        <!--<div class="form-group mission-title">
+          <ng-select formControlName="mission"
+                     placeholder="Sélectionnez un utilisateur"
+                     (change)="onUserSelect($event)">
+            <ng-option *ngFor="let user of users" [value]="user.id">{{user.fullName}}</ng-option>
+          </ng-select>
+        </div>-->
+        <form [formGroup]="craFormGroup">
+
+          <div *ngIf="craFormGroup">
+            <div *ngFor="let activity of craFormGroup.controls.activities?.value; let i = index; trackBy:trackByFn"
+                 formArrayName="activities">
+
+              <div [formGroupName]="i">
+
+                <table cellpadding="2" cellspacing="2" class="foobar">
+                  <tr></tr>
+                  <tr class="border_bottom">
+                    <td>
+                      <div class="form-group mission-title">
+
+                        <ng-select [readonly]="true"   formControlName="mission" placeholder="Sélectionnez une activité" [(ngModel)]="craFormGroup.controls['activities'].at(i).get('mission').value">
+                          <ng-option   *ngFor="let mission of missions" [value]="mission.id">{{mission.name}}</ng-option>
+                        </ng-select>
+
+                      </div>
+
+                    </td>
+                    <td>
+                      <table>
+                        <thead>
+                        <tr>
+                          <th *ngFor="let col of columns" [innerHTML]="col.name" class="cra-size"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <!------Input valid>-->
+                          <td *ngFor="let col of columns; let g = index">
+                            <!--                            <div *ngIf=" !(col.weekend || col.freeDay); else elseBlock">-->
+                            <div *ngIf="enableInactiveDays || !(col.weekend || col.freeDay); else elseBlock">
+                              <input (change)="calculateTotl(g)"
+                                     [ngClass]="isValidFormControl(i,col.prop)?'valid':'invalid'" class="cra-size"
+                                     formControlName="{{col.prop}}"
+                                     readonly
+                                     type="text"/>
+                            </div>
+                            <ng-template #elseBlock>
+                              <div class="cra-size free-days form-control"></div>
+                            </ng-template>
+                          </td>
+                          <td>
+
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                </table>
+              </div>
+
+            </div>
+          </div>
+          <div>
+            <table cellpadding="2" cellspacing="2" class="foobar">
+              <tr>
+
+                <td>
+                  <table>                           <!------Input valid-->
+
+                    <tr>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br/>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 bg-light text-right">
+                <button class="btn btn-success" (click)="updateStatusToValid()" *ngIf="status !== 'EN_ATTENTE'" [disabled]="status === 'VALIDE'"> <i class="fas fa-check"></i> Valider</button>
+                <button class="btn btn-primary" (click)="updateStatusPendingToValid()" *ngIf="status !== 'EN_PROGRESSION' && status !== 'VALIDE'" ><i class="fas fa-check"></i> Valider </button>
+                <button class="btn btn-danger" (click)="updateStatusToPending()" [disabled]="status === 'VALIDE'"><i class="fas fa-times"></i> Refuser </button>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- table-responsive -->
+    </div>
+  </div>
+
+</div>
+<!-- End Row -->

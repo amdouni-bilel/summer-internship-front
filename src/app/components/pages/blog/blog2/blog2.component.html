@@ -1,0 +1,91 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Blog 02</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layers mr-2 fs-14"></i>Pages</a>
+            </li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Blog</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Blog 02</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-xl-4 col-lg-6 col-md-12" *ngFor="let cardData of CardData">
+        <div class="card overflow-hidden">
+            <div class="card-body pr-2">
+                <div class="d-flex align-items-center mt-auto">
+                    <div class="avatar brround avatar-md mr-3" style="background-image: url({{cardData.avatarImg}})">
+                    </div>
+                    <div>
+                        <a href="javascript:void(0)" class="font-weight-semibold">{{cardData.name}}</a>
+                        <small class="d-block text-muted">{{cardData.timeline}}</small>
+                    </div>
+                    <div class="ml-auto text-muted">
+                        <div class="card-options" ngbDropdown container="body">
+                            <a class="option-dots" ngbDropdownToggle>
+                                <i class="fe fe-more-vertical text-icon"></i>
+                            </a>
+                            <div ngbDropdownMenu>
+                                <a href="javascript:void(0)" ngbDropdownItem>Assigned to</a>
+                                <a href="javascript:void(0)" ngbDropdownItem>Mark As Unread</a>
+                                <a href="javascript:void(0)" ngbDropdownItem>Mark As Important</a>
+                                <a href="javascript:void(0)" ngbDropdownItem>Add Star</a>
+                                <a href="javascript:void(0)" ngbDropdownItem>Move to</a>
+                                <a href="javascript:void(0)" ngbDropdownItem>Mute</a>
+                                <a href="javascript:void(0)" ngbDropdownItem>Move to Trash</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item7-card-img px-4">
+                <a href="javascript:void(0)"></a>
+                <img src="{{cardData.img}}" alt="img" class="cover-image br-7">
+            </div>
+            <div class="card-body">
+                <div class="item7-card-desc d-flex mb-5">
+                    <a href="javascript:void(0)" class="d-flex"><i class="fe fe-calendar fs-16 mr-1"></i>
+                        <div class="mt-0">{{cardData.date}}</div>
+                    </a>
+                    <div class="ml-auto">
+                        <a class="mr-0 d-flex" href="javascript:void(0)"><i class="fe fe-message-square fs-16 mr-1"></i>
+                            <div class="mt-0">{{cardData.comment}}</div>
+                        </a>
+                    </div>
+                </div>
+                <a href="javascript:void(0)" class="mt-4">
+                    <h5 class="font-weight-semibold">{{cardData.cardName}}</h5>
+                </a>
+                <p class="">{{cardData.cardDescription}}</p>
+                <div class="media py-3 mt-0 border-top">
+                    <div class="media-user mr-2">
+                        <div class="avatar-list avatar-list-stacked">
+                            <span class="avatar brround" style="background-image: url({{cardData.avatarImg}})"></span>
+                            <span class="avatar brround" style="background-image: url({{cardData.avatarImg}})"></span>
+                            <span class="avatar brround" style="background-image: url({{cardData.avatarImg}})"></span>
+                            <span class="avatar brround" style="background-image: url({{cardData.avatarImg}})"></span>
+                        </div>
+                    </div>
+                    <div class="ml-auto text-muted mt-3">
+                        <a href="javascript:void(0)" class="new ml-3"><i class="fe fe-heart  fs-16 text-icon"></i></a>
+                        <a href="javascript:void(0)" class="new ml-3"><i
+                                class="fe fe-thumbs-up  fs-16 text-icon"></i></a>
+                        <a href="javascript:void(0)" class="new ml-3"><i class="fe fe-share-2  fs-16 text-icon"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Row-->

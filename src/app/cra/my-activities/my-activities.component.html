@@ -1,0 +1,53 @@
+<!--row open-->
+<!--Page header-->
+<div class="page-header">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">Mes acitivités</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layout mr-2 fs-14"></i>Acitivités</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">mes acitivités</a></li>
+    </ol>
+  </div>
+  <div class="page-rightheader">
+    <div class="btn btn-list">
+      <!--  <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+        <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+        -->
+      <a  routerLink="/mission/create"class="btn btn-warning"><i class="si si-plus"></i>Ajouter une acitivité</a>
+
+
+
+    </div>
+  </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Mes acitivités</div>
+      </div>
+      <div class="card-body"  >
+        <ngx-datatable class="bootstrap"
+                       [rows]="activities"
+                       [loadingIndicator]="loadingIndicator"
+                       [columns]="columns"
+                       [columnMode]="'force'"
+                       [headerHeight]="40"
+                       [summaryPosition]="'bottom'"
+                       [footerHeight]="40"
+                       [rowHeight]="'auto'"
+                       [reorderable]="reorderable">
+        </ngx-datatable>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- /Row -->
+
+<!--[summaryRow]="true"-->

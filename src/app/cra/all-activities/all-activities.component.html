@@ -1,0 +1,48 @@
+
+<div class="page-header">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">CRA</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layout mr-2 fs-14"></i>CRA</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Liste des CRA</a></li>
+    </ol>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Liste des CRA</div>
+    <div class="card-header-form">
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table  id="customers" class="table table-striped" >
+        <tr>
+          <th class="wd-15p border-bottom-0">User</th>
+          <th class="wd-25p border-bottom-0">Month</th>
+          <th class="wd-25p border-bottom-0">Status</th>
+          <th class="wd-25p border-bottom-0">Actions</th>
+        </tr>
+        <tr *ngFor="let activity of activities">
+          <td>{{ getUserFullName(activity.idUser) }}</td>
+          <td>{{ activity.month }}</td>
+          <td>
+            <div class="progress h-2 mt-1">
+              <div *ngIf="activity.status === 'EN_ATTENTE'" class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: 100%">En Attente</div>
+              <div *ngIf="activity.status === 'EN_PROGRESSION'" class="progress-bar progress-bar-striped progress-bar-animated bg-info" style="width: 100%">En Progression</div>
+              <div *ngIf="activity.status === 'VALIDE'" class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 100%">Validé</div>
+            </div>
+          </td>
+
+          <td width="100" style="align-items: center">
+            <button class="btn btn-primary" (click)="goToActivities(activity.idUser)"><i class="fas fa-eye"></i></button>
+          </td>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+

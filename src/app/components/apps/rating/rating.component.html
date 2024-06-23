@@ -1,0 +1,136 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Rating</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-grid mr-2 fs-14"></i>Apps</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Ratings</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row row-deck">
+    <div class="col-md-12 col-lg-6 col-xl-4">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Basic Star Ratings</h3>
+            </div>
+            <div class="card-body">
+                <ng-template #basicstar let-fill="fill">
+                    <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                    </span>
+                </ng-template>
+                
+                <ngb-rating [(rate)]="currentRate" [starTemplate]="basicstar" [max]="5" class="ng-rating"></ngb-rating>
+                
+                <hr>
+                <p class="mb-0">Rate: <b>{{currentRate}}</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6 col-xl-4">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Events and readonly ratings</h3>
+            </div>
+            <div class="card-body">
+                <ng-template #eventstar let-fill="fill">
+                    <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                    </span>
+                </ng-template>
+                
+                <ngb-rating [(rate)]="selected" (hover)="hovered=$event" (leave)="hovered=0" [readonly]="readonly" [starTemplate]="eventstar" [max]="5" class="ng-rating"></ngb-rating>
+                
+                <hr>
+                <p>
+                    Selected: <b>{{selected}}</b>
+                    Hovered: <b>{{hovered}}</b>
+                </p>
+                <button class="btn btn-sm btn-outline-{{readonly ? 'danger' : 'success'}}"
+                    (click)="readonly = !readonly">
+                    {{ readonly ? "readonly" : "editable"}}
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6 col-xl-4">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Custom decimal rating</h3>
+            </div>
+            <div class="card-body">
+                <ng-template #t let-fill="fill">
+                    <span class="star" [class.full]="fill === 100">
+                        <span class="heartHalf" [style.width.%]="fill">&hearts;</span>&hearts;
+                    </span>
+                </ng-template>
+
+                <ngb-rating [(rate)]="heartRate" [starTemplate]="t" [max]="5" class="ng-rating"></ngb-rating>
+                <p>Rate: <b>{{heartRate}}</b></p>
+                <button class="btn btn-sm btn-outline-primary mr-2" (click)="heartRate = 1.35">1.35</button>
+                <button class="btn btn-sm btn-outline-primary mr-2" (click)="heartRate = 4.72">4.72</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Form integration</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <ng-template #formstar let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                        </span>
+                    </ng-template>
+                    <ngb-rating [starTemplate]="formstar" [formControl]="ctrl" class="rating-size"></ngb-rating>
+                    <div class="form-text small">
+                      <div *ngIf="ctrl.valid" class="text-success">Thanks!</div>
+                      <div *ngIf="ctrl.invalid" class="text-danger">Please rate us</div>
+                    </div>
+                  </div>
+                  
+                  <p>Ratings: <b>{{ ctrl.value }}</b></p>
+                  <button class="btn btn-sm btn-outline-{{ ctrl.disabled ? 'danger' : 'success'}} mr-2" (click)="toggle()">
+                    {{ ctrl.disabled ? "control disabled" : " control enabled" }}
+                  </button>
+                  <button class="btn btn-sm btn-outline-primary mr-2" (click)="ctrl.setValue(null)">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Custom star template</h3>
+            </div>
+            <div class="card-body">
+                <ngb-rating [(rate)]="customCurrentRate" class="ng-rating">
+                    <ng-template let-fill="fill" let-index="index">
+                      <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                    </ng-template>
+                  </ngb-rating>
+                  <hr>
+                  <p>Rate: <b>{{customCurrentRate}}</b></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- End Row -->
+

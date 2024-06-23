@@ -1,0 +1,44 @@
+
+<div class="row" style="margin-top: 20px;">
+  <div class="col-lg-12 col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5>Liste des invitations</h5>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="myTable1">
+            <thead style="text-align: center" class="border-top">
+              <tr>
+                <th>Envoyer par</th>
+                <th>Key</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody style="text-align: center">
+              <tr *ngFor="let org of resultat">
+                <td>{{ org.mailSender }}</td>
+                <td>
+                 {{org.fileKey}}
+                </td>
+                <td>
+                  <button
+                    class="btn btn-icon btn-primary"
+                    (click)="share(org.id)"
+                  >
+                    <i class="fe fe-eye"></i>
+                  </button>
+                  <button
+                  class="btn btn-icon btn-danger"
+                  (click)="delete(org.id)"
+                >
+                  <i class="fe fe-x-circle"></i>
+                </button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,210 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Advanced-Foms</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-file-text mr-2 fs-14"></i>Forms</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Advanced Foms</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <form method="post" class="card">
+            <div class="card-header">
+                <h3 class="card-title">File Uploader</h3>
+            </div>
+            <div class=" card-body">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12">
+                        <h5>Single File Uploader</h5>
+                        <div class="dropzone dropzone-primary" [dropzone]="config1" (init)="onUploadInit($event)"
+                            (error)="onUploadError($event)" (success)="onUploadSuccess($event)">
+                            <div class="dz-message needsclick">
+                                <i class="fe fe-upload-cloud" aria-hidden="true"></i>
+                                <h6>Drop files here or click to upload.</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <h5>Multiple File Uploader</h5>
+                        <div class="dropzone dropzone-primary" [dropzone]="config2" (init)="onUploadInit($event)"
+                            (error)="onUploadError($event)" (success)="onUploadSuccess($event)">
+                            <div class="dz-message needsclick">
+                                <i class="fe fe-upload-cloud" aria-hidden="true"></i>
+                                <h6>Drop Multiple files here or click to upload multiple files.</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <h5>File Type Validation</h5>
+                        <div class="dropzone dropzone-primary" [dropzone]="config3" (init)="onUploadInit($event)"
+                            (error)="onUploadError($event)" (success)="onUploadSuccess($event)">
+                            <div class="dz-message needsclick">
+                                <i class="fe fe-upload-cloud" aria-hidden="true"></i>
+                                <h6>Drop only .png files here or click to upload.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Country selctor</div>
+            </div>
+            <div class="card-body">
+                <div class="input-group">
+                    <form class="d-flex">
+                            <ngx-intl-tel-input
+                                [cssClass]="'custom'"
+                                [preferredCountries]="[CountryISO.UnitedStates, CountryISO.UnitedKingdom]"
+                                [enableAutoCountrySelect]="true"
+                                [enablePlaceholder]="true"
+                                [searchCountryFlag]="true"
+                                [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                                [selectFirstCountry]="false"
+                                [selectedCountryISO]="CountryISO.India"
+                                [maxLength]="15"
+                                [tooltipField]="TooltipLabel.Name"
+                                [phoneValidation]="true"
+                                name="phone"
+                                class="form-control">
+                            </ngx-intl-tel-input>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <form method="post" class="card">
+            <div class="card-header">
+                <h3 class="card-title">Select2 elements</h3>
+            </div>
+            <div class="card-body ">
+                <div class="form-group ">
+                    <label class="form-label">Basic Select2</label>
+                    <ng-select placeholder="Choose one">
+                        <ng-option value="1">Chuck Testa</ng-option>
+                        <ng-option value="2">Sage Cattabriga-Alosa</ng-option>
+                        <ng-option value="3">Nikola Tesla</ng-option>
+                        <ng-option value="4">Cattabriga-Alosa</ng-option>
+                        <ng-option value="5">Nikola Alosa</ng-option>
+                    </ng-select>
+
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Select2 with Group Option</label>
+                    <ng-select [items]="select2Countries" bindLabel="title" bindvalue="id" groupBy="countryNames"
+                        [multiple]="true">
+                        <ng-template ng-optgroup-tmp let-item="item">{{item.title}}</ng-template>
+                        <ng-template ng-option-tmp let-item="item">{{item.title}}</ng-template>
+
+                    </ng-select>
+
+
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Select2 with Search box</label>
+                    <ng-select placeholder="Choose one (with searchbox)" [items]="select2Countries" bindLabel="title"
+                        bindValue="id" groupBy="countryNames" [multiple]="true">
+                        <ng-template ng-optgroup-tmp let-item="item">{{item.title}}</ng-template>
+                        <ng-template ng-option-tmp let-item="item">{{item.title}}</ng-template>
+                    </ng-select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Users list</label>
+                    <ng-select placeholder="Choose Browser">
+                        <ng-option value="Firefox">Firefox</ng-option>
+                        <ng-option value="Chrome selected">Chrome</ng-option>
+                        <ng-option value="Safari">Safari</ng-option>
+                        <ng-option value="Opera">Opera</ng-option>
+                        <ng-option value="Internet Explorer">Internet Explorer</ng-option>
+                    </ng-select>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Multiple Select Styles</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="from-label">Basic Single Select</label>
+                            <angular2-multiselect [data]="dropdownList" [(ngModel)]="SingleItems"
+                                [settings]="SingleSettings">
+                            </angular2-multiselect>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="from-label">Basic Multiple Select</label>
+                            <angular2-multiselect [data]="dropdownList" [(ngModel)]="multipleItems"
+                                [settings]="multipleSettings">
+                            </angular2-multiselect>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="from-label">Selected Countries</label>
+                            <angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems"
+                                [settings]="selectedSettings">
+                            </angular2-multiselect>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="from-label">Disabled Multiple Select</label>
+                            <angular2-multiselect [settings]="disableSettings">
+                            </angular2-multiselect>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="from-label">Search Countries</label>
+                            <angular2-multiselect [data]="dropdownList" [(ngModel)]="searchItems"
+                                [settings]="searchSettings">
+                            </angular2-multiselect>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="from-label">Search and Add New Item</label>
+                            <angular2-multiselect [data]="dropdownList2" [(ngModel)]="addItems" [settings]="addSettings"
+                                (onAddFilterNewItem)="onAddItem($event)">
+                            </angular2-multiselect>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="from-label">Select Group By</label>
+                            <angular2-multiselect [data]="itemList" [(ngModel)]="itemSelect" [settings]="itemSettings">
+                            </angular2-multiselect>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+<!-- End Row-->

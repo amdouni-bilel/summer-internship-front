@@ -1,0 +1,257 @@
+::ng-deep {
+    .ng-wizard-theme-dots .ng-wizard-container {
+        min-height: 0;
+    }
+    .ng-wizard-theme-dots > ul.step-anchor > li > a:after {
+        bottom: -6px;
+        left: 44.5%;
+    }
+    .ng-wizard-theme-arrows > .ng-wizard-container {
+        min-height: 0;
+    }
+    .ng-wizard-theme-dots > ul.step-anchor:before {
+        top: 77px;
+        background-color: #f3f4f7;
+    }
+    .ng-wizard-theme-dots > ul.step-anchor > li > a:before {
+        background: #f3f4f7;
+        color: #705ec8;
+    }
+    .ng-wizard-theme-dots > ul.step-anchor > li.active > a:after {
+        background: #705ec8;
+    }
+    .ng-wizard-theme-dots > ul.step-anchor > li > a {
+        color: #5c6287;
+    }
+    .ng-wizard-theme-dots > ul.step-anchor > li.active > a {
+        color: #705ec8;
+    }
+    .nav-tabs .nav-link:hover:not(.disabled) {
+        color: #705ec8;
+    }
+    .ng-wizard-theme-dots > ul.step-anchor > li.done > a:after,
+    .ng-wizard-theme-dots > ul.step-anchor > li > a:after {
+        background: #dfe3e6;
+    }
+    .ng-wizard-theme-dots > ul.step-anchor > li.done > a {
+        color: #728096;
+    }
+    .ng-wizard-theme-dots .step-content {
+        padding: 25px 0;
+    }
+    .nav.nav-tabs.step-anchor {
+        margin: 0;
+    }
+    .ng-wizard-theme-arrows .step-content {
+        padding: 25px 10px;
+    }
+    .ng-wizard-theme-arrows {
+        border: 1px solid #e3e4e9;
+    }
+    .ng-wizard-theme-arrows > ul.step-anchor {
+        border-bottom: 1px solid #e3e4e9;
+        background: none;
+    }
+    .ng-wizard-theme-arrows > ul.step-anchor > li > a,
+    .ng-wizard-theme-arrows > ul.step-anchor > li > a:hover {
+        background: #ebeef1;
+        color: #5c6287;
+    }
+    .ng-wizard-theme-arrows > ul.step-anchor > li > a:before,
+    .ng-wizard-theme-arrows > ul.step-anchor > li > a:after {
+        border-left: 30px solid#ebeef1;
+        color: #5c6287;
+    }
+    .ng-wizard-theme-arrows > ul.step-anchor > li.active > a {
+        border-color: #705ec8 !important;
+        background: #705ec8 !important;
+    }
+    .ng-wizard-theme-arrows > ul.step-anchor > li.active > a:after {
+        border-left: 30px solid #705ec8 !important;
+    }
+    .ng-wizard-theme-arrows > ul.step-anchor > li.done > a {
+        border-color: #ebeef1 !important;
+        background: #ebeef1 !important;
+        color: #5c6287 !important;
+    }
+    .ng-wizard-theme-arrows > ul.step-anchor > li.done > a:after {
+        border-left: 30px solid #ebeef1 !important;
+    }
+    .ng-wizard-theme-arrows > ul.step-anchor > li > a:hover:after {
+        border-left-color: #ebeef1;
+    }
+    .nav.nav-tabs.step-anchor .nav-item {
+        margin: 0;
+    }
+    .toast-container .ngx-toastr:hover {
+        box-shadow: none;
+    }
+    aw-wizard-navigation-bar.horizontal.small ul.steps-indicator li:not(:last-child):after {
+        background-color: #f3f4f7;
+        height: 3px;
+    }
+    aw-wizard-navigation-bar.horizontal.small ul.steps-indicator li .step-indicator {
+        background-color: #dfe3e6;
+    }
+    aw-wizard-navigation-bar.horizontal.small ul.steps-indicator li.current .step-indicator {
+        background-color: #705ec8;
+    }
+    aw-wizard-navigation-bar.horizontal.small ul.steps-indicator li.done .step-indicator {
+        background-color: #dfe3e6;
+    }
+    .custom-control-input {
+        left: 2px;
+        top: 5px;
+    }
+  }
+  
+  
+  
+  
+  
+  /* Import Google Fonts (facultatif) */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  
+  /* Réinitialisation CSS *//*
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  */
+  
+  /* Arborescence CSS */
+  .tree-container {
+    width: 100%;
+    overflow-x: auto; /* Activer le défilement horizontal */
+  }
+  
+  .tree {
+    list-style-type: none;
+    padding-left: 20px;
+    white-space: nowrap; /* Empêcher les éléments de passer à la ligne */
+  }
+  
+  .tree ul {
+    padding-top: 20px;
+    position: relative;
+    transition: .5s;
+  }
+  
+  .tree li {
+    display: inline-table;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 10px;
+    transition: .5s;
+  }
+  
+  .tree li::before,
+  .tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px dashed #ccc;
+    width: 51%;
+    height: 10px;
+  }
+  
+  
+  
+  
+  .tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+  }
+  
+  .tree li:only-child::after,
+  .tree li:only-child::before {
+    display: none;
+  }
+  
+  .tree li:only-child {
+    padding-top: 0;
+  }
+  
+  .tree li:first-child::before,
+  .tree li:last-child::after {
+    border: 0 none;
+  }
+  
+  .tree li:last-child::before {
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+  }
+  
+  .tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+  }
+  
+  .tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+  }
+  
+  .tree li a {
+   
+    padding: 10px;
+    display: inline-grid;
+    border-radius: 5px;
+    text-decoration-line: none;
+    border-radius: 5px;
+    transition: .5s;
+  }
+  
+  .tree li a img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px !important;
+    border-radius: 100px;
+    margin: auto;
+  }
+  
+  .tree li a  {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #666;
+    padding: 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+  
+  /* Hover */
+  .tree li a:hover,
+  .tree li a:hover i,
+  .tree li a:hover ,
+  .tree li a:hover+ul li a {
+    background: #c8e4f8;
+    color: #000;
+    border: 1px solid #94a0b4;
+  }
+  
+  .tree li a:hover+ul li::after,
+  .tree li a:hover+ul li::before,
+  .tree li a:hover+ul::before,
+  .tree li a:hover+ul ul::before {
+    border-color: transparent;
+  }
+  
+  /* Ajouter une classe pour les icônes pour les sélectionner spécifiquement */
+  .zoom-controls i {
+    font-size: 18px; /* Ajuster la taille de l'icône (changez la valeur comme vous le souhaitez) */
+    margin-right: 8px; /* Ajuster la marge entre les deux icônes (changez la valeur comme vous le souhaitez) */
+  }

@@ -1,0 +1,152 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Email Sent</h4>
+        
+    </div> 
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-lg-4 col-xl-3">
+        <div class="card">
+            <div class="list-group list-group-transparent mb-0 mail-inbox pb-3">
+                <div class="mt-4 mb-4 ml-4 mr-4 text-center">
+                    <a routerLink="/pages/email/compose" class="btn btn-primary btn-block">Compose</a>
+                </div>
+                <a routerLink="/pages/email/inbox" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <i class="fe fe-inbox fs-18 mr-2"></i> Inbox 
+                </a>
+                <a href="javascript:void(0)" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <i class="fe fe-mail fs-18 mr-2"></i> Sent Mail
+                </a>
+             
+            </div>
+                <div *ngFor="let group of groups">
+            <div class="p-2">
+                <div class="list-group list-group-transparent mb-0 mail-inbox">
+                    <a href="javascript:void(0)"
+                        class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2">
+                        <span class="w-2 h-2 brround bg-success mr-2"></span> {{group.nom}}
+                    </a>
+                  
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-8 col-xl-9">
+        <div class="card">
+            <div class="card-body p-6">
+                <div class="inbox-body">
+                    <div class="mail-option">
+                      
+                    </div>
+                    <div class="center-content" *ngIf="emails.length==0">
+                        <p style="color: darkgrey;">no Data</p>
+                        </div>
+                    <div class="table-responsive">
+                        <table class="table table-inbox table-hover text-nowrap">
+                            <tbody>
+                                <tr class="" *ngFor="let email of emails" >
+                                        <td class="view-message text-right " style="font-style: italic;"><i class="fa fa-search" (click)="handleEvent(email, 'Clicked', $event.event,null)"></i></td>
+                                    <td class="view-message dont-show font-weight-semibold">{{email.from}}</td>
+                                    <td class="view-message">{{email.subject}}</td>
+                                    <td class="view-message text-right " style="font-style: italic;">{{email.creationDate}}</td>
+                                    <td class="view-message text-right " style="font-style: italic;">{{email.creationTime}}</td>
+                                    <td class="view-message text-right " style="font-style: italic;"><i class="fa fa-trash" (click)="deleteEmail(email.id)"></i></td>
+
+                                </tr>
+
+
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+
+<ng-template #modalContent let-close="close">
+    <div class="modal-header">
+        <h5 class="modal-title">Email Details</h5>
+        <button type="button" class="close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+       
+        <!-- form -->
+
+        <div class="col-md-18 col-lg-12"> 
+            <div class="card">
+              
+                <div class="card-body">
+            
+                    <div class="email-media">
+                        <div class="mt-0 d-sm-flex">
+                            <img class="mr-2 rounded-circle avatar avatar-lg" src="../../assets/images/users/2.jpg"
+                                alt="avatar">
+                            <div class="media-body pt-0">
+                                <div class="float-right d-none d-md-flex fs-15">
+                                    <small class="mr-3 mt-3 text-muted">{{ email.creationDate }} at {{ email.creationTime }}</small>
+                                 
+                                   
+                                </div>
+                                <div class="media-title text-dark font-weight-semibold mt-1">{{ email.username }} <span
+                                        class="text-muted font-weight-semibold">( {{ email.to }} )</span></div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container">
+                        <hr>
+                    
+                        <div class="email-details animated-border">
+                            
+                          <div class="row">
+                            <div class="col-md-6">
+                             
+                              <div class="form-group">
+                                <label><b>Subject:</b></label>
+                                <p>{{ email.subject }}</p>
+                              </div>
+                            </div>
+                          
+                          </div>
+                    <br><br>
+                    
+                          <div   class="form-group">
+                            <label><b>Message Body:</b></label>
+                            <p><i>{{ email.message }}</i></p>
+                          </div>
+                        </div>
+                    
+                      </div>
+                    
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button *ngIf="isCreate==true" type="button" class="btn btn-outline-primary" (click)="saveContact()">Create</button>
+        <button *ngIf="isCreate==false" type="button" class="btn btn-outline-primary" (click)="updateContact()">Update</button>
+
+        <button type="button" class="btn btn-outline-secondary" (click)="closePopup()">
+            Cancel
+        </button>
+    </div>
+</ng-template> 
+
