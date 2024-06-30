@@ -15,9 +15,12 @@ const routes: Routes = [
   {path: 'auth/login', component: LoginPageComponent},
   {path: 'auth/register', component: RegisterPageComponent},
   {path: '', pathMatch: 'full', redirectTo: 'dashboard'},
-  {path: '', component: ContentComponent, children: content, canActivate: [AuthGuard]},
-  {path: '', component: FullContentComponent, children: full, canActivate: [AuthGuard]},
-  {path: '', component: ContentStyleComponent, children: custom_style, canActivate: [AuthGuard]},
+  //{path: '', component: ContentComponent, children: content, canActivate: [AuthGuard]},
+  {path: '', component: ContentComponent, children: content},
+  //{path: '', component: FullContentComponent, children: full, canActivate: [AuthGuard]},
+  {path: '', component: FullContentComponent, children: full,},
+  //{path: '', component: ContentStyleComponent, children: custom_style, canActivate: [AuthGuard]},
+  {path: '', component: ContentStyleComponent, children: custom_style,},
 ];
 
 @NgModule({

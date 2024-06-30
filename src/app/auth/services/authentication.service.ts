@@ -66,15 +66,29 @@ export class AuthenticationService extends BaseService {
     );
   }
 
-  login(params: {
+/*  login(params: {
     body: AuthRequest
   }): Observable<UserView> {
 
     return this.login$Response(params).pipe(
       map((r: StrictHttpResponse<UserView>) => r.body as UserView)
     );
+  }*/
+  login(params: { body: AuthRequest }): Observable<UserView> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    // @ts-ignore
+    return this.http.post<StrictHttpResponse<UserView>>(this.apiUrl, params.body, { headers, observe: 'response' }).pipe(
+      map((r: StrictHttpResponse<UserView>) => r.body as UserView)
+    );
   }
+  private apiUrl = 'http://localhost:9001/api/public/login';
 
+
+/*  login1(username: string, password: string): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = { username, password };
+    return this.http.post<any>(this.apiUrl, body, { headers });
+  }*/
   register(params: {
     body: AuthRequest
   }): Observable<UserView> {
