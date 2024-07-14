@@ -29,9 +29,9 @@ export class EmployeeService {
     return this.http.get<EmployeeResponse[]>(`${environment.employeeApiUrl}`);
   }
 
-  getEmployeeById(id: number): Observable<EmployeeRequest> {
+/*getEmployeeById(id: number): Observable<EmployeeRequest> {
     return this.http.get<EmployeeResponse>(`${environment.employeeApiUrl}/${id}`);
-  }
+  }*/
 
   updateEmployee(id: number, employeeRequest: EmployeeRequest): Observable<EmployeeResponse> {
     return this.http.put<EmployeeResponse>(`${environment.employeeApiUrl}/${id}`, employeeRequest);

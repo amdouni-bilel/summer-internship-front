@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {mergeMap, Observable} from "rxjs";
+import { Observable } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 import {environment} from "../../../environments/environment";
 declare var FormData: any;
 declare var File: any;

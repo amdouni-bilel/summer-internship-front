@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Resume } from './resume.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ApiConfiguration } from '../api/api-configuration';
 
 

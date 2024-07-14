@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {UserView} from "../../auth/models/user-view";
-import {map, Observable, of} from "rxjs";
-import {environment} from "../../../environments/environment";
+import { Observable, of } from "rxjs";
+import { map } from "rxjs/operators";import {environment} from "../../../environments/environment";
 import {tap} from "rxjs/operators";
 
 @Injectable({

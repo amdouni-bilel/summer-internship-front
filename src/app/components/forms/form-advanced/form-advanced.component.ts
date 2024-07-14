@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { SearchCountryField, TooltipLabel, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
-
+import { SearchCountryField, TooltipLabel, CountryISO } from 'ngx-intl-tel-input';
+import { PhoneNumberFormat } from 'src/app/shared/phone-number-format';
 @Component({
   selector: 'app-form-advanced',
   templateUrl: './form-advanced.component.html',
