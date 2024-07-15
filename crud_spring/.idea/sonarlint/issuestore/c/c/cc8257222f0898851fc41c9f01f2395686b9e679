@@ -1,9 +1,0 @@
-
-”
-java:S1128"QRemove this unused import 'com.coding.crud_spring.controller.CustomerController'.(“˜§½8“ØøÒ‰2J$37eaed09-c7c9-4613-8684-4c525a7fa9e9
-
-java:S1128"MRemove this unused import 'com.coding.crud_spring.controller.UserController'.(Õ„™Ö8®ØøÒ‰2J$4414bd0e-0390-489b-b72b-4a7e4f6edfa1
-“
-java:S1128"KRemove this unused import 'com.coding.crud_spring.service.CustomerService'.(ÂÅ•Äüÿÿÿÿ8ÿØøÒ‰2J$65c9e9ce-d60a-4930-8c89-cb4a84c8c697
-Š
-java:S1128"GRemove this unused import 'com.coding.crud_spring.service.UserService'.(µ³µ°8ÿØøÒ‰2J$2342affc-2b62-400a-8f77-98662cff118c
