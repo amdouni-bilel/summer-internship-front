@@ -1,3 +1,7 @@
 
-…
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8¡Áô™ˆ2J$15abb224-2151-43d4-b99c-b20eaf09674d
+u
+java:S1192"YDefine a constant instead of duplicating this literal "User not found with id: " 3 times.(¤¶Ï{8‘à©¸‹2
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8“à©¸‹2
+K
+java:S2201*"/The return value of "orElseThrow" must be used.(¤¶Ï{8¢à©¸‹2

@@ -1,13 +1,12 @@
 package com.coding.crud_spring.service;
 
-
 import com.coding.crud_spring.entity.User;
+import com.coding.crud_spring.exception.ResourceNotFoundException;
 import com.coding.crud_spring.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -19,8 +18,9 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Optional<User> getUserById(Long id) {
-        return userRepository.findById(id);
+    public User getUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
     }
 
     public User createUser(User user) {
@@ -28,7 +28,8 @@ public class UserService {
     }
 
     public User updateUser(Long id, User userDetails) {
-        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
         user.setUsername(userDetails.getUsername());
         user.setFullName(userDetails.getFullName());
         user.setPassword(userDetails.getPassword());
@@ -37,6 +38,8 @@ public class UserService {
     }
 
     public void deleteUser(Long id) {
+        userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
         userRepository.deleteById(id);
     }
 }
