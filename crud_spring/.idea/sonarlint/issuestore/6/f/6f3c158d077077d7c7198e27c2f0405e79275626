@@ -1,7 +1,7 @@
 
-O
-java:S1068"-Remove this unused "timestamp" private field.(œ¥½¾üÿÿÿÿ8»õ£¸‹2
-M
-java:S1068"+Remove this unused "message" private field.(ù„è¿ûÿÿÿÿ8¼õ£¸‹2
-H
-java:S1068"+Remove this unused "details" private field.(…ç¢«8¼õ£¸‹2
+u
+java:S1068"-Remove this unused "timestamp" private field.(œ¥½¾üÿÿÿÿ8»õ£¸‹2J$b2e6a500-9398-46c4-855b-53d8040bf36b
+s
+java:S1068"+Remove this unused "message" private field.(ù„è¿ûÿÿÿÿ8¼õ£¸‹2J$99e4e480-f676-4a3b-810f-6dbe7dba6cfb
+n
+java:S1068"+Remove this unused "details" private field.(…ç¢«8¼õ£¸‹2J$8b0d3fc0-f634-4e3f-8753-d95a8a00baf7

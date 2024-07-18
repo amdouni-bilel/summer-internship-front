@@ -1,3 +1,6 @@
 
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¹Ïª¸‹2
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÃŸğ‹Œ2J$041a0524-cefa-49ca-9e26-8eb15e779ac8
+H
+java:S1452"&Remove usage of generic wildcard type.(ï¬ß¾üÿÿÿÿ8âöËŒ2
+L	java:S106"+Replace this use of System.out by a logger.(Ú¾äÔşÿÿÿÿ8äöËŒ2

@@ -1,14 +1,13 @@
 package com.coding.crud_spring.controller;
 
-
 import com.coding.crud_spring.entity.User;
 import com.coding.crud_spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-//@CrossOrigin ("")
 
 @RestController
 @RequestMapping("/api/users")
@@ -18,8 +17,15 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    public ResponseEntity<?> getAllUsers() {
+        try {
+            List<User> users = userService.getAllUsers();
+            System.out.println("yess i got the list");
+            return ResponseEntity.ok(users);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error retrieving users: " + e.getMessage());
+        }
     }
 
     @GetMapping("/{id}")
