@@ -1,0 +1,10 @@
+
+˜	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•µİ®øÿÿÿÿ8¤áÅŒ2J$7c07c603-55d8-4e24-ad59-0670386d2e1e
+	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¨áÅŒ2J$f66e2985-dff0-4c6b-bb4f-4d90b971ecb3
+º
+java:S5527"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8²áÅŒ2J$fff0e35b-cde3-42fb-9397-a95fc9bfcfcf
+W
+java:S1161":Add the "@Override" annotation above this method signature(‡èú×8ò„òÅŒ2
+r	java:S106*"+Replace this use of System.out by a logger.(Òë¨úÿÿÿÿ8µáÅŒ2J$cf1b1743-70af-4ea8-8ef0-ba74e8d6af5e
+a
+java:S1128"Remove this duplicated import.(¬µ²8·áÅŒ2J$8403beba-cbce-4db6-9979-081a747156fd

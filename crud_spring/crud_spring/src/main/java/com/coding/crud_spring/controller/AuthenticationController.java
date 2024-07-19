@@ -3,23 +3,35 @@ package com.coding.crud_spring.controller;
 import com.coding.crud_spring.dto.LoginUserDto;
 import com.coding.crud_spring.dto.RegisterUserDto;
 import com.coding.crud_spring.entity.User;
+import com.coding.crud_spring.repository.UserRepository;
 import com.coding.crud_spring.service.AuthenticationService;
+import com.coding.crud_spring.service.EmailService;
 import com.coding.crud_spring.service.JwtService;
 import com.coding.crud_spring.util.LoginResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/auth")
 public class AuthenticationController {
     private final JwtService jwtService;
     private final AuthenticationService authenticationService;
+    private final EmailService emailService;
 
-    public AuthenticationController(JwtService jwtService, AuthenticationService authenticationService) {
+    private  final UserRepository userRepository;
+
+    @Autowired
+    public AuthenticationController(JwtService jwtService, AuthenticationService authenticationService, EmailService emailService,UserRepository userRepository) {
         this.jwtService = jwtService;
         this.authenticationService = authenticationService;
+        this.emailService = emailService;
+        this.userRepository = userRepository;
     }
 
     @PostMapping("/signup")
@@ -44,6 +56,18 @@ public class AuthenticationController {
         }
     }
 
+    @PostMapping("/send-otp")
+    public ResponseEntity<?> sendOtp(@RequestBody Map<String, String> request) {
+        String email = request.get("email");
+        Optional<User> user = userRepository.findByUsername(email);
+
+        if (user.isPresent()) {
+            emailService.sendOtpEmail(email);
+            return ResponseEntity.ok("OTP sent successfully");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse("Email not found"));
+        }
+    }
 
     public static class ErrorResponse {
         private String message;

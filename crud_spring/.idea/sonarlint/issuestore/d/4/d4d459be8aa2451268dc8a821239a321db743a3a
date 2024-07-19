@@ -1,6 +1,0 @@
-
-F	java:S106,"+Replace this use of System.out by a logger.(˜ÎG8¯Ää´Œ2
-G	java:S1065"+Replace this use of System.out by a logger.(‚áË 8³Ää´Œ2
-j
-java:S1128
-"MRemove this unused import 'org.springframework.security.core.Authentication'.(ñıÓ“8»Ää´Œ2
