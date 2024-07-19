@@ -23,6 +23,11 @@ public class UserService {
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
     }
 
+    public boolean usernameExists(String email) {
+        return userRepository.findByUsername(email).isPresent();
+    }
+
+
     public User createUser(User user) {
         return userRepository.save(user);
     }

@@ -2,11 +2,13 @@ package com.coding.crud_spring.controller;
 
 import com.coding.crud_spring.dto.LoginUserDto;
 import com.coding.crud_spring.dto.RegisterUserDto;
+import com.coding.crud_spring.dto.ResetPasswordRequest;
 import com.coding.crud_spring.entity.User;
 import com.coding.crud_spring.repository.UserRepository;
 import com.coding.crud_spring.service.AuthenticationService;
 import com.coding.crud_spring.service.EmailService;
 import com.coding.crud_spring.service.JwtService;
+import com.coding.crud_spring.service.UserService;
 import com.coding.crud_spring.util.LoginResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +27,15 @@ public class AuthenticationController {
     private final JwtService jwtService;
     private final AuthenticationService authenticationService;
     private final EmailService emailService;
+    private final UserService userService;
     private final UserRepository userRepository;
 
     @Autowired
-    public AuthenticationController(JwtService jwtService, AuthenticationService authenticationService, EmailService emailService, UserRepository userRepository) {
+    public AuthenticationController(JwtService jwtService, AuthenticationService authenticationService, EmailService emailService, UserService userService, UserRepository userRepository) {
         this.jwtService = jwtService;
         this.authenticationService = authenticationService;
         this.emailService = emailService;
+        this.userService = userService;
         this.userRepository = userRepository;
     }
 
@@ -84,6 +88,21 @@ public class AuthenticationController {
                     .body(Collections.singletonMap("error", "Invalid OTP"));
         }
     }
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@RequestBody Map<String, String> request) {
+        String email = request.get("email");
+        String newPassword = request.get("newPassword");
+        boolean isPasswordReset = authenticationService.resetPassword(email, newPassword);
+        if (isPasswordReset) {
+            return ResponseEntity.ok(Collections.singletonMap("message", "Password reset successfully"));
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Collections.singletonMap("error", "Failed to reset password"));
+        }
+    }
+
+
 
     public static class ErrorResponse {
         private String message;

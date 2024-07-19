@@ -1,14 +1,20 @@
 
-H
-java:S1452-"&Remove usage of generic wildcard type.(¨÷™ÿÿÿÿÿ8ßÄËŒ2
-G	java:S1064"+Replace this use of System.out by a logger.(›°˜Ä8âÄËŒ2
-H
-java:S1452="&Remove usage of generic wildcard type.(×œ›‰şÿÿÿÿ8âÄËŒ2
-B
-java:S1452I"&Remove usage of generic wildcard type.(×Û¥8çÄËŒ2
-˜
-java:S1128"PRemove this unused import 'io.swagger.v3.oas.annotations.responses.ApiResponse'.(ÑÁÔ¾ıÿÿÿÿ8¾æ´ËŒ2J$f0d9087a-5e4d-435b-a7f5-5da88e956935
-Q
-java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8ìÄËŒ2
+j
+java:S1192I"HDefine a constant instead of duplicating this literal "message" 3 times.(ş¿§­üÿÿÿÿ8¹µéåŒ2
+h
+java:S1192F"FDefine a constant instead of duplicating this literal "error" 3 times.(¢òËğùÿÿÿÿ8ÀµéåŒ2
+‰
+java:S1192B"FDefine a constant instead of duplicating this literal "email" 3 times.(©·ÔÇ8¾¨ÛåŒ2J$aab4c69d-5a25-465a-a6a0-4bc26c5c006f
+n
+java:S14521"&Remove usage of generic wildcard type.(¨÷™ÿÿÿÿÿ8Ë¨ÛåŒ2J$25fb3447-ca9c-404f-817b-1d8b1f56d7b8
+m	java:S1068"+Replace this use of System.out by a logger.(›°˜Ä8Î¨ÛåŒ2J$65937fc6-1fd6-47a1-a770-9860319b23bf
+n
+java:S1452A"&Remove usage of generic wildcard type.(×œ›‰şÿÿÿÿ8Ğ¨ÛåŒ2J$82fa3f1c-8edc-44d2-a80d-ef9dde0520af
+h
+java:S1452M"&Remove usage of generic wildcard type.(×Û¥8Ò¨ÛåŒ2J$5069858c-fb47-4a59-b124-d5eabe832b1a
+C
+java:S1452]"&Remove usage of generic wildcard type.(´Œ¢ú8ùµéåŒ2
+w
+java:S1068"/Remove this unused "userService" private field.(ÇêŞ¢ıÿÿÿÿ8á¨ÛåŒ2J$5293dfc3-8b20-47b4-b8a5-2e96763d06ab
 O
-java:S1068"2Remove this unused "userRepository" private field.(¼²Æ÷8íÄËŒ2
+java:S1068"2Remove this unused "userRepository" private field.(¼²Æ÷8†¶éåŒ2

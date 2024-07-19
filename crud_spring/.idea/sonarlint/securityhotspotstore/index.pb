@@ -49,3 +49,5 @@ Jcrud_spring/src/main/java/com/coding/crud_spring/service/EmailService.java,b\6
 Rcrud_spring/src/main/java/com/coding/crud_spring/config/SecurityConfiguration.java,a\f\afc1b51fa9a963754bba5f66c0840217d147eedb
 „
 Tcrud_spring/src/main/java/com/coding/crud_spring/config/JwtAuthenticationFilter.java,d\4\d4d459be8aa2451268dc8a821239a321db743a3a
+~
+Ncrud_spring/src/main/java/com/coding/crud_spring/dto/ResetPasswordRequest.java,f\e\fe06f398fd87ffe44347480bc31b27afbeeba6a3

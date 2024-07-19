@@ -7,6 +7,8 @@ import com.coding.crud_spring.repository.UserRepository;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AuthenticationService {
 
@@ -41,5 +43,17 @@ public class AuthenticationService {
         }
 
         return user;
+    }
+
+
+    public boolean resetPassword(String email, String newPassword) {
+        Optional<User> userOptional = userRepository.findByUsername(email);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            user.setPassword(newPassword);
+            userRepository.save(user);
+            return true;
+        }
+        return false;
     }
 }
