@@ -10,7 +10,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthenticationService {
 
+
     private final UserRepository userRepository;
+
+
+    public boolean usernameExists(String email) {
+        return userRepository.findByUsername(email).isPresent();
+    }
+
 
     public AuthenticationService(UserRepository userRepository) {
         this.userRepository = userRepository;

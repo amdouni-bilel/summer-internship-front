@@ -1,6 +1,14 @@
 
-n
-java:S1452,"&Remove usage of generic wildcard type.(¨÷™ÿÿÿÿÿ8Ã¶ÑÈŒ2J$3f198297-7091-424a-a79f-7e3a11257ea0
-m	java:S1063"+Replace this use of System.out by a logger.(›°˜Ä8Ä¶ÑÈŒ2J$8b3040fd-f646-45f9-b335-f6d12eff9604
 H
-java:S1452<"&Remove usage of generic wildcard type.(×œ›‰şÿÿÿÿ8çÏñÈŒ2
+java:S1452-"&Remove usage of generic wildcard type.(¨÷™ÿÿÿÿÿ8ßÄËŒ2
+G	java:S1064"+Replace this use of System.out by a logger.(›°˜Ä8âÄËŒ2
+H
+java:S1452="&Remove usage of generic wildcard type.(×œ›‰şÿÿÿÿ8âÄËŒ2
+B
+java:S1452I"&Remove usage of generic wildcard type.(×Û¥8çÄËŒ2
+˜
+java:S1128"PRemove this unused import 'io.swagger.v3.oas.annotations.responses.ApiResponse'.(ÑÁÔ¾ıÿÿÿÿ8¾æ´ËŒ2J$f0d9087a-5e4d-435b-a7f5-5da88e956935
+Q
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8ìÄËŒ2
+O
+java:S1068"2Remove this unused "userRepository" private field.(¼²Æ÷8íÄËŒ2
