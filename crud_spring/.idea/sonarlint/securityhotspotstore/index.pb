@@ -51,3 +51,5 @@ Rcrud_spring/src/main/java/com/coding/crud_spring/config/SecurityConfiguration.j
 Tcrud_spring/src/main/java/com/coding/crud_spring/config/JwtAuthenticationFilter.java,d\4\d4d459be8aa2451268dc8a821239a321db743a3a
 ~
 Ncrud_spring/src/main/java/com/coding/crud_spring/dto/ResetPasswordRequest.java,f\e\fe06f398fd87ffe44347480bc31b27afbeeba6a3
+x
+Hcrud_spring/src/main/java/com/coding/crud_spring/service/JwtService.java,b\5\b52db9b34cedd5c922da90e8f7fff11c38a3f1a4

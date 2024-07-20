@@ -18,6 +18,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -50,17 +51,18 @@ public class AuthenticationController {
         try {
             User authenticatedUser = authenticationService.authenticate(loginUserDto);
             String jwtToken = jwtService.generateToken(authenticatedUser);
-            LoginResponse loginResponse = new LoginResponse()
-                    .setToken(jwtToken)
-                    .setExpiresIn(jwtService.getExpirationTime());
             System.out.println(jwtToken);
-            return ResponseEntity.ok(loginResponse);
+            Map<String, Object> response = new HashMap<>();
+            response.put("token", jwtToken);
+            response.put("fullName", authenticatedUser.getFullName());
+            response.put("username", authenticatedUser.getUsername());
+            response.put("roles", authenticatedUser.getRoles());
+            return ResponseEntity.ok(response);
         } catch (AuthenticationException ex) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(new ErrorResponse("Login failed: Invalid username or password"));
         }
     }
-
     @PostMapping("/send-otp")
     public ResponseEntity<?> sendOtp(@RequestBody Map<String, String> request) {
         String email = request.get("email");
