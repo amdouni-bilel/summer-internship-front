@@ -3,17 +3,12 @@
 <div class="page-header">
   <div class="page-leftheader">
     <h4 class="page-title mb-0">Contact List: </h4>
-    <!-- <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-grid mr-2 fs-14"></i>Apps</a></li>
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Contact</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Contact List 02</a></li>
-    </ol> -->
   </div>
   <div class="page-rightheader">
     <div class="btn btn-list">
-      <a (click)="handleEvent('Clicked', $event.event,null)" class="btn btn-info"><i class="fe fe-user-plus mr-1"></i> New contact </a>
-      <!-- <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
-      <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a> -->
+      <a (click)="handleEvent('Clicked', $event.event, null)" class="btn btn-info">
+        <i class="fe fe-user-plus mr-1"></i> New contact
+      </a>
     </div>
   </div>
 </div>
@@ -27,27 +22,28 @@
         <div class="main-content-left main-content-left-contacts">
           <div class="card-header">
             <div class="card-title">All Contacts</div>
-
           </div>
 
           <div class="input-group mb-3">
-            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search contacts">
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search contacts" (input)="searchContacts()">
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="button" (click)="clearSearch()">Clear</button>
             </div>
           </div>
+
           <div class="main-contacts-list" id="mainContactList">
             <div *ngFor="let contact of filteredContacts">
               <div class="main-contact-item" (click)="changeDisplayedContact(contact)">
-                <div class="main-img-user"><img alt="" src="../../assets/images/users/12.jpg" class="avatar avatar-md brround"></div>
+                <div class="main-img-user">
+                  <img [src]="contact.image ? contact.image : '../../assets/images/users/12.jpg'" alt="Contact Image" class="avatar avatar-md brround">
+                </div>
                 <div class="main-contact-body">
                   <h6>{{contact.fname}} {{contact.lname}}</h6>
-                  <span class="phone">{{contact.post}}</span>
+                  <span class="phone">{{contact.tlph}}</span>
                 </div>
               </div>
             </div>
           </div>
-
 
         </div>
       </div>
@@ -58,26 +54,23 @@
           <div class="main-contact-info-header">
             <div class="media">
               <div class="main-img-user brround">
-                <img alt="" src="../../assets/images/users/2.jpg" class="w-100 h-100 brround">
-                <a href="javascript:void(0)"><i class="fe fe-camera"></i></a>
+                <img alt="" src="../../assets/images/users/2.jpg" class="w-100 h-100 brround" [src]="imageSrc">
+                <a href="javascript:void(0)" (click)="onCameraClick()"><i class="fe fe-camera"></i></a>
+                <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
               </div>
               <div class="media-body">
-                <h4>{{displayedContact.nom}} {{displayedContact.prenom}}</h4>
+                <h4>{{displayedContact.fname}} {{displayedContact.lname}}</h4>
                 <p>{{displayedContact.post}}</p>
-
               </div>
-              <div class="main-contact-action" *ngIf="contacts.length!=0">
-                <a href="javascript:void(0)" class="btn btn-light btn-svgs" (click)="handleEvent('Clicked', $event.event,displayedContact)">
-                  <i class="fe fe-edit mr-1"></i>
-                  Edit <span>
-                                    </span></a>
+              <div class="main-contact-action" *ngIf="contacts.length != 0">
+                <a href="javascript:void(0)" class="btn btn-light btn-svgs" (click)="handleEvent('Clicked', $event.event, displayedContact)">
+                  <i class="fe fe-edit mr-1"></i>Edit
+                </a>
                 <a (click)="deleteContact(displayedContact.id)" class="btn btn-danger btn-svgs">
-                  <i class="fe fe-trash-2 mr-1"></i>
-                  <span>Delete</span>
+                  <i class="fe fe-trash-2 mr-1"></i>Delete
                 </a>
               </div>
-
-              <!-- main-contact-action -->
+            </div>
           </div>
           <div class="main-contact-info-body">
             <div class="card-body">
@@ -92,8 +85,7 @@
                       <i class="fa fa-home"></i>
                     </div>
                     <div>
-                      <label>Society</label> <span class="font-weight-semibold fs-14">
-                                                {{displayedContact.societe}}</span>
+                      <label>Society</label> <span class="font-weight-semibold fs-14">{{displayedContact.societe}}</span>
                     </div>
                   </div>
                   <div class="d-flex">
@@ -113,8 +105,7 @@
                       <i class="fa fa-phone"></i>
                     </div>
                     <div>
-                      <label>Phone</label> <span
-                      class="font-weight-semibold fs-14">{{displayedContact.tlph}}</span>
+                      <label>Phone</label> <span class="font-weight-semibold fs-14">{{displayedContact.tlph}}</span>
                     </div>
                   </div>
                   <div class="d-flex">
@@ -122,17 +113,15 @@
                       <i class="fa fa-map-marker"></i>
                     </div>
                     <div>
-                      <label>Society address</label> <span
-                      class="font-weight-semibold fs-14">{{displayedContact.socadd}}</span>
+                      <label>Society address</label> <span class="font-weight-semibold fs-14">{{displayedContact.socadd}}</span>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-      </div>
+      </div> <!-- This was the unclosed div -->
     </div>
   </div>
 </div>
@@ -148,12 +137,8 @@
     </button>
   </div>
   <div class="modal-body">
-
-    <!-- form -->
-
     <div class="col-md-18 col-lg-12">
       <div class="card">
-
         <div class="card-body">
           <form [formGroup]="coordonneeGroup">
 
@@ -161,18 +146,27 @@
               <div class="form-group col-md-6 mb-0">
                 <div class="form-group">
                   <input type="text" class="form-control" name="fname" formControlName="fname" placeholder="First Name">
+                  <!-- Message d'erreur pour fname -->
+                  <div *ngIf="coordonneeGroup.get('fname').invalid && (coordonneeGroup.get('fname').dirty || coordonneeGroup.get('fname').touched)" class="text-danger">
+                    <div *ngIf="coordonneeGroup.get('fname').errors?.lettersOnly">Le prénom ne doit contenir que des lettres.</div>
+                  </div>
                 </div>
               </div>
               <div class="form-group col-md-6 mb-0">
                 <div class="form-group">
                   <input type="text" class="form-control" name="lname" formControlName="lname" placeholder="Last Name">
+                  <!-- Message d'erreur pour lname -->
+                  <div *ngIf="coordonneeGroup.get('lname').invalid && (coordonneeGroup.get('lname').dirty || coordonneeGroup.get('lname').touched)" class="text-danger">
+                    <div *ngIf="coordonneeGroup.get('lname').errors?.lettersOnly">Le nom ne doit contenir que des lettres.</div>
+                  </div>
                 </div>
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6 mb-0">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="societe" formControlName="societe" placeholder="Society ">
+                  <input type="text" class="form-control" name="societe" formControlName="societe" placeholder="Society">
                 </div>
               </div>
               <div class="form-group col-md-6 mb-0">
@@ -185,11 +179,19 @@
               <div class="form-group col-md-6 mb-0">
                 <div class="form-group">
                   <input type="text" class="form-control" name="soctlph" formControlName="soctlph" placeholder="Society phone">
+                  <!-- Message d'erreur pour soctlph -->
+                  <div *ngIf="coordonneeGroup.get('soctlph').invalid && (coordonneeGroup.get('soctlph').dirty || coordonneeGroup.get('soctlph').touched)" class="text-danger">
+                    <div *ngIf="coordonneeGroup.get('soctlph').errors?.phoneNumber">Le numéro de téléphone de la société doit contenir exactement 8 chiffres.</div>
+                  </div>
                 </div>
               </div>
               <div class="form-group col-md-6 mb-0">
                 <div class="form-group">
                   <input type="text" class="form-control" name="tlph" formControlName="tlph" placeholder="Phone">
+                  <!-- Message d'erreur pour tlph -->
+                  <div *ngIf="coordonneeGroup.get('tlph').invalid && (coordonneeGroup.get('tlph').dirty || coordonneeGroup.get('tlph').touched)" class="text-danger">
+                    <div *ngIf="coordonneeGroup.get('tlph').errors?.phoneNumber">Le numéro de téléphone doit contenir exactement 8 chiffres.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -201,24 +203,21 @@
               </div>
               <div class="form-group col-md-6 mb-0">
                 <div class="form-group">
-                  <textarea class="form-control" name="comment" formControlName="comment" placeholder="comment"></textarea>
+                  <textarea class="form-control" name="comment" formControlName="comment" placeholder="Comment"></textarea>
                 </div>
               </div>
             </div>
+
+         <!--   <button type="submit" class="btn btn-primary" [disabled]="coordonneeGroup.invalid">Save</button>
+-->
           </form>
         </div>
       </div>
     </div>
-
   </div>
   <div class="modal-footer">
-    <button *ngIf="isCreate==true" type="button" class="btn btn-outline-primary" (click)="saveContact()">Create</button>
-    <button *ngIf="isCreate==false" type="button" class="btn btn-outline-primary" (click)="updateContact()">Update</button>
-
-    <button type="button" class="btn btn-outline-secondary" (click)="closePopup()">
-      Cancel
-    </button>
+    <button *ngIf="isCreate == true" type="button" class="btn btn-outline-primary" (click)="saveContact()">Create</button>
+    <button *ngIf="isCreate == false" type="button" class="btn btn-outline-primary" (click)="updateContact(displayedContact.id)">Update</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="closePopup()">Cancel</button>
   </div>
 </ng-template>
-
-</div>

@@ -8,6 +8,7 @@ export class Contacts {
   private tlph: string;
   private post: string;
   private comment: string;
+  private _image: string;
 
   constructor(
     id: number,
@@ -18,7 +19,8 @@ export class Contacts {
     soctlph: string,
     tlph: string,
     post: string,
-    comment: string
+    comment: string,
+    image: string
   ) {
     this.id = id;
     this.fname = fname;
@@ -29,6 +31,7 @@ export class Contacts {
     this.tlph = tlph;
     this.post = post;
     this.comment = comment;
+    this._image = image;
   }
 
   getId(): number {
@@ -101,5 +104,13 @@ export class Contacts {
 
   setComment(comment: string): void {
     this.comment = comment;
+  }
+
+  get image(): string {
+    return this._image;
+  }
+
+  set image(value: string) {
+    this._image = value;
   }
 }
