@@ -74,7 +74,9 @@ export class ContactsService {
   uploadImage(contactId: number, file: File): Observable<any> {
     const formData = new FormData();
     formData.append('file', file);
-    return this.http.post<any>(`${this.baseUrl}/upload/${contactId}`, formData);
+    //return this.http.post<any>(`${this.baseUrl}/upload/${contactId}`, formData);
+    return this.http.post(`${this.baseUrl}/files/upload/${contactId}`, formData);
+
   }
 // Validateur pour vérifier que le champ ne contient que des lettres
   checkPhoneExists(phone: string): Observable<boolean> {
