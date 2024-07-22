@@ -1,5 +1,6 @@
 package com.coding.crud_spring.controller;
 
+import com.coding.crud_spring.dto.MissionUserDTO;
 import com.coding.crud_spring.entity.MissionUser;
 import com.coding.crud_spring.service.MissionUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class MissionUserController {
     }
 
     @GetMapping("/user/{userId}")
-    public List<MissionUser> getMissionsByUserId(@PathVariable Long userId) {
+    public List<MissionUserDTO> getMissionsByUserId(@PathVariable Long userId) {
         return missionUserService.getMissionsByUserId(userId);
     }
 }

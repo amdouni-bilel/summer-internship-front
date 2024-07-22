@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,6 +15,9 @@ public class Mission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name", nullable = false)
+    private String name; // New attribute
 
     @Column(name = "endDate", nullable = false)
     private String endDate;
@@ -28,13 +30,17 @@ public class Mission {
 
     @Column(name = "sellDays", nullable = false)
     private boolean sellDays;
+
     @Column(name = "shareMission", nullable = false)
     private boolean shareMission;
+
     @Column(name = "startDate", nullable = false)
     private String startDate;
+
     @Column(name = "tjm", nullable = false)
     private int tjm;
 
+    // Getters and setters
     public boolean getIsForMe() {
         return isForMe;
     }
@@ -46,5 +52,4 @@ public class Mission {
     public Mission(Long id) {
         this.id = id;
     }
-
 }

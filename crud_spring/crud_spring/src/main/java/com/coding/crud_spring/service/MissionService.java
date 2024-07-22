@@ -1,8 +1,6 @@
 package com.coding.crud_spring.service;
 
-
 import com.coding.crud_spring.entity.Mission;
-import com.coding.crud_spring.entity.User;
 import com.coding.crud_spring.repository.MissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +28,7 @@ public class MissionService {
 
     public Mission updateMission(Long id, Mission MissionDetails) {
         Mission mission = MissionRepository.findById(id).orElseThrow(() -> new RuntimeException("Mission not found"));
+        mission.setName(MissionDetails.getName()); // Updated
         mission.setEndDate(MissionDetails.getEndDate());
         mission.setStartDate(MissionDetails.getStartDate());
         mission.setTjm(MissionDetails.getTjm());
