@@ -36,6 +36,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/users/**").permitAll()
+                        .requestMatchers("/api/mission/**").permitAll()
+                        .requestMatchers("/api/mission-user/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

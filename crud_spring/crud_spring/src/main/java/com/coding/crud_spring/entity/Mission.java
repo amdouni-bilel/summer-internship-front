@@ -43,4 +43,8 @@ public class Mission {
         this.isForMe = isForMe;
     }
 
+    public Mission(Long id) {
+        this.id = id;
+    }
+
 }
