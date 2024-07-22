@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MissionUserDTO {
     private Long missionId;
-    // Add any other fields you need from the MissionUser entity
+    private String missionName;
 }

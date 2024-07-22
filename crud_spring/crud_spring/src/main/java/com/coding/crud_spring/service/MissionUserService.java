@@ -4,6 +4,7 @@ import com.coding.crud_spring.dto.MissionUserDTO;
 import com.coding.crud_spring.entity.Mission;
 import com.coding.crud_spring.entity.MissionUser;
 import com.coding.crud_spring.entity.User;
+import com.coding.crud_spring.repository.MissionRepository;
 import com.coding.crud_spring.repository.MissionUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,9 @@ public class MissionUserService {
 
     @Autowired
     private MissionUserRepository missionUserRepository;
+
+    @Autowired
+    private MissionRepository missionRepository;
 
     public MissionUser assignMissionToUser(Long userId, Long missionId) {
         // Check if the mission is already assigned to the user
@@ -30,21 +34,21 @@ public class MissionUserService {
         return missionUserRepository.save(missionUser);
     }
 
-    /*public List<MissionUser> getMissionsByUserId(Long userId) {
-        return missionUserRepository.findByUserId(userId);
-    }*/
-
-
     public boolean isMissionAssignedToUser(Long userId, Long missionId) {
         // Check if the assignment already exists
         return missionUserRepository.existsByUserIdAndMissionId(userId, missionId);
     }
 
-
     public List<MissionUserDTO> getMissionsByUserId(Long userId) {
         List<MissionUser> missionUsers = missionUserRepository.findByUserId(userId);
         return missionUsers.stream()
-                .map(missionUser -> new MissionUserDTO(missionUser.getMission().getId()))
+                .map(missionUser -> {
+                    Long missionId = missionUser.getMission().getId();
+                    String missionName = missionRepository.findById(missionId)
+                            .map(Mission::getName)
+                            .orElse("Unknown"); // Handle case where mission might not be found
+                    return new MissionUserDTO(missionId, missionName);
+                })
                 .collect(Collectors.toList());
     }
 }

@@ -1,5 +1,8 @@
 
-	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(›³±Šøÿÿÿÿ8­ß­¿2J$65de96ba-ca57-453b-9a0e-73429b381575
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(›³±Šøÿÿÿÿ8³æÉÁ2
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8®ß­¿2J$502e2634-70a3-404b-b1a4-5e5d36dbc0e5
-X	java:S125!"<This block of commented-out lines of code should be removed.(¯ºÚ8Êˆ®¿2
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8®ß­¿2J$f2141f11-4212-4c2a-b2aa-a0b31deb665b
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¸æÉÁ2
+½
+java:S62044"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹8êş»Á2J$4d511e32-d3d8-4390-b9dc-c8764d397874
