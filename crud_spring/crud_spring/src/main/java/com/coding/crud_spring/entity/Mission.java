@@ -17,7 +17,7 @@ public class Mission {
     private Long id;
 
     @Column(name = "name", nullable = false)
-    private String name; // New attribute
+    private String name;
 
     @Column(name = "endDate", nullable = false)
     private String endDate;

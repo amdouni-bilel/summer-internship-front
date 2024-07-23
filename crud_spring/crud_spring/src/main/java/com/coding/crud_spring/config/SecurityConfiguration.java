@@ -35,10 +35,11 @@ public class SecurityConfiguration {
                 .cors(corsConfigurer -> corsConfigurer.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/users/**").permitAll()
-                        .requestMatchers("/api/mission/**").permitAll()
-                        .requestMatchers("/api/mission-user/**").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/api/users/**").authenticated()
+                        .requestMatchers("/api/mission/**").authenticated()
+                        .requestMatchers("/api/mission-user/**").authenticated()
+                        //.requestMatchers("/swagger-ui/**").permitAll()
+                        .anyRequest().permitAll()
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

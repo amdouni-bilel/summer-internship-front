@@ -22,12 +22,10 @@ public class MissionUserService {
     private MissionRepository missionRepository;
 
     public MissionUser assignMissionToUser(Long userId, Long missionId) {
-        // Check if the mission is already assigned to the user
         if (missionUserRepository.existsByUserIdAndMissionId(userId, missionId)) {
             throw new RuntimeException("Mission is already assigned to this user");
         }
 
-        // Create and save the new assignment
         MissionUser missionUser = new MissionUser();
         missionUser.setUser(new User(userId));
         missionUser.setMission(new Mission(missionId));
