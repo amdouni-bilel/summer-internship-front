@@ -65,3 +65,13 @@ x
 Hcrud_spring/src/main/java/com/coding/crud_spring/dto/MissionUserDTO.java,2\5\25b60fea58700e9ac28b562bf0fccc5c70cb7cb0
 t
 Dcrud_spring/src/main/java/com/coding/crud_spring/dto/MissionDTO.java,5\3\536df30297b83350b6a8f984aa1b37faa3cb4c53
+s
+Ccrud_spring/src/main/java/com/coding/crud_spring/entity/Conges.java,b\0\b093e4c6a30acf9f7146ff71c78d5bc51b40ba5d
+Å
+Qcrud_spring/src/main/java/com/coding/crud_spring/repository/CongesRepository.java,0\2\023e3f96635a69a3b57d9aff30dfbb3cd5629845
+{
+Kcrud_spring/src/main/java/com/coding/crud_spring/service/CongesService.java,e\5\e5c4ca5921bd199d7e50d5e2f5750fe2f0c96ebc
+Å
+Qcrud_spring/src/main/java/com/coding/crud_spring/controller/CongesController.java,d\3\d398f967e4c9c62d9b73c52312e2cc8444eb8afe
+â
+Ycrud_spring/src/main/java/com/coding/crud_spring/exception/InsufficientDaysException.java,4\e\4e91e2e9d7cda87141d55fdd8d6448a85b181083

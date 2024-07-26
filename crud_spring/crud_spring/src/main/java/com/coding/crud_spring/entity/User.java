@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -37,6 +38,9 @@ public class User implements UserDetails {
 
     @Column(name = "joursCong", nullable = false)
     private int joursCong = 14;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Conges> conges;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
