@@ -39,6 +39,7 @@ public class UserService {
         user.setFullName(userDetails.getFullName());
         user.setPassword(userDetails.getPassword());
         user.setRoles(userDetails.getRoles());
+        user.setJoursCong(userDetails.getJoursCong());
         return userRepository.save(user);
     }
 

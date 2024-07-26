@@ -35,6 +35,9 @@ public class User implements UserDetails {
     @Column(name = "roles", nullable = false)
     private String roles;
 
+    @Column(name = "joursCong", nullable = false)
+    private int joursCong = 14;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of();

@@ -35,8 +35,8 @@ public class SecurityConfiguration {
                 .cors(corsConfigurer -> corsConfigurer.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/users/**").authenticated()
-                        .requestMatchers("/api/mission/**").authenticated()
+                        .requestMatchers("/api/users/**").permitAll()
+                        .requestMatchers("/api/mission/**").permitAll()
                         .requestMatchers("/api/mission-user/**").authenticated()
                         //.requestMatchers("/swagger-ui/**").permitAll()
                         .anyRequest().permitAll()
