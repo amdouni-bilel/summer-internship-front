@@ -29,7 +29,15 @@ public class CongesService {
                 .orElseThrow(() -> new ResourceNotFoundException("Conges not found with id: " + id));
     }
 
+    public List<Conges> getCongesByUserId(Long userId) {
+        return congesRepository.findByUserId(userId);
+    }
+
     public Conges createConges(Conges conges) {
+        if (conges.getUser() == null) {
+            throw new IllegalArgumentException("User must be provided");
+        }
+
         User user = userRepository.findById(conges.getUser().getId())
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + conges.getUser().getId()));
 
@@ -48,10 +56,15 @@ public class CongesService {
         return congesRepository.save(conges);
     }
 
+
     public Conges updateConges(Long id, Conges congesDetails) {
         Conges conges = getCongesById(id);
 
-        if (conges.getUser().getId() != congesDetails.getUser().getId()) {
+        if (congesDetails.getUser() == null || congesDetails.getUser().getId() == null) {
+            throw new IllegalArgumentException("Update Conges: User details must be provided");
+        }
+
+        if (!conges.getUser().getId().equals(congesDetails.getUser().getId())) {
             User oldUser = conges.getUser();
             oldUser.setJoursCong(oldUser.getJoursCong() + conges.getJoursCong());
             userRepository.save(oldUser);
@@ -87,9 +100,11 @@ public class CongesService {
 
     public void deleteConges(Long id) {
         Conges conges = getCongesById(id);
-        User user = conges.getUser();
-        user.setJoursCong(user.getJoursCong() + conges.getJoursCong());
-        userRepository.save(user);
+        if (conges.getUser() != null) {
+            User user = conges.getUser();
+            user.setJoursCong(user.getJoursCong() + conges.getJoursCong());
+            userRepository.save(user);
+        }
         congesRepository.delete(conges);
     }
 }

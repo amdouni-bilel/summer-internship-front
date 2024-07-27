@@ -15,6 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
@@ -38,6 +41,18 @@ public class AuthenticationController {
         this.emailService = emailService;
         this.userService = userService;
         this.userRepository = userRepository;
+    }
+
+    @GetMapping("/user")
+    public ResponseEntity<?> getCurrentUser() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            User user = userService.findByUsername(username);
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.badRequest().body("User not found");
+        }
     }
 
     @PostMapping("/signup")

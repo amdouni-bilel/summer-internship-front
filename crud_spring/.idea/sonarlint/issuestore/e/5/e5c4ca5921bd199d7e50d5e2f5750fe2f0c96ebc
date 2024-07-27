@@ -1,9 +1,7 @@
 
-„
-java:S49736"<Strings and Boxed types should be compared using "equals()".(èåÓéøÿÿÿÿ8µí¡2J$aaa0092c-ccf1-436c-9a97-555ec46c2e2f
 ¦
-java:S1192%"cDefine a constant instead of duplicating this literal "User does not have enough days off" 3 times.(úô‚8êí¡2J$0ce382e7-9c1e-4650-8b57-352b79c0c2d9
+java:S1192-"cDefine a constant instead of duplicating this literal "User does not have enough days off" 3 times.(úô‚8ÙôŠ®2J$39b3cd0e-0620-4fdf-a82b-bb410e5a19da
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÚŞ2J$e44bf008-d7d0-45c4-af40-3cd52924605f
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÜôŠ®2J$850f6a87-f152-4116-b8bb-8460c0ee39ac
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÛŞ2J$b97b25e9-8c7e-4467-aa92-70ce614139de
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÜôŠ®2J$47e15270-a8a5-4d84-9b9c-6e9589433c1b

@@ -1,20 +1,32 @@
 
-
-java:S1192K"HDefine a constant instead of duplicating this literal "message" 3 times.(ş¿§­üÿÿÿÿ8¹µéåŒ2J$cc34ec38-b943-45c8-a03b-5622e9797874
-
-java:S1192H"FDefine a constant instead of duplicating this literal "error" 3 times.(¢òËğùÿÿÿÿ8ÀµéåŒ2J$9a86d939-5b9b-406b-900b-0a12ce38f862
-‰
-java:S1192D"FDefine a constant instead of duplicating this literal "email" 3 times.(©·ÔÇ8¾¨ÛåŒ2J$ee403a06-974c-4074-9c20-fb7479c75abd
-n
-java:S14522"&Remove usage of generic wildcard type.(¨÷™ÿÿÿÿÿ8Û¿ñŒ2J$7cee05f5-65be-4a51-96aa-6d24eb509334
-m	java:S1066"+Replace this use of System.out by a logger.(›°˜Ä8•¿‡2J$01d57669-a900-4f05-a0d2-fa0784a40687
-n
-java:S1452C"&Remove usage of generic wildcard type.(×œ›‰şÿÿÿÿ8ü¢»‡2J$7ae5250e-1033-44dd-b19f-60bad7bc1847
+j
+java:S1192Z"HDefine a constant instead of duplicating this literal "message" 3 times.(ş¿§­üÿÿÿÿ8ûÏÕ¬2
 h
-java:S1452O"&Remove usage of generic wildcard type.(×Û¥8«œ¼‡2J$cfaae25f-cc44-4419-b2df-d667e136ce77
-i
-java:S1452_"&Remove usage of generic wildcard type.(´Œ¢ú8Ÿ¿‡2J$b6027461-2494-4315-b1fc-2b8586061539
-w
-java:S1068"/Remove this unused "userService" private field.(ÇêŞ¢ıÿÿÿÿ8á¨ÛåŒ2J$2b2f283a-5807-4064-9b1d-13b32f8c8002
-u
-java:S1068 "2Remove this unused "userRepository" private field.(¼²Æ÷8†¶éåŒ2J$54bfaf99-28d2-497d-8ac6-361c5f9bebf7
+java:S1192W"FDefine a constant instead of duplicating this literal "error" 3 times.(¢òËğùÿÿÿÿ8üÏÕ¬2
+c
+java:S1192S"FDefine a constant instead of duplicating this literal "email" 3 times.(©·ÔÇ8üÏÕ¬2
+H
+java:S1452/"&Remove usage of generic wildcard type.(×ÀÓÏúÿÿÿÿ8‡ĞÕ¬2
+r
+java:S62011"PReplace this instanceof check and cast with 'instanceof UserDetails userdetails'(ñ¢Ÿøÿÿÿÿ8‰ĞÕ¬2
+H
+java:S1452A"&Remove usage of generic wildcard type.(¨÷™ÿÿÿÿÿ8ĞÕ¬2
+G	java:S106E"+Replace this use of System.out by a logger.(›°˜Ä8ĞÕ¬2
+H
+java:S1452R"&Remove usage of generic wildcard type.(×œ›‰şÿÿÿÿ8“ĞÕ¬2
+B
+java:S1452^"&Remove usage of generic wildcard type.(×Û¥8—ĞÕ¬2
+C
+java:S1452n"&Remove usage of generic wildcard type.(´Œ¢ú8›ĞÕ¬2
+n
+java:S1128"LRemove this unused import 'com.coding.crud_spring.dto.ResetPasswordRequest'.(ïçı·şÿÿÿÿ8 ĞÕ¬2
+b
+java:S1128"FRemove this unused import 'com.coding.crud_spring.util.LoginResponse'.(¨ÛÛ68 ĞÕ¬2
+r
+java:S1128"PRemove this unused import 'io.swagger.v3.oas.annotations.responses.ApiResponse'.(ÑÁÔ¾ıÿÿÿÿ8¡ĞÕ¬2
+~
+java:S1128"aRemove this unused import 'org.springframework.security.core.annotation.AuthenticationPrincipal'.(Øù¢8¡ĞÕ¬2
+Q
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8£ĞÕ¬2
+O
+java:S1068#"2Remove this unused "userRepository" private field.(¼²Æ÷8¤ĞÕ¬2
