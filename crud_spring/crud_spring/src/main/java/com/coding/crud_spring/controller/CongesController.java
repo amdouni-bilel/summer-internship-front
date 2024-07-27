@@ -1,9 +1,11 @@
 package com.coding.crud_spring.controller;
 
 import com.coding.crud_spring.entity.Conges;
+import com.coding.crud_spring.entity.User;
 import com.coding.crud_spring.exception.InsufficientDaysException;
 import com.coding.crud_spring.exception.ResourceNotFoundException;
 import com.coding.crud_spring.service.CongesService;
+import com.coding.crud_spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,9 @@ public class CongesController {
 
     @Autowired
     private CongesService congesService;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping
     public List<Conges> getAllConges() {
@@ -32,6 +37,10 @@ public class CongesController {
     @PostMapping
     public ResponseEntity<?> createConges(@RequestBody Conges conges) {
         try {
+            // Ensure the user is set
+            User user = userService.getUserById(conges.getUser().getId());
+            conges.setUser(user);
+
             Conges newConges = congesService.createConges(conges);
             return ResponseEntity.status(HttpStatus.CREATED).body(newConges);
         } catch (InsufficientDaysException e) {

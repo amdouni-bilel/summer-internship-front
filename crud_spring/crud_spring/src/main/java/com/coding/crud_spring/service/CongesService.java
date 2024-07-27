@@ -30,53 +30,31 @@ public class CongesService {
     }
 
     public Conges createConges(Conges conges) {
-        User user = userRepository.findById(conges.getUser().getId())
-                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + conges.getUser().getId()));
-
+        User user = conges.getUser();
         if (user.getJoursCong() < conges.getJoursCong()) {
-            throw new InsufficientDaysException("User does not have enough days of congé.");
+            throw new InsufficientDaysException("User does not have enough days off");
         }
-
         user.setJoursCong(user.getJoursCong() - conges.getJoursCong());
         userRepository.save(user);
-
-        conges.setUser(user);
-        conges.setConfirmed(false);
         return congesRepository.save(conges);
     }
 
-
     public Conges confirmConges(Long id) {
-        Conges conges = congesRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Conges not found with id: " + id));
+        Conges conges = getCongesById(id);
         conges.setConfirmed(true);
         return congesRepository.save(conges);
     }
 
     public Conges updateConges(Long id, Conges congesDetails) {
-        Conges conges = congesRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Conges not found with id: " + id));
-        User user = conges.getUser();
-        int originalJoursCong = conges.getJoursCong();
-
-
-        user.setJoursCong(user.getJoursCong() + originalJoursCong - congesDetails.getJoursCong());
-        if (user.getJoursCong() < 0) {
-            throw new IllegalArgumentException("Not enough leave days available");
-        }
-        userRepository.save(user);
-
+        Conges conges = getCongesById(id);
         conges.setJoursCong(congesDetails.getJoursCong());
         conges.setDateDebut(congesDetails.getDateDebut());
+        conges.setConfirmed(congesDetails.isConfirmed());
         return congesRepository.save(conges);
     }
 
     public void deleteConges(Long id) {
-        Conges conges = congesRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Conges not found with id: " + id));
-        User user = conges.getUser();
-        user.setJoursCong(user.getJoursCong() + conges.getJoursCong());
-        userRepository.save(user);
-        congesRepository.deleteById(id);
+        Conges conges = getCongesById(id);
+        congesRepository.delete(conges);
     }
 }
