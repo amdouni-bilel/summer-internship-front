@@ -1,5 +1,9 @@
 
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8“Ü¼2
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8“Ü¼2
+„
+java:S49736"<Strings and Boxed types should be compared using "equals()".(èåÓéøÿÿÿÿ8µí¡2J$aaa0092c-ccf1-436c-9a97-555ec46c2e2f
+¦
+java:S1192%"cDefine a constant instead of duplicating this literal "User does not have enough days off" 3 times.(úô‚8êí¡2J$0ce382e7-9c1e-4650-8b57-352b79c0c2d9
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÚŞ2J$e44bf008-d7d0-45c4-af40-3cd52924605f
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÛŞ2J$b97b25e9-8c7e-4467-aa92-70ce614139de
