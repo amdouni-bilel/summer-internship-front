@@ -6,6 +6,7 @@ import com.coding.crud_spring.exception.InsufficientDaysException;
 import com.coding.crud_spring.exception.ResourceNotFoundException;
 import com.coding.crud_spring.repository.CongesRepository;
 import com.coding.crud_spring.repository.UserRepository;
+import com.coding.crud_spring.util.EmailClass;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,9 @@ public class CongesService {
 
     @Autowired
     private UserRepository userRepository;
+
+    private EmailClass emailClass = new EmailClass();
+
 
     public List<Conges> getAllConges() {
         return congesRepository.findAll();
@@ -53,9 +57,19 @@ public class CongesService {
     public Conges confirmConges(Long id) {
         Conges conges = getCongesById(id);
         conges.setConfirmed(true);
-        return congesRepository.save(conges);
-    }
+        Conges updatedConges = congesRepository.save(conges);
 
+        // Send confirmation email
+        User user = conges.getUser();
+        if (user != null) {
+            String email = user.getUsername();
+            String fullName = user.getFullName();
+            String dateDebut = conges.getDateDebut();
+            emailClass.sendConfirmationEmail(email, fullName, dateDebut);
+        }
+
+        return updatedConges;
+    }
 
     public Conges updateConges(Long id, Conges congesDetails) {
         Conges conges = getCongesById(id);

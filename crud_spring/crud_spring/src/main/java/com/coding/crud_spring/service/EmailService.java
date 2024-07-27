@@ -29,6 +29,8 @@ public class EmailService {
         emailClass.envoyer(receiverEmail, "Your OTP is: " + otp);
     }
 
+
+
     public boolean verifyOtp(String email, String otp) {
         return otp.equals(otpStorage.get(email));
     }

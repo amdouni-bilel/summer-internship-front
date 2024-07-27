@@ -44,4 +44,37 @@ public class EmailClass {
             throw new RuntimeException(e);
         }
     }
+
+    public void sendConfirmationEmail(String receiver, String fullName, String dateDebut) {
+        // New confirmation email sending logic
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.ssl.enable", "true");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.socketFactory.fallback", "false");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "465");
+        props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("Innohire45@gmail.com"));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(receiver));
+            message.setSubject("Congé Confirmé");
+            message.setText("Bonjour " + fullName + ",\n\nVotre congé prévu pour le " + dateDebut + " a été confirmé.\n\nCordialement,\nL'équipe RH");
+
+            Transport.send(message);
+            System.out.println("email envoyé");
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

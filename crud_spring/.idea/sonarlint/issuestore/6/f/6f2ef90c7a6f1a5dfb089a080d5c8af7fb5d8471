@@ -1,10 +1,19 @@
 
-˜	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•µİ®øÿÿÿÿ8¤áÅŒ2J$7c07c603-55d8-4e24-ad59-0670386d2e1e
-	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¨áÅŒ2J$f66e2985-dff0-4c6b-bb4f-4d90b971ecb3
+˜	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•µİ®øÿÿÿÿ8¤áÅŒ2J$28475b7f-78eb-422a-a6fd-776fd967b0f0
+	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¨áÅŒ2J$e5099bc6-d52d-4fec-ae30-9b09234b7057
+	java:S112M"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8²¯¾²2J$1c4d6e15-2989-4fee-aab2-489b3b2e1399
+˜
+java:S1192
+"UDefine a constant instead of duplicating this literal "Innohire45@gmail.com" 3 times.(­ì…’8´¯¾²2J$748e18ad-4aaf-4f1f-a166-763d2a200322
 º
-java:S5527"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8²áÅŒ2J$fff0e35b-cde3-42fb-9397-a95fc9bfcfcf
-W
-java:S1161":Add the "@Override" annotation above this method signature(‡èú×8ò„òÅŒ2
-r	java:S106*"+Replace this use of System.out by a logger.(Òë¨úÿÿÿÿ8µáÅŒ2J$cf1b1743-70af-4ea8-8ef0-ba74e8d6af5e
+java:S5527"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8²áÅŒ2J$9b890f16-137a-43fa-909d-959432497c1d
+}
+java:S1161":Add the "@Override" annotation above this method signature(‡èú×8ò„òÅŒ2J$1c2a87d3-a320-46c9-b6a5-fc02ffb52288
+r	java:S106*"+Replace this use of System.out by a logger.(Òë¨úÿÿÿÿ8µáÅŒ2J$950d16e8-014d-4317-bca6-bee6572c75f7
+º
+java:S55275"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8Ê¯¾²2J$3f7f03eb-3252-45fe-889b-f3eba6825c96
+}
+java:S1161=":Add the "@Override" annotation above this method signature(‡èú×8Í¯¾²2J$f42a81fb-3b4d-4c84-8b1b-e0f7c4561cf7
+m	java:S106K"+Replace this use of System.out by a logger.(šåâ8Ï¯¾²2J$a1cf04f1-b376-43ca-9b0a-50348047c8d5
 a
-java:S1128"Remove this duplicated import.(¬µ²8·áÅŒ2J$8403beba-cbce-4db6-9979-081a747156fd
+java:S1128"Remove this duplicated import.(¬µ²8·áÅŒ2J$a466eee3-8636-4213-8797-7778a1bdc7cf
