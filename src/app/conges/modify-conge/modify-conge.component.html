@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="card mt-4">
+      <div class="card-header">
+        <h2>Modifier Congé</h2>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="congeForm" (ngSubmit)="submit()">
+          <div class="form-group">
+            <label for="user">User</label>
+            <select id="user" formControlName="userId" class="form-control">
+              <option *ngFor="let user of users" [value]="user.id">{{ user.fullName }}</option>
+            </select>
+            <div *ngIf="submitted && congeForm.controls['userId'].errors" class="text-danger">
+              <div *ngIf="congeForm.controls['userId'].errors.required">User is required.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="joursCong">Days Off</label>
+            <input type="number" id="joursCong" formControlName="joursCong" class="form-control">
+            <div *ngIf="submitted && congeForm.controls['joursCong'].errors" class="text-danger">
+              <div *ngIf="congeForm.controls['joursCong'].errors.required">Days Off is required.</div>
+              <div *ngIf="congeForm.controls['joursCong'].errors.min">Days Off must be at least 1.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dateDebut">Start Date</label>
+            <input type="date" id="dateDebut" formControlName="dateDebut" class="form-control">
+            <div *ngIf="submitted && congeForm.controls['dateDebut'].errors" class="text-danger">
+              <div *ngIf="congeForm.controls['dateDebut'].errors.required">Start Date is required.</div>
+            </div>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" id="confirmed" formControlName="confirmed" class="form-check-input">
+            <label for="confirmed" class="form-check-label">Confirmed</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-secondary" (click)="navigateToListConges()">Back to List</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

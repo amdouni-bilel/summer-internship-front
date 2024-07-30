@@ -1,0 +1,92 @@
+
+@media (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }}
+.w3-container {
+  padding: 20px;
+}
+.row-1 {
+  flex: 100%;
+width: 100%;
+}
+.form-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.title h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.grid-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.field-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.field-label {
+  margin-right: 10px;
+  font-weight: bold;
+  width: 100px; /* Adjust the width of the label as needed */
+}
+
+.field-value {
+  margin: 0;
+
+}
+
+.field-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #818381;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button.modifier-button {
+  margin-left: 5px;
+  background-color: #007bff;
+}
+
+button.suivant-button {
+  background-color: #818381;
+}
+
+.ligne {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+

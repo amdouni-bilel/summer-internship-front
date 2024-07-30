@@ -1,0 +1,245 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Chart 03 (Pop up Chat)</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-grid mr-2 fs-14"></i>Apps</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Chart</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Chart 03</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="row">
+
+            <!-- col -->
+            <div class="col-xl-6" *ngFor="let data of chatData">
+                <div class="card">
+                    <div class="card-body p-0">
+                        <div class="chat-widget-header d-flex p-5">
+                            <div class="font-weight-bold d-flex">
+                                <img class="avatat avatar-md brround mr-2" src="{{data.img}}" alt="img">
+                                <div class="mt-1 d-none d-sm-block">
+                                    <h6 class="font-weight-semibold mb-0">{{data.name}}</h6>
+                                    <small>{{data.email}}</small>
+                                </div>
+                            </div>
+                            <div class="ml-auto">
+                                <div class="d-flex">
+                                    <!-- <button type="button" class="btn btn-primary mt-3" (click)="SmallSizeOpen(smallsizemodal)">Small Modal</button> -->
+
+                                    <a class="option-dots new-list2" (click)="ChatOpen(messagemodal)"><i
+                                            class="fe fe-message-square"></i></a>
+                                    <a class="option-dots new-list2" placement="top" ngbTooltip="call"><i
+                                            class="fe  fe-phone"></i></a>
+                                    <a class="option-dots new-list2" placement="top" ngbTooltip="video call"><i
+                                            class="fe  fe-video"></i></a>
+                                    <div ngbDropdown class="d-flex">
+                                        <a href="javascript:void(0)" class="option-dots new-list2" ngbDropdownToggle>
+                                            <i class="fe  fe-more-vertical"></i>
+                                        </a>
+                                        <div ngbDropdownMenu class="tx-13 dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Assigned to</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Mark As Unread</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Mark As Important</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Add to Tasks</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Add Star</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Move to</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Mute</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Move to Trash</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /col -->
+
+        </div>
+    </div>
+</div>
+
+<!-- Message Modal -->
+<ng-template #messagemodal let-modal>
+    <div class="chatbox ">
+        <div class="chat">
+            <div class="card overflow-hidden mb-0 border-0">
+                <!-- action-header -->
+                <div class="modal-header action-header">
+                    <div class="float-left hidden-xs d-flex ml-2">
+                        <div class="img_cont mr-3">
+                            <img src="../../assets/images/users/2.jpg" class="rounded-circle user_img avatar avatar-md"
+                                alt="img">
+                        </div>
+                        <div class="align-items-center mt-2 text-white">
+                            <h5 class="mb-0">Jessica</h5>
+                            <span class="dot-label bg-success"></span><span class="mr-3 fs-12">online</span>
+                        </div>
+                    </div>
+                    <ul class="ah-actions actions align-items-center">
+                        <li class="call-icon">
+                            <a href="javascript:void(0)" class="d-done d-md-block phone-button">
+                                <i class="fe  fe-phone fs-20"></i>
+                            </a>
+                        </li>
+                        <li class="video-icon">
+                            <a href="javascript:void(0)" class="d-done d-md-block phone-button">
+                                <i class="fe  fe-video fs-20"></i>
+                            </a>
+                        </li>
+                        <li ngbDropdown>
+                            <a href="javascript:void(0)" ngbDropdownToggle><i
+                                    class="fe  fe-more-vertical fs-20"></i></a>
+                            <ul ngbDropdownMenu class="dropdown-menu-right">
+                                <li ngbDropdownItem><i class="fa fa-user-circle"></i> View profile</li>
+                                <li ngbDropdownItem><i class="fa fa-users"></i> Add to close friends</li>
+                                <li ngbDropdownItem><i class="fa fa-plus"></i> Add to group</li>
+                                <li ngbDropdownItem><i class="fa fa-ban"></i> Block</li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="javascript:void(0)" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                <span aria-hidden="true"><i class="fe fe-x fs-20"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- action-header end -->
+                <!-- msg_card_body -->
+                <div class="card-body msg_card_body">
+                    <div class="chat-box-single-line">
+                        <abbr class="timestamp">February 1st, 2019</abbr>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/9.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                        <div class="msg_cotainer">
+                            Hi, how are you Jenna Side?
+                            <span class="msg_time">8:40 AM, Today</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end ">
+                        <div class="msg_cotainer_send">
+                            Hi Connor Paige i am good tnx how about you?
+                            <span class="msg_time_send">8:55 AM, Today</span>
+                        </div>
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/2.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-start ">
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/9.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                        <div class="msg_cotainer">
+                            I am good too, thank you for your chat template
+                            <span class="msg_time">9:00 AM, Today</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end ">
+                        <div class="msg_cotainer_send">
+                            You welcome Connor Paige
+                            <span class="msg_time_send">9:05 AM, Today</span>
+                        </div>
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/2.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-start ">
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/9.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                        <div class="msg_cotainer">
+                            Yo, Can you update Views?
+                            <span class="msg_time">9:07 AM, Today</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end mb-4">
+                        <div class="msg_cotainer_send">
+                            But I must explain to you how all this mistaken born and I will give
+                            <span class="msg_time_send">9:10 AM, Today</span>
+                        </div>
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/2.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-start ">
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/9.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                        <div class="msg_cotainer">
+                            Yo, Can you update Views?
+                            <span class="msg_time">9:07 AM, Today</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end mb-4">
+                        <div class="msg_cotainer_send">
+                            But I must explain to you how all this mistaken born and I will give
+                            <span class="msg_time_send">9:10 AM, Today</span>
+                        </div>
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/2.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-start ">
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/9.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                        <div class="msg_cotainer">
+                            Yo, Can you update Views?
+                            <span class="msg_time">9:07 AM, Today</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end mb-4">
+                        <div class="msg_cotainer_send">
+                            But I must explain to you how all this mistaken born and I will give
+                            <span class="msg_time_send">9:10 AM, Today</span>
+                        </div>
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/2.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                        <div class="img_cont_msg">
+                            <img src="../../assets/images/users/9.jpg" class="rounded-circle user_img_msg" alt="img">
+                        </div>
+                        <div class="msg_cotainer">
+                            Okay Bye, text you later..
+                            <span class="msg_time">9:12 AM, Today</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- msg_card_body end -->
+                <!-- card-footer -->
+                <div class="card-footer">
+                    <div class="msb-reply-button d-flex">
+                        <div class="input-group">
+                            <input type="text" class="form-control  bg-white" placeholder="Typing....">
+                            <div class="input-group-append ">
+                                <button type="button" class="btn btn-primary ">
+                                    <i class="fa fa-paper-plane-o"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- card-footer end -->
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<!-- End Page -->

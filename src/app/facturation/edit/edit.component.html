@@ -1,0 +1,12 @@
+<div class="edit-fields">
+    <input [(ngModel)]="facture.title" placeholder="Title">
+    <input [(ngModel)]="facture.date" placeholder="Date">
+    <input [(ngModel)]="facture.dividerText" placeholder="Functionality">
+    <div class="price-container">
+      <input [(ngModel)]="facture.price" placeholder="Price">
+      <input [(ngModel)]="facture.tva" placeholder="TVA">
+    </div>
+  
+    <button (click)="save()">Save</button>
+    <button (click)="cancel()">Cancel</button>
+  </div>

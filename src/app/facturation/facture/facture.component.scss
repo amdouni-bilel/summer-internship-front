@@ -1,0 +1,225 @@
+
+.icon-section {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+
+
+.container {
+  position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .small-buttons {
+    display: flex;
+  }
+  
+  .small-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    border: none;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .small-button:last-child {
+    margin-right: 0;
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button-31,
+  .button-30 {
+    margin-left: 10px;
+  }
+  
+  /* Rest of your button styles */
+  
+
+
+
+/* SCSS */
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 50px;
+    margin: 5px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+  
+    &:focus {
+      box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    }
+  
+    &:hover {
+      box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+  
+    &:active {
+      box-shadow: #D6D6E7 0 3px 7px inset;
+      transform: translateY(2px);
+      background-color: rgb(163, 175, 224);
+    }
+  }
+  
+
+
+  .button-31 {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 50px;
+    margin: 5px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+  
+    &:focus {
+      box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    }
+  
+    &:hover {
+      box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+  
+    &:active {
+      box-shadow: #D6D6E7 0 3px 7px inset;
+      transform: translateY(2px);
+      background-color: rgb(233, 106, 97);
+    }
+  }
+
+  .small-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    border: none;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .small-button:last-child {
+    margin-right: 0;
+  }
+  
+
+  .container2 {
+    padding: 20px;
+    margin-top: 50px;
+    position: relative;
+    background-color: #ffffff;
+    max-height: 400px;
+    overflow-y: auto; /* Add a scrollbar when content exceeds max-height */
+  }
+  
+  
+  .icon-container2 {
+    position: absolute;
+    top: -10px; /* Adjust the top position as needed */
+    right: -10px; /* Adjust the right position as needed */
+  }
+  
+  .green-icon {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+  }
+  
+
+  .title-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .title-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .title {
+    margin-top: 10px;
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
+
+  .button-1 {
+    background-color: #f6f7f8;
+    color: white;
+    border: none;
+  
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 2px 4px rgb(158, 158, 158);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 70%;
+  }
+  
+
+  

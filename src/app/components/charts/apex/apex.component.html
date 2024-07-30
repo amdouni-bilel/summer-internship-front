@@ -1,0 +1,138 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Apex Chart</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i
+                        class="fe fe-bar-chart-2 mr-2 fs-14"></i>Charts</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Apex Chart</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row row-deck">
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Area Chart With Random data</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <apx-chart [series]="RandomData.series" [chart]="RandomData.chart"
+                        [annotations]="RandomData.annotations" [colors]="RandomData.colors"
+                        [dataLabels]="RandomData.dataLabels" [markers]="RandomData.markers" [xaxis]="RandomData.xaxis"
+                        [tooltip]="RandomData.tooltip" [fill]="RandomData.fill"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Area Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <apx-chart [series]="apexData.series" [colors]="apexData.colors" [chart]="apexData.chart"
+                        [dataLabels]="apexData.dataLabels" [stroke]="apexData.stroke" [xaxis]="apexData.xaxis"
+                        [tooltip]="apexData.tooltip" [legend]="apexData.legend"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Horizontal Bar Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <apx-chart [series]="barData.series" [colors]="barData.colors" [chart]="barData.chart"
+                        [dataLabels]="barData.dataLabels" [xaxis]="barData.xaxis" [legend]="barData.legend"
+                        [plotOptions]="barData.plotOptions"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Horizontal Stacked Bar Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <apx-chart [series]="stackedbarData.series" [colors]="stackedbarData.colors"
+                        [chart]="stackedbarData.chart" [stroke]="stackedbarData.stroke" [xaxis]="stackedbarData.xaxis"
+                        [yaxis]="stackedbarData.yaxis" [legend]="stackedbarData.legend"
+                        [plotOptions]="stackedbarData.plotOptions" [tooltip]="stackedbarData.tooltip"
+                        [fill]="stackedbarData.fill"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Donut Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <apx-chart [series]="donutData.pieseries" [colors]="donutData.colors" [chart]="donutData.chart"
+                        [responsive]="donutData.responsive" [legend]="donutData.legend"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Pie Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <apx-chart [series]="pieData.pieseries" [colors]="pieData.colors" [chart]="pieData.chart"
+                        [labels]="pieData.labels" [legend]="pieData.legend" [responsive]="pieData.responsive">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Radial Bar circle Chart</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <apx-chart [series]="radicalbarData.pieseries" [colors]="radicalbarData.colors"
+                        [chart]="radicalbarData.chart" [labels]="radicalbarData.labels"
+                        [responsive]="radicalbarData.responsive" [plotOptions]="radicalbarData.plotOptions"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Radial Bar circle Chart Multiple</div>
+            </div>
+            <div class="card-body">
+                <div class="chartjs-wrapper-demo">
+                    <apx-chart [series]="radicalmultipleData.pieseries" [colors]="radicalmultipleData.colors"
+                        [chart]="radicalmultipleData.chart" [labels]="radicalmultipleData.labels"
+                        [plotOptions]="radicalmultipleData.plotOptions"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Row -->

@@ -1,0 +1,119 @@
+
+<!-- Page header-->
+<div class="page-header">
+  <div class="page-leftheader">
+      <h4 class="page-title mb-0">Hi! Welcome Back</h4>
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-home mr-2 fs-14"></i>Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Resume Dashboard</a></li>
+      </ol>
+  </div>
+  <div class="page-rightheader">
+    <div class="btn btn-list">
+      <label for="file-upload" class="btn btn-info">
+        <i class="fe fe-settings mr-1"></i> Upload
+      </label>
+      <input  id="file-upload" type="file" (change)="uploadFile($event)" hidden />
+    </div>
+    <button class="up-button" (click)="navigateToMatching()">Matching</button>
+  </div>
+</div>
+<!--End Page header -->
+<div  class="form-container">
+<div class="grid-container">
+
+  <div class="row-1">
+    <div class="grid-item">
+      <div class="header">
+        <div class="field-group">
+          <ng-container *ngIf="!isEditMode">
+            <label class="field-label">Name:</label>
+            <p class="field-value">{{ resume?.name }}</p>
+          </ng-container>
+          <input *ngIf="isEditMode" class="field-input" [(ngModel)]="resume.name" placeholder="Name " />
+        </div>
+
+        <div class="field-group">
+          <ng-container *ngIf="!isEditMode">
+            <label class="field-label">Mail:</label>
+            <p class="field-value">{{ resume?.mail }}</p>
+          </ng-container>
+          <input *ngIf="isEditMode" class="field-input" [(ngModel)]="resume.mail" placeholder="Addresse mail"/>
+        </div>
+
+        <div class="field-group">
+          <ng-container *ngIf="!isEditMode">
+            <label class="field-label">Titre:</label>
+            <p class="field-value">{{ resume?.titre }}</p>
+          </ng-container>
+          <input *ngIf="isEditMode" class="field-input" [(ngModel)]="resume.titre" placeholder="Titre du resume"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-1">
+    <div class="grid-item">
+      <div class="header">
+        <div class="field-group">
+          <ng-container *ngIf="!isEditMode">
+            <label class="field-label">Phone number:</label>
+            <p class="field-value">{{ resume?.phone }}</p>
+          </ng-container>
+          <input *ngIf="isEditMode" class="field-input" [(ngModel)]="resume.phone" placeholder="Numero de tele" />
+        </div>
+
+        <div class="field-group">
+          <ng-container *ngIf="!isEditMode">
+            <label class="field-label">Adresse:</label>
+            <p class="field-value">{{ resume?.addresse }}</p>
+          </ng-container>
+          <input *ngIf="isEditMode" class="field-input" [(ngModel)]="resume.addresse" placeholder="Adresse "/>
+        </div>
+
+        <div class="field-group">
+          <ng-container *ngIf="!isEditMode">
+            <label class="field-label">Nombre d'experience:</label>
+            <p class="field-value">{{ resume?.nb_an_exp }}</p>
+          </ng-container>
+          <input *ngIf="isEditMode" class="field-input" [(ngModel)]="resume.nb_an_exp" placeholder="nombre d'annee d'experience"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-1">
+    <div class="grid-item">
+      <div class="header">
+        <div class="field-group">
+          <ng-container *ngIf="!isEditMode">
+            <label class="field-label">Langues:</label>
+            <p class="field-value">{{ resume?.langues }}</p>
+          </ng-container>
+          <input *ngIf="isEditMode" class="field-input" [(ngModel)]="resume.langues" placeholder="Language"/>
+        </div>
+
+        <div class="field-group">
+          <ng-container *ngIf="!isEditMode">
+            <label class="field-label">Competence:</label>
+            <p class="field-value">{{ resume?.competences }}</p>
+          </ng-container>
+          <input *ngIf="isEditMode" class="field-input" [(ngModel)]="resume.competences" placeholder="Competences "/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="display: flex; flex-direction: row; width:100%; ">
+  <div class="navigation-buttons">
+    <button class="up-button" *ngIf="responseReceived" (click)="navigateToExperience()">Suivant</button>
+  </div>
+
+  <button class="modifier-button" (click)="toggleEditMode()">
+    {{ isEditMode ? 'Valider' : 'Modifier' }}
+  </button>
+</div>
+</div>
+
+<router-outlet></router-outlet>
+

@@ -1,0 +1,60 @@
+<!--Page header-->
+<div class="page-header">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">Mes missions</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layout mr-2 fs-14"></i>Missions</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Toutes les missions</a></li>
+    </ol>
+  </div>
+  <div class="page-rightheader">
+    <div class="btn btn-list">
+      <a routerLink="/mission/create" class="btn btn-warning"><i class="si si-plus"></i>Ajouter une mission</a>
+    </div>
+  </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Toutes les missions</div>
+      </div>
+      <div class="card-body"  >
+        <ngx-datatable class="bootstrap"
+                       [rows]="missions"
+                       [loadingIndicator]="loadingIndicator"
+                       [columns]="columns"
+                       [columnMode]="'force'"
+                       [headerHeight]="40"
+                       [summaryRow]="true"
+                       [summaryPosition]="'bottom'"
+                       [footerHeight]="40"
+                       [rowHeight]="'auto'"
+                       [reorderable]="reorderable">
+          <ngx-datatable-column *ngFor="let col of columns" [name]="col.name" [prop]="col.prop">
+            <ng-template ngx-datatable-cell-template let-row="row" let-value="value" let-column="column">
+              <div *ngIf="column.name === 'Actions'">
+                <button class="btn btn-info ml-2" type="button" [routerLink]="['/missions/upload-cv/mission/', row.id]">
+                  Détails
+                </button>
+
+
+              </div>
+              <div *ngIf="column.name !== 'Actions'">{{ value }}</div>
+            </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

@@ -72,7 +72,7 @@ public class EmailClass {
             message.setText("Bonjour " + fullName + ",\n\nVotre congé prévu pour le " + dateDebut + " a été confirmé.\n\nCordialement,\nL'équipe RH");
 
             Transport.send(message);
-            System.out.println("email envoyé");
+            System.out.println("email de confirmation envoyé");
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }

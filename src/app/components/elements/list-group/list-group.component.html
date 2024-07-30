@@ -1,0 +1,832 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">List Group</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-server mr-2 fs-14"></i>Elements</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">List Group</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Basic List Group</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav1="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html1" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts1" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav1"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Active List item</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item active">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav2="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html2"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html2" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts2"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts2" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav2"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End Row-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Default Active Link List</div>
+            </div>
+            <div class="card-body">
+                <div class="panel panel-default">
+                    <div class="list-group">
+                        <a href="javascript:void(0)" class="list-group-item">Cras justo odio</a>
+                        <a href="javascript:void(0)" class="list-group-item active">Dapibus ac facilisis in</a>
+                        <a href="javascript:void(0)" class="list-group-item">Morbi leo risus</a>
+                        <a href="javascript:void(0)" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="javascript:void(0)" class="list-group-item">Vestibulum at eros</a>
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav3="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html3" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts3" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav3"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Primary Active Link List</div>
+            </div>
+            <div class="card-body">
+                <div class="panel panel-primary">
+                    <div class="list-group">
+                        <a href="javascript:void(0)" class="list-group-item">Cras justo odio</a>
+                        <a href="javascript:void(0)" class="list-group-item active">Dapibus ac facilisis in</a>
+                        <a href="javascript:void(0)" class="list-group-item">Morbi leo risus</a>
+                        <a href="javascript:void(0)" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="javascript:void(0)" class="list-group-item">Vestibulum at eros</a>
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav4="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html4" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts4" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav4"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Success Active Link List</div>
+            </div>
+            <div class="card-body">
+                <div class="panel panel-success">
+                    <div class="list-group">
+                        <a href="javascript:void(0)" class="list-group-item">Cras justo odio</a>
+                        <a href="javascript:void(0)" class="list-group-item active">Dapibus ac facilisis in</a>
+                        <a href="javascript:void(0)" class="list-group-item">Morbi leo risus</a>
+                        <a href="javascript:void(0)" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="javascript:void(0)" class="list-group-item">Vestibulum at eros</a>
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+          <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav5="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html5"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html5" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts5"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts5" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav5"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Info Active Link List</div>
+            </div>
+            <div class="card-body">
+                <div class="panel panel-info">
+                    <div class="list-group">
+                        <a href="javascript:void(0)" class="list-group-item">Cras justo odio</a>
+                        <a href="javascript:void(0)" class="list-group-item active">Dapibus ac facilisis in</a>
+                        <a href="javascript:void(0)" class="list-group-item">Morbi leo risus</a>
+                        <a href="javascript:void(0)" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="javascript:void(0)" class="list-group-item">Vestibulum at eros</a>
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav6="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html6"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html6" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts6"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts6" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav6"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Warning Active Link List</div>
+            </div>
+            <div class="card-body">
+                <div class="panel panel-warning">
+                    <div class="list-group">
+                        <a href="javascript:void(0)" class="list-group-item">Cras justo odio</a>
+                        <a href="javascript:void(0)" class="list-group-item active">Dapibus ac facilisis in</a>
+                        <a href="javascript:void(0)" class="list-group-item">Morbi leo risus</a>
+                        <a href="javascript:void(0)" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="javascript:void(0)" class="list-group-item">Vestibulum at eros</a>
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav7="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html7"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html7" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts7"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts7" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav7"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">list styles</div>
+            </div>
+            <div class="card-body">
+                <div class="panel panel-danger">
+                    <div class="list-group">
+                        <a href="javascript:void(0)" class="list-group-item">Cras justo odio</a>
+                        <a href="javascript:void(0)" class="list-group-item active">Dapibus ac facilisis in</a>
+                        <a href="javascript:void(0)" class="list-group-item">Morbi leo risus</a>
+                        <a href="javascript:void(0)" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="javascript:void(0)" class="list-group-item">Vestibulum at eros</a>
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav8="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html8"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html8" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts8"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts8" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav8"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Order list</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="listorder">Cras justo odio</li>
+                    <li class="listorder">Dapibus ac facilisis in</li>
+                    <li class="listorder">Morbi leo risus</li>
+                    <li class="listorder">Porta ac consectetur ac</li>
+                    <li class="listorder">Vestibulum at eros</li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav9="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html9"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html9" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts9"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts9" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav9"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Unorder list</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="listunorder">Cras justo odio</li>
+                    <li class="listunorder">Dapibus ac facilisis in</li>
+                    <li class="listunorder">Morbi leo risus</li>
+                    <li class="listunorder">Porta ac consectetur ac</li>
+                    <li class="listunorder">Vestibulum at eros</li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav10="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html10"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html10" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts10"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts10" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav10"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End row-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Disabled List item</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item disabled">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav11="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html11"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html11" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts11"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts11" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav11"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Contextual classes with List Group</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
+                    <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
+                    <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
+                    <li class="list-group-item list-group-item-danger">Vestibulum at eros</li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav12="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html12"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html12" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts12"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts12" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav12"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row-->
+<div class="row">
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">List Group with icons</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Cras justo odio</li>
+                    <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Dapibus ac facilisis in
+                    </li>
+                    <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Morbi leo risus</li>
+                    <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Porta ac consectetur ac
+                    </li>
+                    <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Vestibulum at eros</li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav13="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html13"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html13" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts13"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts13" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav13"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">List Group with colored icons</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><i class="fa fa-cog text-primary" aria-hidden="true"></i> Dapibus ac
+                        facilisis in</li>
+                    <li class="list-group-item"><i class="fa fa-cog text-danger" aria-hidden="true"></i> Dapibus ac
+                        facilisis in</li>
+                    <li class="list-group-item"><i class="fa fa-cog text-success" aria-hidden="true"></i> Cras sit amet
+                        nibh libero</li>
+                    <li class="list-group-item"><i class="fa fa-cog text-warning" aria-hidden="true"></i> Porta ac
+                        consectetur ac</li>
+                    <li class="list-group-item"><i class="fa fa-cog text-info" aria-hidden="true"></i> Vestibulum at
+                        eros</li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav14="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html14"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html14" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts14"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts14" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav14"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End Row-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">List Group With defalut badges</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Cras justo odio
+                        <span class="badgetext badge badge-default badge-pill">14</span>
+                    </li>
+                    <li class="list-group-item">
+                        Dapibus ac facilisis in
+                        <span class=" badgetext badge badge-default badge-pill">2</span>
+                    </li>
+                    <li class="list-group-item">
+                        Morbi leo risus
+                        <span class=" badgetext badge badge-default badge-pill">1</span>
+                    </li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav15="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html15"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html15" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts15"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts15" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav15"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">List Group With color badges</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item justify-content-between">
+                        Cras justo odio
+                        <span class="badgetext badge badge-primary badge-pill">14</span>
+                    </li>
+                    <li class="list-group-item justify-content-between">
+                        Dapibus ac facilisis in
+                        <span class="badgetext badge badge-danger badge-pill">2</span>
+                    </li>
+                    <li class="list-group-item justify-content-between">
+                        Morbi leo risus
+                        <span class="badgetext badge badge-success badge-pill">1</span>
+                    </li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav16="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html16"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html16" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts16"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts16" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav16"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">List Group With Custom content</h3>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small>Donec id elit non mi porta.</small>
+                    </a>
+                    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+                    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav17="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html17"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html17" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts17"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts17" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav17"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">List Group With Disabled Custom content</h3>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start disabled">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small>Donec id elit non mi porta.</small>
+                    </a>
+                    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+                    <a href="javascript:void(0)" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav18="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html18"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html18" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts18"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts18" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav18"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End Row -->

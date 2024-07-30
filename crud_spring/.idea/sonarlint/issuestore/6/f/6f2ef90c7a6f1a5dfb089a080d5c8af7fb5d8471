@@ -1,19 +1,19 @@
 
-˜	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•µİ®øÿÿÿÿ8¤áÅŒ2J$28475b7f-78eb-422a-a6fd-776fd967b0f0
-	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¨áÅŒ2J$e5099bc6-d52d-4fec-ae30-9b09234b7057
-	java:S112M"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8²¯¾²2J$1c4d6e15-2989-4fee-aab2-489b3b2e1399
+˜	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•µİ®øÿÿÿÿ8¤áÅŒ2J$25f73203-d04d-4f08-914a-1dc8a75b7941
+	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¨áÅŒ2J$1286cdab-3dda-4752-983a-eb257c189ee0
+	java:S112M"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8²¯¾²2J$eca03c67-53b5-4dac-89e3-0bb2e26a629f
 ˜
 java:S1192
-"UDefine a constant instead of duplicating this literal "Innohire45@gmail.com" 3 times.(­ì…’8´¯¾²2J$748e18ad-4aaf-4f1f-a166-763d2a200322
+"UDefine a constant instead of duplicating this literal "Innohire45@gmail.com" 3 times.(­ì…’8´¯¾²2J$ebb0acce-6e5a-435b-9a0e-e0717fa0e53b
 º
-java:S5527"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8²áÅŒ2J$9b890f16-137a-43fa-909d-959432497c1d
+java:S5527"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8²áÅŒ2J$289c925b-eb43-405f-92f1-babd4f0c2761
 }
-java:S1161":Add the "@Override" annotation above this method signature(‡èú×8ò„òÅŒ2J$1c2a87d3-a320-46c9-b6a5-fc02ffb52288
-r	java:S106*"+Replace this use of System.out by a logger.(Òë¨úÿÿÿÿ8µáÅŒ2J$950d16e8-014d-4317-bca6-bee6572c75f7
+java:S1161":Add the "@Override" annotation above this method signature(‡èú×8ò„òÅŒ2J$f04f1f18-15a1-4634-9fd4-1e84ed4ed5bf
+r	java:S106*"+Replace this use of System.out by a logger.(Òë¨úÿÿÿÿ8µáÅŒ2J$1ce41b62-1489-4076-b655-aa91228dff38
 º
-java:S55275"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8Ê¯¾²2J$3f7f03eb-3252-45fe-889b-f3eba6825c96
+java:S55275"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8Ê¯¾²2J$5e8e2a81-b4c1-4840-bfe3-482c3dd7e45c
 }
-java:S1161=":Add the "@Override" annotation above this method signature(‡èú×8Í¯¾²2J$f42a81fb-3b4d-4c84-8b1b-e0f7c4561cf7
-m	java:S106K"+Replace this use of System.out by a logger.(šåâ8Ï¯¾²2J$a1cf04f1-b376-43ca-9b0a-50348047c8d5
+java:S1161=":Add the "@Override" annotation above this method signature(‡èú×8Í¯¾²2J$3099fd2b-e6d6-40ad-9b6e-d10c42cc95f5
+m	java:S106K"+Replace this use of System.out by a logger.( ·»Å8Ï¯¾²2J$0d99af33-64fb-40f1-aae2-54309546d214
 a
-java:S1128"Remove this duplicated import.(¬µ²8·áÅŒ2J$a466eee3-8636-4213-8797-7778a1bdc7cf
+java:S1128"Remove this duplicated import.(¬µ²8·áÅŒ2J$6a1d5f32-ceb2-4fb7-b542-0418044730c0

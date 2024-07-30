@@ -1,0 +1,66 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Session Time Out</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-grid mr-2 fs-14"></i>Apps</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Session Time Out</a>
+            </li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings
+            </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now
+            </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Session Time Out Demo
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="mg-b-20">The Basic Collapse Accordion Styles of Nixlot template</p>
+                <p class="mg-b-10">I must explain to you how all this mistaken idea of denouncing
+                    pleasure and praising pain was born and I will give you a complete account of
+                    the system, and expound the actual teachings of the great explorer of the truth,
+                    the master-builder of human happiness. No one rejects, dislikes, or avoids
+                    pleasure itself, because it is pleasure, but because those who do not know how
+                    to pursue pleasure rationally encounter consequences</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Modal -->
+<ng-template #sessionModal let-modal>
+    <div class="modal-body text-center">
+        <i class="fe fe-alert-triangle fs-50"></i>
+        <h4 class="text-primary fs-20 font-weight-semibold mt-2">Session Timeout</h4>
+        <p>
+            <ngb-progressbar
+                type="success"
+                [value]="value"
+                [striped]="true"
+                [animated]="true"
+                >
+            </ngb-progressbar></p>
+        <p class="mb-4 mx-4">You're being timed out due to inactivity. Please choose to stay signed in or to logoff. Otherwise, you will logged off automatically..</p>
+        <button type="button" class="btn btn-danger px-5" (click)="logout()">Log Out</button>
+        <button type="button" class="btn btn-primary px-5 text-white" (click)="modal.close('Close click')">Stay Loggedin</button>
+    </div>
+</ng-template>
+
+<!-- /Modal -->

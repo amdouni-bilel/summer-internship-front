@@ -1,0 +1,42 @@
+<div class="w3-container">
+  <div class="formation-container">
+    <div class="formation">
+      <div class="title">
+        <h2>Formations</h2>
+      </div>
+
+      <div class="formation-list">
+      <div *ngFor="let form of resume.formations" class="formation-item">
+        <div class="field-group">
+          <p *ngIf="!isEditMode" class="field-value"><span>Titre :</span>  {{ form.titre_f }}</p>
+          <input *ngIf="isEditMode" class="field-input" id="titreInput" [(ngModel)]="form.titre_f" placeholder="Titre formation" />
+        </div>
+        <div class="field-group">
+
+          <p *ngIf="!isEditMode" class="field-value"><span>Ecole :</span>  {{ form.ecole }}</p>
+          <input *ngIf="isEditMode" class="field-input" id="ecoleInput" [(ngModel)]="form.ecole" placeholder="Nom d'ecole " />
+        </div>
+        <div class="field-group">
+
+          <p *ngIf="!isEditMode" class="field-value"><span>Date :</span>  {{ form.date_debut_f }} - {{ form.date_fin_f }}</p>
+          <input *ngIf="isEditMode" class="field-input" id="dateDebutInput" [(ngModel)]="form.date_debut_f" placeholder="Date "/>
+          <input *ngIf="isEditMode" class="field-input" id="dateFinInput" [(ngModel)]="form.date_fin_f" />
+        </div>
+        <div class="button-container"></div>
+        <button *ngIf="isEditMode" (click)="deleteFormation(form)">Supprimer</button>
+        <hr class="ligne">
+      </div>
+      </div>
+      <div style="display: flex; flex-direction: row; width:100%; ">
+        <button class="modifier-button" (click)="toggleEditMode()">
+          {{ isEditMode ? 'Valider' : 'Modifier' }}
+        </button>
+        <button class="add-button" *ngIf="isEditMode" (click)="addFormation()" style="margin-left: 10px;">Add Formation</button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>

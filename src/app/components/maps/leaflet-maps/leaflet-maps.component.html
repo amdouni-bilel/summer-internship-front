@@ -1,0 +1,56 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Leaflet Maps</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-map-pin mr-2 fs-14"></i>Maps</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Leaflet Maps</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row row-sm">
+    <div class="col-lg-12">
+        <div class="card mg-b-20" id="map">
+            <div class="card-header">
+                <div class="card-title">Basic</div>
+            </div>
+            <div class="card-body">
+                <div class="ht-300" id="leaflet2" style="height: 300px;" leaflet [leafletOptions]="options1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="card mg-b-20" id="map2">
+            <div class="card-header">
+                <div class="card-title">With Popup</div>
+            </div>
+            <div class="card-body">
+                <div class="ht-300" id="leaflet2" style="height:300px" leaflet [leafletOptions]="options2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="card" id="map1">
+            <div class="card-header">
+                <div class="card-title">Map With Circle</div>
+            </div>
+            <div class="card-body">
+                <div class="ht-200 ht-sm-300 ht-md-400" id="leaflet3" style="height:300px" leaflet
+                    [leafletOptions]="options3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Row -->

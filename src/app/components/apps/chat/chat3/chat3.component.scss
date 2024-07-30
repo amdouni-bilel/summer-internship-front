@@ -1,0 +1,13 @@
+::ng-deep{
+    .modal-content{
+        border: 0;
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+    }
+    .chat .actions > li{
+        margin:0 0 0 5px;
+    }
+    .dropdown-menu-right.dropdown-menu.show{
+        transform: translate(-120px, 50px) !important;
+    }
+}

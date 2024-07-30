@@ -1,0 +1,30 @@
+::ng-deep{
+    .hljs{
+        background: none;
+        color: inherit;
+        
+    }
+    .html-code.nav-link{
+        color: #282d3c;
+        border:0;
+        margin-left: 30px;
+    }
+    .html-code.nav-link:hover{
+        outline: 0;
+        color: #282d3c;
+    }
+    .nav-tabs .html-code.nav-link:hover:not(.disabled){
+        background: #705ec8;
+    }
+    .nav-tabs .nav-item:not(:first-child) .html-code.nav-link{
+        margin-left: 10px;
+    }
+    .highlight{
+        border:0;
+        background:none;
+        overflow: inherit;
+    }
+    .highlight pre{
+        padding-bottom: 0;
+    }
+}

@@ -1,0 +1,7 @@
+<app-generic-table
+  [data]="tableData"
+  [columns]="tableColumns"
+  [pageSizeOptions]="[5, 10, 20]"
+  [pageSize]="pageSize"
+  (pageChange)="onPageChange($event)"
+></app-generic-table>

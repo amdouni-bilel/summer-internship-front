@@ -1,0 +1,115 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Color Picker</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-server mr-2 fs-14"></i>Elements</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Color Picker</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<div class="col-sm-12 col-lg-12 col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Color Pickers Styles</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label">Basic ColorPicker</label>
+                        <input [style.background]="color1" [(colorPicker)]="color1"
+                        (colorPickerOpen)="onEventLog('colorPickerOpen', $event)"
+                        (colorPickerClose)="onEventLog('colorPickerClose', $event)"
+                        (cpInputChange)="onEventLog('cpInputChange', $event)"
+                        (cpSliderDragStart)="onEventLog('cpSliderDragStart', $event)"
+                        (cpSliderDragEnd)="onEventLog('cpSliderDragEnd', $event)" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label">GrayScale ColorPicker</label>
+                        <input [style.background]="color10" [(colorPicker)]="color10" [cpColorMode]="'grayscale'"
+                        (colorPickerOpen)="onEventLog('colorPickerOpen', $event)"
+                        (colorPickerClose)="onEventLog('colorPickerClose', $event)"
+                        (cpInputChange)="onEventLog('cpInputChange', $event)"
+                        (cpSliderDragStart)="onEventLog('cpSliderDragStart', $event)"
+                        (cpSliderDragEnd)="onEventLog('cpSliderDragEnd', $event)" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label">Color Value</label>
+                        <input [value]="color2" [style.background]="color2" [(colorPicker)]="color2" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label">Click to change Text Color</label>
+                        <span class="change-me" [style.color]="color6" [cpPosition]="'bottom'"
+                                [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true"
+                                [(colorPicker)]="color6">Change me!</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label">Cancel button</label>
+                        <input [value]="color7" [style.background]="color7" [cpCancelButton]="true"
+                        [(colorPicker)]="color7" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label">OK Button</label>
+                        <input [value]="color8" [style.background]="color8" [cpOKButton]="true"
+                                [cpSaveClickOutside]="false" [cpOKButtonClass]="'btn btn-primary btn-xs'"
+                                [(colorPicker)]="color8" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-12 col-xl-6 col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Color Picker OverView</h3>
+        </div>
+        <div class="card-body">
+            <div class="row" style="height: 320px">
+                <div class="col-xl-4 col-md-6">
+                    <span [style.background]="arrayColors[selectedColor]" [cpToggle]="true" [cpDialogDisplay]="'inline'"
+                        [cpCancelButton]="true" [cpCancelButtonClass]="'btn btn-primary btn-xs'"
+                        [(colorPicker)]="arrayColors[selectedColor]"></span>
+                </div>
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="color-box" [style.background]="arrayColors['color1']" (click)="selectedColor='color1'">
+                    </div>
+
+                    <div class="color-box" [style.background]="arrayColors['color2']" (click)="selectedColor='color2'">
+                    </div>
+
+                    <div class="color-box" [style.background]="arrayColors['color3']" (click)="selectedColor='color3'">
+                    </div>
+
+                    <div class="color-box" [style.background]="arrayColors['color4']" (click)="selectedColor='color4'">
+                    </div>
+
+                    <div class="color-box" [style.background]="arrayColors['color5']" (click)="selectedColor='color5'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

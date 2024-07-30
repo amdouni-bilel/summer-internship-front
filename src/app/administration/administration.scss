@@ -1,0 +1,80 @@
+/* list-component.css */
+.container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .list-section {
+    flex: 1;
+    margin-right: 50px;
+    
+  }
+  
+  .form-section {
+    flex: 1;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .list li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .list li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .list-item {
+    flex: 1;
+  }
+  
+  .delete-button {
+    cursor: pointer;
+  }
+  
+  .form-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-container input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-container button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,183 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <form [formGroup]="uploadCVForm">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-14 col-xl-12 col-md-14 col-sm-14">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Informations sur le client</h4>
+                </div>
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-lg-12 col-md-8">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                      <div class="form-group">
+                        <label class=" form-label">Nom du Client</label>
+                        <input class="form-control"
+                               formControlName="nameClient"
+                               [ngModel]="missions?.client?.nameClient"
+                               type="text"
+                               readonly>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                      <div class="form-group ">
+                        <label class="  form-label">Mail</label>
+                        <input class="form-control"
+                               formControlName="mail"
+                               [ngModel]="missions?.client?.mail"
+                               type="text"
+                               readonly>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-14 col-xl-12 col-md-14 col-sm-14">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Informations sur la mission</h4>
+                </div>
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-lg-12 col-md-8">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                      <div class="form-group">
+                        <label class=" form-label">Descriptif</label>
+                        <input class="form-control"
+                               formControlName="descriptif"
+                               type="text"
+                               [ngModel]="missions?.descriptif"
+                               readonly>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                      <div class="form-group ">
+                        <label class="  form-label">TJM</label>
+                        <input class="form-control"
+                               formControlName="tjm"
+                               type="text"
+                               [ngModel]="missions?.tjm"
+                               readonly>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-14 col-xl-12 col-md-14 col-sm-14">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Upload CV</h4>
+                </div>
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-lg-12 col-md-8">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                      <div class="form-group">
+                        <div class="form-label">Choisir le fichier à uploader</div>
+                        <div class="input-group file-browser">
+                          <div class="custom-file">
+                            <input type="file" class="border-right-0 browse-file bg-white"
+                                   multiple id="importFile"
+                                   (change)="onFileChange($event.target.files)">
+                            <label class="custom-file-label" #labelImport for="importFile">Choisir un fichier</label>
+                          </div>
+                          <button class="btn btn-info ml-2" type="button" (click)="uploadFile()">
+                            <i class="fe fe-upload mr-2"></i> Upload CV
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<!--<ng-template #sessionModal let-modal>
+  <div class="modal-body text-center">
+    <i class="fe fe-alert-triangle fs-50"></i>
+    <h4 class="text-primary fs-20 font-weight-semibold mt-2">Session Timeout</h4>
+    <p>
+      <ngb-progressbar
+        type="success"
+        [value]="value"
+        [striped]="true"
+        [animated]="true"
+      >
+      </ngb-progressbar></p>
+    <p class="mb-4 mx-4">You're being timed out due to inactivity. Please choose to stay signed in or to logoff. Otherwise, you will logged off automatically..</p>
+    <button type="button" class="btn btn-danger px-5" (click)="logout()">Log Out</button>
+    <button type="button" class="btn btn-primary px-5 text-white" (click)="modal.close('Close click')">Stay Loggedin</button>
+  </div>
+</ng-template>-->
+
+<!-- /Modal -->
+
+
+
+
+<!--<div class="container">
+  <div class="row">
+    <div class="col-md-12 bg-light text-right">
+      <button (click)="BasicOpen(basicmodal)" class="btn btn-info" type="button"><i class="fe fe-upload mr-2"></i>Ouvrir le Modal</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #basicmodal let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-basic-title">Choisir le CV à importer</h3>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <div class="form-label">Bootstrap's Custom File Input</div>
+      <div class="input-group file-browser">
+        <div class="custom-file">
+          <input type="file" class="border-right-0 browse-file bg-white"
+                 multiple id="importFile"
+                 (change)="onFileChange($event.target.files)">
+
+          <label class="custom-file-label" #labelImport for="importFile">Choisir le fichier</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-indigo" type="button" (click)="uploadFile()">Uploader le CV</button>
+    <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Fermer</button>
+  </div>
+</ng-template>-->

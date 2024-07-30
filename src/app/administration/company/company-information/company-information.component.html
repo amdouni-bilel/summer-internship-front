@@ -1,0 +1,210 @@
+<div class="col-12">
+  <div class="d-flex flex-row-reverse">
+    <button type="button" class="btn btn-icon btn-primary" (click)="show()">
+      <span *ngIf="display">ajouter &nbsp;<i class="fa fa-plus-square" aria-hidden="true"></i></span>
+      <span *ngIf="!display">voir &nbsp;<i class="fa fa-eye" aria-hidden="true"></i></span>
+    </button>
+  </div>
+  <form [formGroup]="societeInformation" (ngSubmit)="submitForm()">
+    <div class="mt-3" *ngIf="display">
+      <app-company-list></app-company-list>
+    </div>
+    <div class="row mt-3" *ngIf="!display">
+
+      <div class="col-lg-14 col-xl-12 col-md-14 col-sm-14">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Information de la Société</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+
+                <div class="form-group">
+                  <label class="form-label">Nom</label>
+                  <input class="form-control" formControlName="companyName" type="text">
+                </div>
+
+
+                <div class="form-group">
+                  <label class=" form-label">Etat</label>
+                  <select class="form-control" formControlName="etat" placeholder="&#45;&#45;Select&#45;&#45;">
+                    <option value="">-&#45;&#45; Choisissez un état -&#45;&#45;</option>
+                    <option *ngFor="let etatSoc of etat" [value]="etatSoc.id">{{ etatSoc.name }}
+                    </option>
+                  </select>
+                </div>
+
+              </div>
+              <div class="col-lg-6 col-md-12">
+
+                <div class="form-group ">
+                  <label class="form-label">Effectif</label>
+                  <input class="form-control" formControlName="effectif" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Secteur</label>
+                  <select class="form-control" formControlName="secteur" placeholder="">
+                    <option value="">---Choisissez un secteur ---</option>
+                    <option *ngFor="let secteur of secteurs" [value]="secteur.id">{{ secteur.name }}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12">
+                <div class="form-group">
+                  <label class="  form-label">Responsable Manager</label>
+                  <input class="form-control" formControlName="responsable" type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-14 col-xl-12 col-md-14 col-sm-14">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Coordonnées société</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+
+                <div class="form-group">
+                  <label class=" form-label">Tel</label>
+                  <input class="form-control" formControlName="tel" name="tel" type="tel">
+                </div>
+
+                <div class="form-group ">
+                  <label class="form-label">Adresse</label>
+                  <input class="form-control" formControlName="adresse" name="adresse" type="text">
+                </div>
+
+                <div class="form-group  ">
+                  <label class="form-label">Code Postal</label>
+                  <input class="form-control" formControlName="postalCode" name="codePostal" type="text">
+                </div>
+
+              </div>
+
+              <div class="col-lg-6 col-md-12">
+
+                <div class="form-group  ">
+                  <label class=" form-label">Email</label>
+                  <input class="form-control" formControlName="email" id="email" name="email" placeholder="Email"
+                         type="email">
+                </div>
+
+                <div class="form-group  ">
+                  <label class="form-label">Ville</label>
+                  <input class="form-control" formControlName="ville" name="ville" type="text">
+                </div>
+
+                <div class="form-group  ">
+                  <label class=" form-label">Site Web</label>
+                  <input class="form-control" formControlName="website" name="siteWeb" type="text">
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-14 col-xl-12 col-md-14 col-sm-14">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Données légales </h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+
+                <div class="form-group">
+                  <label class=" form-label">Statut Juridique</label>
+                  <select class="form-control" formControlName="statutJuiridique" placeholder="">
+                    <option value="">-&#45;&#45; Choisissez un statut juridique -&#45;&#45;</option>
+                    <option *ngFor="let statu of status" [value]="statu.id">{{ statu.name }}</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group ">
+                  <label class="form-label">TVA IC</label>
+                  <input class="form-control" formControlName="tva" name="tva" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label class="  form-label">SIRET</label>
+                  <input class="form-control" formControlName="siret" name="siret" type="text">
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-12">
+
+                <div class="form-group">
+                  <label class="form-label">SIREN</label>
+                  <div>
+                    <input class="form-control" formControlName="siren" name="siren" type="text">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class=" form-label">CODE APE</label>
+                  <input class="form-control" formControlName="codeApe" name="codeApe" type="text">
+                </div>
+                <div class="form-group  ">
+                  <label class=" form-label">RCS</label>
+                  <input class="form-control" formControlName="rcs" name="rcs" type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-14 col-xl-12 col-md-14 col-sm-14">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Coordonnées Bancaire</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+
+                <div class="form-group ">
+                  <label class="form-label">Compte N°:</label>
+                  <input class="form-control" formControlName="compteNum" name="compteNum" type="text">
+                </div>
+
+                <div class="form-group ">
+                  <label class="form-label">RIB: </label>
+                  <input class="form-control" formControlName="rib" name="rib" type="text">
+                </div>
+
+              </div>
+              <div class="col-lg-6 col-md-12">
+
+                <div class="form-group ">
+                  <label class="form-label">BIC: </label>
+                  <input class="form-control" formControlName="bic" name="bic" type="text">
+                </div>
+
+                <div class="form-group  ">
+                  <label class="  form-label">IBAN: </label>
+                  <input class="form-control" formControlName="iban" name="iban" type="text">
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-row-reverse">
+          <button type="submit" class="btn btn-info">
+            Sauvgarder <i class="fa fa-floppy-o" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

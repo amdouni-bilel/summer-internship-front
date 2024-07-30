@@ -1,0 +1,83 @@
+<!-- Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0"></h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-home mr-2 fs-14"></i>Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Tableau de bord de facturation</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <!--End Page header
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Imprimer </a>
+             -->
+        </div>
+    </div>
+</div>
+<!--End Page header -->
+
+
+
+
+<header class="full-width-header">
+  <div class="container" style="max-width: 100%;">
+    <div class="icon-section">
+      <img class="icon" src="./assets/images/facture/note.png" alt="Icon">
+      <div>
+        <h3 class="title">{{user.fullName}}</h3>
+        <p class="description">{{date}}</p>
+      </div>
+    </div>
+    <div class="button-container">
+      <div class="small-buttons">
+
+      </div>
+      <div class="buttons">
+        <button class="button-31" role="button">
+          <img class="icon" src="./assets/images/facture/cancel.png" alt="Icon"> Rejeter
+        </button>
+        <button class="button-30"  (click)="saveData()">
+          <img class="icon" width="25px" height="25px" src="./assets/images/facture/save.png" alt="Icon">
+          <span style="font-weight: bold; font-size: 18px;" >Enregister</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="container2">
+
+  <div class="title-section">
+    <div class="title-container">
+      <h3 class="title">Frais réels</h3>
+    </div>
+    <div class="icon-container">
+      <button class="button-1">
+        <img class="plus-icon"   mat-raised-button  (click)="openPopup()"  src="./assets/images/facture/plus.png" alt="Plus Icon">
+      </button>
+      <img class="plus-icon" width="25px" height="30px" src="./assets/images/facture/arrow.png" alt="Plus Icon">
+    </div>
+  </div>
+
+  <!-- Rest of the container's content goes here -->
+  <br>
+  <br>
+  <ng-container *ngIf="itemsize > 0; else emptyText">
+    <app-list></app-list>
+  </ng-container>
+
+  <ng-template #emptyText>
+    <p style="display: flex;justify-content: center;">No items available.</p>
+  </ng-template>
+
+</div>
+<app-commentaire></app-commentaire>
+
+
+
+
+
+
+

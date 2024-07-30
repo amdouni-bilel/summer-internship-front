@@ -1,0 +1,145 @@
+<!--Page header-->
+<div class="page-header">
+    <!-- <div class="page-leftheader">
+        <h4 class="page-title mb-0">Email Compose</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layers mr-2 fs-14"></i>Pages</a>
+            </li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Email</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Email Compose</a></li>
+        </ol>
+    </div> -->
+    <!-- <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div> -->
+</div>
+<!--End Page header-->
+
+<!-- <span class="ml-auto badge badge-success">14</span> -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-4 col-xl-3 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="list-group list-group-transparent mb-0 mail-inbox pb-3">
+                <a routerLink="/pages/email/inbox" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <i class="fe fe-inbox fs-18 mr-2"></i> Inbox 
+                </a>
+                <a routerLink="/pages/email/read" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <i class="fe fe-mail fs-18 mr-2"></i> Sent Mail
+                </a>
+                <!-- <a href="javascript:void(0)" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <i class="fe fe-alert-octagon fs-18 mr-2"></i> Important <span
+                        class="ml-auto badge badge-danger">3</span>
+                </a>
+                <a href="javascript:void(0)" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <i class="fe fe-star fs-18 mr-2"></i> Starred
+                </a>
+                <a href="javascript:void(0)" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <i class="fe fe-briefcase fs-18 mr-2"></i> Drafts
+                </a>
+                <a href="javascript:void(0)" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <i class="fe fe-tag fs-18 mr-2"></i> Tags
+                </a>
+                <a href="javascript:void(0)" class="list-group-item list-group-item-action d-flex align-items-center">
+                    <i class="fe fe-trash-2 fs-18 mr-2"></i> Trash
+                </a> -->
+            </div>
+            <div *ngFor="let group of groups">
+            <div class="p-2">
+                <div class="list-group list-group-transparent mb-0 mail-inbox">
+                    <a href="javascript:void(0)"
+                        class="list-group-item list-group-item-action d-flex align-items-center px-0 py-2">
+                        <span class="w-2 h-2 brround bg-success mr-2"></span> {{group.nom}}
+                    </a>
+                  
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-xl-9 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Compose new message</h3>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="coordonneeEmail">
+                    <div class="form-group">
+                        <div class="row align-items-center">
+                            <label class="col-sm-2 form-label">To</label>
+                            <div class="col-sm-10">
+                            <ng-select formControlName="to">
+                                <ng-option *ngFor="let item of groupsAndUsers"  [value]="item.nom">{{item.nom}}</ng-option>
+                            </ng-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row align-items-center">
+                            <label class="col-sm-2 form-label">Model</label>
+                            <div class="col-sm-10">
+                            <ng-select formControlName="model" (change)="onModelChange($event)" >
+                                <ng-option *ngFor="let item of models" [value]="item.description">{{item.nom}}</ng-option>
+                            </ng-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row align-items-center">
+                            <label class="col-sm-2 form-label">Subject</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="Subject" formControlName="subject">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row ">
+                            <label class="col-sm-2 form-label">Message</label>
+                            <div class="col-sm-10">
+                                <textarea rows="10" class="form-control" name="Message" formControlName="message"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row align-items-center">
+                            <label class="col-sm-2 form-label">Files</label>
+                            <div class="col-sm-10">
+                                <div class="input-group file-browser" >
+                                    <div class="custom-file" style="height: 50px;" >
+                                        <input type="file"   class="border-right-0 browse-file bg-white" 
+                                                multiple id="importFile" 
+                                                (change)="onFileChange($event.target.files)">
+                                        <label style="height: 50px;" class="custom-file-label" #labelImport for="importFile">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                    
+                </form>
+            </div>
+            <div class="card-footer d-sm-flex">
+              
+                   
+ 
+                    <!-- <a href="javascript:void(0)" class="btn btn-icon btn-light btn-svg" placement="top"
+                        ngbTooltip="Link"><i class="fe fe-link"></i></a>
+                    <a href="javascript:void(0)" class="btn btn-icon btn-light btn-svg" placement="top"
+                        ngbTooltip="Photos"><i class="fe fe-image"></i></a>
+                    <a href="javascript:void(0)" class="btn btn-icon btn-light btn-svg" placement="top"
+                        ngbTooltip="Delete"><i class="fe fe-trash-2"></i></a> -->
+                <div class="btn-list ml-auto">
+                    <!-- <button type="button" class="btn btn-danger btn-space">Cancel</button> -->
+                    <div class="msb-reply">
+                        <button style="cursor: pointer;" (click)="sendEmail()"><i class="fa fa-paper-plane-o"></i></button>
+                    </div>                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+::ng-deep {
+    .accordion.panel .card {
+        margin-bottom: 10px;
+        box-shadow: none;
+        border: 0;
+        border-radius: 0;
+    }
+    .accordion.panel .card-header {
+        background: #f0f0f2;
+        padding: 0;
+        min-height: 0;
+        border: 0;
+    }
+    .accordion.panel .card-header::before {
+        display: none;
+    }
+    .accordion.panel .card-header .btn {
+        display: block;
+        padding: 15px;
+        width: 100%;
+        text-align: left;
+        line-height: 0;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.1;
+    }
+    .collapse .card-body {
+        border: 1px solid #ebecf1;
+        line-height: 25px;
+        font-size: 14px;
+        padding: 15px;
+    }
+    .collapse.show{
+        transition: 3s ease-in-out;
+    }
+    
+
+}

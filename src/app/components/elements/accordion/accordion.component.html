@@ -1,0 +1,372 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Accordion</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-server mr-2 fs-14"></i>Elements</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Accordion</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!--Row-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Default Accordion</h3>
+            </div>
+            <div class="card-body">
+                <ngb-accordion [closeOthers]="true">
+                    <ngb-panel id="static-1" title="Collapsible Group Item #1">
+                        <ng-template ngbPanelContent>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable.
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="static-2" title="Collapsible Group Item #2">
+                        <ng-template ngbPanelContent>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore.
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="static-3" title="Collapsible Group Item #3">
+                        <ng-template ngbPanelContent>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore.
+                        </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+
+                <!-- accordion -->
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0">
+                <ul ngbNav #nav1="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html1" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts1" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav1"></div>
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Default Accordion 2</h3>
+            </div>
+            <div class="card-body">
+                <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                    <ngb-panel title="Collapsible Group Item #1">
+                        <ng-template ngbPanelContent>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable.
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel title="Collapsible Group Item #2">
+                        <ng-template ngbPanelContent>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable.
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel title="Collapsible Group Item #3">
+                        <ng-template ngbPanelContent>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable.
+                        </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav2="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html2"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html2" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts2"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts2" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav2"></div>
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!--End Row-->
+
+<!--Row-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Buttons Accordion</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-2">
+                    <a class="btn btn-primary" role="button" (click)="toggle()" [attr.aria-expanded]="!isCollapsed"
+                        aria-controls="collapseExample">
+                        Link with href
+                    </a>
+                    <button class="btn btn-secondary" type="button" (click)="toggle()"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                        Button with data-target
+                    </button>
+                </div>
+                <div *ngIf="isCollapsed">
+                    <div class="border p-3">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                        proident.
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                        qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
+                        modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+                        veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
+                        commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
+                        nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                    </div>
+                </div>
+            </div>
+
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav4="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre class="language-markup"><code [highlight]="html3" class="language-markup"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html3" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts3" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav4"></div>
+
+            </figure>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Multiple targets Accordion</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-2 btn-list">
+                    <a class="btn btn-info" role="button" (click)="first()" aria-controls="multiCollapseExample1">Toggle
+                        first element</a>
+                    <a class="btn btn-danger" role="button" (click)="second()"
+                        aria-controls="multiCollapseExample2">Toggle second element</a>
+                    <a class="btn btn-warning" role="button" (click)="both()"
+                        aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</a>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="border p-3" *ngIf="isFirstCollapsed">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                            sapiente ea proident.
+                            But I must explain to you how all this you a explorer of the truth, the master-builder
+                            of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is
+                            pleasure, but because those who do not know how to pursue pleasure rationally encounter
+                            consequences that are extremely painful.
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="border p-3" *ngIf="isSecondCollapsed">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                            sapiente ea proident.
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                            occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+                            mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+                            expedita distinctio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav4="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html4" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts4" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav4"></div>
+
+            </figure>
+        </div>
+    </div>
+</div>
+<!--End Row-->
+
+<!--Row-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Gradient Accordion style</h3>
+            </div>
+            <div class="card-body">
+                <div class="panel-group1" id="accordion1">
+                    <div class="panel panel-default mb-4 overflow-hidden">
+                        <div class="panel-heading1">
+                            <h4 class="panel-title1">
+                                <a class="accordion-toggle firstgradient bg-gradient-primary collapsed "
+                                    (click)="FirstGradient()">Section 1</a>
+                            </h4>
+                        </div>
+                        <div *ngIf="isFirstGradient">
+                            <div class="panel-collapse">
+                                <div class="panel-body">
+                                    <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks
+                                        as
+                                        necessary, making this the first true generator on the Internet. It uses a
+                                        dictionary of over 200 Latin words </p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled.Nor again is there anyone
+                                        who
+                                        loves or pursues or desires to obtain pain of itself, because it is pain, but
+                                        because occasionally circumstances occur in which toil and pain can procure him
+                                        some
+                                        great pleasure. To take a trivial example, which of us ever undertakes laborious
+                                        physical exercise</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default overflow-hidden">
+                        <div class="panel-heading1">
+                            <h4 class="panel-title1">
+                                <a class="accordion-toggle secondgradient bg-gradient-primary collapsed"
+                                    (click)="SecondGradient()">Section 2</a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse" *ngIf="isSecondGradient">
+                            <div class="panel-body">
+                                <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
+                                    necessary, making this the first true generator on the Internet. It uses a
+                                    dictionary of over 200 Latin words </p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled.Nor again is there anyone who
+                                    loves or pursues or desires to obtain pain of itself, because it is pain, but
+                                    because occasionally circumstances occur in which toil and pain can procure him some
+                                    great pleasure. To take a trivial example, which of us ever undertakes laborious
+                                    physical exercise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav5="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html5"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html5" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts5"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts5" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav5"></div>
+                <div class="clipboard-icon" data-clipboard-target="#element12"><i class="las la-paste"></i></div>
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!--End Row-->

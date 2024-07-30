@@ -1,0 +1,36 @@
+::ng-deep {
+    .ng-rating:focus,
+    .rating-size:focus {
+        outline: 0;
+    }
+    .star {
+        position: relative;
+        display: inline-block;
+        font-size: 3rem;
+        color: #f0f0f2;
+    }
+    .full {
+        color: #ffab00;
+    }
+    .half {
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        color: #ffab00;
+    }
+    .heartHalf {
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        color: red;
+    }
+    .filled {
+        color: #ffab00;
+    }
+    .bad {
+        color: #deb0b0;
+    }
+    .filled.bad {
+        color: #ff1e1e;
+    }
+}

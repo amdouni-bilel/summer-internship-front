@@ -1,0 +1,125 @@
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="coordonneeSmtp">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Paramètres Smtp</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                          <label class="form-label">Username:</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="username"
+                            formControlName="username"
+                          />
+                          <div
+                            *ngIf="coordonneeSmtp.get('username').invalid && coordonneeSmtp.get('username').touched"
+                            class="alert"
+                          >
+                            <small style="color:red;" *ngIf="coordonneeSmtp.get('username').hasError('required')"
+                              >Username is required.</small
+                            >
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Email:</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="email"
+                            formControlName="email"
+                          />
+                          <div
+                            *ngIf="coordonneeSmtp.get('email').invalid && coordonneeSmtp.get('email').touched"
+                            class="alert"
+                          >
+                            <small style="color:red;" *ngIf="coordonneeSmtp.get('email').hasError('required')"
+                              >Email is required.</small
+                            >
+                            <small style="color:red;" *ngIf="coordonneeSmtp.get('email').hasError('email')"
+                              >Invalid email format.</small
+                            >
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">SMTP HOST: </label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="host"
+                            formControlName="host"
+                          />
+                          <div
+                            *ngIf="coordonneeSmtp.get('host').invalid && coordonneeSmtp.get('host').touched"
+                            class="alert"
+                          >
+                            <small style="color:red;" *ngIf="coordonneeSmtp.get('host').hasError('required')"
+                              >Host is required.</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                          <label class="form-label">Password: </label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="password"
+                            formControlName="password"
+                          />
+                          <div
+                            *ngIf="coordonneeSmtp.get('password').invalid && coordonneeSmtp.get('password').touched"
+                            class="alert"
+                          >
+                            <small style="color:red;" *ngIf="coordonneeSmtp.get('password').hasError('required')"
+                              >Password is required.</small
+                            >
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">SMTP PORT: </label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="port"
+                            formControlName="port"
+                          />
+                          <div
+                            *ngIf="coordonneeSmtp.get('port').invalid && coordonneeSmtp.get('port').touched"
+                            class="alert"
+                          >
+                            <small style="color:red;" *ngIf="coordonneeSmtp.get('port').hasError('required')"
+                              >Port is required.</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      (click)="saveSmtp()"
+                    >
+                      Sauvegarder
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

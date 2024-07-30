@@ -1,0 +1,60 @@
+<div class="col-12">
+  <div class="d-flex flex-row-reverse">
+    <button type="button" class="btn btn-icon btn-primary" (click)="show()">
+      <span *ngIf="display">ajouter &nbsp;<i class="fa fa-plus-square" aria-hidden="true"></i></span>
+      <span *ngIf="!display">liste &nbsp;<i class="fa fa-list" aria-hidden="true"></i></span>
+    </button>
+  </div>
+
+  <div class="mt-3" *ngIf="!display">
+    <app-create-employee></app-create-employee>
+  </div>
+  <div class="row mt-3" *ngIf="display">
+    <div class="col-lg-12 col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Information des employés</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="myTable1">
+              <thead style="text-align: center" class="border-top">
+              <tr>
+                <th>nom & prénom</th>
+                <th>email</th>
+                <th>Téléphone</th>
+                <th>company</th>
+                <th>manager</th>
+                <th>action</th>
+              </tr>
+              </thead>
+              <tbody style="text-align: center">
+              <tr *ngFor="let employee of employeesPage?.content">
+                <td>{{ employee.firstname }} {{ employee.lastname }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.phone }}</td>
+                <td>{{ employee.company?.name }}</td>
+                <td>
+                  <span *ngIf="employee.manager">{{ employee.manager.firstname }} {{ employee.manager.lastname }}</span>
+                  <span *ngIf="!employee.manager"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                </td>
+                <td>Action</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer">
+          <app-pagination
+            [currentPage]="currentPage"
+            [totalPages]="employeesPage?.totalPages"
+            [pageSize]="pageSize"
+            (pageChange)="onPageChange($event)">
+          </app-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

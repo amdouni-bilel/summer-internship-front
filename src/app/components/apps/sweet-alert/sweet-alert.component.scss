@@ -1,0 +1,23 @@
+::ng-deep{
+    .swal2-styled:focus{
+        box-shadow: none;
+    }
+    .swal2-title{
+        color: #1a1630;
+        font-weight: 500;
+    }
+    .swal2-timer-progress-bar{
+        background: #705ec8;
+    }
+    .swal2-html-container{
+        font-weight: 300;
+         color: #1a1630;
+    }
+    .swal2-styled{
+        line-height: 1.84615385;
+        border-radius: 3px;
+        letter-spacing: .03em;
+        font-size: 0.8125rem !important;
+        min-width: 2.375rem;
+    }
+}

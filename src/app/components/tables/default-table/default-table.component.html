@@ -1,0 +1,200 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Default Tables</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layout  mr-2 fs-14"></i>Tables</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Default Tables</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Basic Table</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table card-table table-vcenter text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of defaultData">
+                            <th scope="row">{{data.id}}</th>
+                            <td>{{data.name}}</td>
+                            <td>{{data.position}}</td>
+                            <td>{{data.salary | currency:'USD':'symbol':'3.0-0'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- table-responsive -->
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Striped Rows</h3>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-striped card-table table-vcenter text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Salary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of defaultData">
+                                <th scope="row">{{data.id}}</th>
+                                <td>{{data.name}}</td>
+                                <td>{{data.position}}</td>
+                                <td>{{data.salary | currency:'USD':'symbol':'3.0-0'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- bd -->
+            </div><!-- bd -->
+        </div><!-- bd -->
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Bordered Table</h3>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-bordered card-table table-vcenter text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Salary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of defaultData">
+                                <th scope="row">{{data.id}}</th>
+                                <td>{{data.name}}</td>
+                                <td>{{data.position}}</td>
+                                <td>{{data.salary | currency:'USD':'symbol':'3.0-0'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Hoverable Rows Table</h3>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover card-table table-vcenter text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Salary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of defaultData">
+                                <th scope="row">{{data.id}}</th>
+                                <td>{{data.name}}</td>
+                                <td>{{data.position}}</td>
+                                <td>{{data.salary | currency:'USD':'symbol':'3.0-0'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Full color variations</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table card-table table-vcenter text-nowrap table-success">
+                    <thead class="bg-success text-white">
+                        <tr>
+                            <th class="text-white">ID</th>
+                            <th class="text-white">Name</th>
+                            <th class="text-white">Position</th>
+                            <th class="text-white">Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of defaultData">
+                            <th scope="row">{{data.id}}</th>
+                            <td>{{data.name}}</td>
+                            <td>{{data.position}}</td>
+                            <td>{{data.salary | currency:'USD':'symbol':'3.0-0'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- table-responsive -->
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Full color variations2</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table card-table table-vcenter text-nowrap table-danger">
+                    <thead class="bg-danger text-white">
+                        <tr>
+                            <th class="text-white">ID</th>
+                            <th class="text-white">Name</th>
+                            <th class="text-white">Position</th>
+                            <th class="text-white">Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of defaultData">
+                            <th scope="row">{{data.id}}</th>
+                            <td>{{data.name}}</td>
+                            <td>{{data.position}}</td>
+                            <td>{{data.salary | currency:'USD':'symbol':'3.0-0'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- table-responsive -->
+        </div>
+    </div>
+</div>
+<!-- End Row -->

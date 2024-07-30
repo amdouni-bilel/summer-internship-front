@@ -1,0 +1,424 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <form [formGroup]="organigrammeCoord">
+          <div class="card">
+            <div class="card-header">
+              <h5>Ajouter un Organigramme</h5>
+            </div>
+            <div class="card-body">
+              <div id="treeBasic">
+                <div class="form-group">
+                  <label class="form-label">Titre de l'organigramme</label>
+                  <div>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="titre"
+                      formControlName="titre"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Nombre de niveaux </label>
+                  <div>
+                    <input
+                      class="form-control"
+                      type="number"
+                      min="1"
+                      [defaultValue]="1"
+                      name="nbreNiveaux"
+                      formControlName="nbreNiveaux"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex flex-row-reverse">
+                <button
+                  type="button"
+                  class="btn btn-icon btn-primary"
+                  (click)="openAddWizard(mymodal)"
+                ><i class="fe fe-plus mr-2"></i>
+                </button>
+              </div>
+            </div>
+            <!--MODAL HERE-->
+            <div id="mymodal">
+              <ng-template #mymodal let-modal class="modal-xl">
+                <div class="modal-body p-4">
+                  <button
+                    type="button"
+                    class="close"
+                    aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+  
+                  <!-- # WIZARD HERE -->
+  
+                  <div class="col-12 mt-4">
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">Créer un organigramme</h3>
+                      </div>
+                      <div class="card-body">
+                        <ng-wizard
+                          [config]="config1"
+                          (stepChanged)="stepChanged($event)"
+                        >
+                          <ng-container
+                            *ngFor="let step of [].constructor(x); let i = index"
+                          >
+                            <ng-wizard-step
+                              [title]="'Niveau'"
+                              [description]="i + 1"
+                              [canEnter]="isValidTypeBoolean"
+                              [canExit]="isValidFunctionReturnsBoolean.bind(this)"
+                            >
+                              <form
+                                [formGroup]="mainForm"
+                                (ngSubmit)="onSubmit()"
+                              >
+                                <div class="row">
+                                  <div class="col-sm-10 col-md-10">
+                                    <div class="form-group">
+                                      <label class="form-label"
+                                        >Nombre de Profils
+                                        <span class="text-red">*</span></label
+                                      >
+                                      <input
+                                        type="number"
+                                        class="form-control"
+                                        placeholder=""
+                                        min="1"
+                                        id="numberOfForms"
+                                        formControlName="numberOfForms"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-2 col-md-2">
+                                    <div class="form-group">
+                                      <label class="form-label"
+                                        ><span class="text-white">*</span>
+                                      </label>
+                                      <button
+                                        class="btn btn-primary"
+                                        type="button"
+                                        (click)="createDynamicForms()"
+                                      >
+                                        <i class="fa fa-check"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <hr class="hr" />
+                                <div formArrayName="dynamicForms">
+                                  <div
+                                    *ngFor="
+                                      let formGroup of dynamicForms.controls;
+                                      let i = index
+                                    "
+                                  >
+                                    <div class="row mb-6">
+                                      <!--if niveau 1-->
+                                      <div
+                                        *ngIf="niveau == 1"
+                                        class="col-sm-6 col-md-6"
+                                      >
+                                        <label class="form-label"
+                                          >Nouveau employé(e)<span
+                                            class="text-white"
+                                            >*</span
+                                          ></label
+                                        >
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          placeholder="Nom et Prénom"
+                                          [formControl]="
+                                            formGroup.get('textInput')
+                                          "
+                                        />
+                                      </div>
+                                      <div
+                                        *ngIf="niveau == 1"
+                                        class="col-sm-6 col-md-6"
+                                      >
+                                        <label class="form-label"
+                                          >Poste<span class="text-white"
+                                            >*</span
+                                          ></label
+                                        >
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          placeholder="Poste"
+                                          [formControl]="
+                                            formGroup.get('posteInput')
+                                          "
+                                        />
+                                      </div>
+                                      <!-- if not niveau 1-->
+                                      <div
+                                        *ngIf="niveau != 1"
+                                        class="col-sm-3 col-md-3"
+                                      >
+                                        <label class="form-label"
+                                          >Nouveau employé(e)<span
+                                            class="text-white"
+                                            >*</span
+                                          ></label
+                                        >
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          placeholder="Nom et Prénom"
+                                          [formControl]="
+                                            formGroup.get('textInput')
+                                          "
+                                        />
+                                      </div>
+                                      <div
+                                        *ngIf="niveau != 1"
+                                        class="col-sm-2 col-md-2"
+                                      >
+                                        <label class="form-label"
+                                          >Poste<span class="text-white"
+                                            >*</span
+                                          ></label
+                                        >
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          placeholder="Poste"
+                                          [formControl]="
+                                            formGroup.get('posteInput')
+                                          "
+                                        />
+                                      </div>
+                                      <div
+                                        *ngIf="niveau != 1"
+                                        class="mt-6 col-sm-2 col-md-2"
+                                      >
+                                        <h5 class="text-center">Attaché à</h5>
+                                      </div>
+                                      <div
+                                        *ngIf="niveau != 1"
+                                        class="col-sm-5 col-md-5"
+                                      >
+                                        <label class="form-label"
+                                          >Employé(e)<span class="text-white"
+                                            >*</span
+                                          ></label
+                                        >
+                                        <ng-select
+                                          placeholder="Supérieur"
+                                          [formControl]="
+                                            formGroup.get('selectInput')
+                                          "
+                                        >
+                                          <ng-option
+                                            *ngFor="let v of Array2"
+                                            [value]="v.nom"
+                                            >{{ v.nom }}</ng-option
+                                          >
+                                        </ng-select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-row-reverse">
+                                  <button
+                                    type="submit"
+                                    *ngIf="next"
+                                    class="btn btn-primary"
+                                  >
+                                    Valider niveau
+                                  </button>
+                                </div>
+                              </form>
+                            </ng-wizard-step>
+                          </ng-container>
+                        </ng-wizard>
+                        <div class="d-flex flex-row-reverse">
+                          <button
+                            *ngIf="ok"
+                            type="button"
+                            (click)="create()"
+                            class="btn btn-primary"
+                          >
+                            Terminer
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!--end wizard-->
+                </div>
+              </ng-template>
+  
+              <!--END MODAL-->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Liste des Organigrammes</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="myTable1">
+              <thead style="text-align: center" class="border-top">
+                <tr>
+                  <th>Titre</th>
+                  <th>Voir</th>
+                  <th>Supprimer</th>
+                </tr>
+              </thead>
+              <tbody style="text-align: center">
+                <tr *ngFor="let org of tab">
+                  <td>{{ org.titre }}</td>
+                  <td>
+                    <button
+                      class="btn btn-icon btn-primary"
+                      (click)="openOrgModal(orgModal,org)"
+                    >
+                      <i class="fe fe-eye"></i>
+                    </button>
+  
+                    <!--MODAL HERE-->
+                    <div id="orgModal">
+                      <ng-template #orgModal let-modal>
+                        <div class="modal-body p-4">
+  
+                          <button
+                            type="button"
+                            class="close"
+                            aria-label="Close"
+                            (click)="modal.dismiss('Cross click')"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+  
+  
+  
+                          <div class="container">
+                            <div class="row">
+                                <div class="zoom-controls">
+                                    <i (click)="zoomIn()" class="fe fe-plus"></i>
+                                    <i (click)="zoomOut()" class="fe fe-minus"></i>
+                                  </div>
+                                  
+                              <div class="tree-container" style="display: flex;
+                              justify-content: center;">
+                                <div class="tree" [style.transform]="'scale(' + scale + ')'" [style.transform-origin]="'top left'">
+                                  <ul>
+  
+                                    <li  *ngFor="let item of treeData">
+                                      <a [ngStyle]="{ 'border': item.isDeleted ? '1px solid #d10f0f' : '1px solid #ccc' }"  >
+                                        <span>{{ item.nom }}</span>
+                                        <span>{{ item.poste }}</span>
+                                        <span><i style="width: 20px;height: 20px;" (click)="deletePerso(item.id)" class="fa fa-trash"></i></span>
+                                        <span><i style="width: 20px;height: 20px;" (click)="openPersoModal(item.id, persoModal)" class="fa fa-plus"></i></span>
+                                      </a>
+                                      <ul  *ngIf="item.children && item.children.length > 0">
+                                        <ng-container *ngTemplateOutlet="treeNode; context: { $implicit: item.children }"></ng-container>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+  
+                          <ng-template #treeNode let-treeData>
+  
+                            <li *ngFor="let item of treeData">
+                        
+                              <a [ngStyle]="{ 'border': item.isDeleted ? '1px solid #d10f0f' : '1px solid #ccc' }" >
+                                <span>{{ item.nom }}</span>
+                                <span>{{ item.poste }}</span>
+                                <span><i style="width: 20px;height: 20px;" (click)="deletePerso(item.id)" class="fa fa-trash"></i></span>
+                                <span><i style="width: 20px;height: 20px;" (click)="openPersoModal(item.id,persoModal)" class="fa fa-plus"></i></span>
+                              </a>
+                              <ul *ngIf="item.children && item.children.length > 0">
+                                <ng-container *ngTemplateOutlet="treeNode; context: { $implicit: item.children }"></ng-container>
+                              </ul>
+                            </li>
+                          </ng-template>
+  
+  
+  
+  
+  
+                        </div>
+                      </ng-template>
+                    </div>
+                    <div id="persoModal">
+                      <ng-template #persoModal let-modal>
+                        <div class="modal-body p-4">
+  
+                          <button
+                            type="button"
+                            class="close"
+                            aria-label="Close"
+                            (click)="modal.dismiss('Cross click')"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+  
+  
+  
+                          <div class="container">
+                            <h4>Ajouter un personnel fils</h4><br>
+                            <form [formGroup]="persoForm" (ngSubmit)="createPerso()">
+                              <div class="form-group">
+                              <label class="form-label">
+                                Nom et Prénom:
+                                <input type="text" class="form-control" formControlName="nom" />
+                              </label>
+                              <br />
+                              <label class="form-label">
+                                Post:
+                                <input  class="form-control" type="text" formControlName="poste" />
+                              </label></div>
+                              <br />
+                              <button type="submit"  class="btn btn-primary">Ajouter</button>
+                            </form>
+  
+  
+  
+  
+                          </div>
+  
+  
+  
+  
+                        </div>
+                      </ng-template>
+                    </div>
+                    <!--END MODAL-->
+                  </td>
+                  <td><button
+                    class="btn btn-icon btn-danger"
+                    (click)="deleteOrg(org.id)"
+                  >
+                    <i class="fe fe-x-circle"></i>
+                  </button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

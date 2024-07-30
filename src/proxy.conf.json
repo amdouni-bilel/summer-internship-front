@@ -1,0 +1,12 @@
+//To Verify
+{
+    "/auth/api/*": {
+        "target": "http://localhost:8081",
+        "secure": false,
+        "chhangeOrigin:": true,
+        "logLevel": "debug",
+        "pathRewrite":{
+            "/auth/api/*": ""
+        }
+    }
+}

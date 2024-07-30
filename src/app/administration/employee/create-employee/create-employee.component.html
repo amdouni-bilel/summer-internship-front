@@ -1,0 +1,52 @@
+<form [formGroup]="employeeFormGroup" (ngSubmit)="submitForm()">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Information de l'employee</h4>
+    </div>
+    <div class="card-body">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label class="form-label">Nom</label>
+          <input class="form-control" formControlName="firstname" type="text">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label">Prenom</label>
+          <input class="form-control" formControlName="lastname" type="text">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label">Tel</label>
+          <input class="form-control" formControlName="phone" type="text">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label">Email</label>
+          <input class="form-control" formControlName="email" type="text">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label">Titre</label>
+          <input class="form-control" formControlName="title" type="text">
+        </div>
+        <div class="form-group col-12">
+          <label class="form-label">Adresse</label>
+          <textarea class="form-control" formControlName="address"></textarea>
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label">Company</label>
+          <select class="form-control" formControlName="companyId">
+            <option *ngFor="let company of companies" [value]="company.id">{{ company.name }}</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label">Manager</label>
+          <select class="form-control" formControlName="managerId">
+            <option *ngFor="let manager of managers" [value]="manager.id">{{ manager.firstname }} {{ manager.lastname }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-end mt-3">
+    <button type="submit" class="btn btn-info">
+      Sauvegarder <i class="fa fa-floppy-o" aria-hidden="true"></i>
+    </button>
+  </div>
+</form>

@@ -1,0 +1,53 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Gallery</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layers mr-2 fs-14"></i>Pages</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Gallery</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+
+
+<!-- Row -->
+
+<div class="demo-gallery card" [(ngbCollapse)]="isClosed">
+    <div class="card-header">
+        <div class="card-title">Light Gallery</div>
+        <div class="card-options ">
+            <a class="card-options-collapse" (click)="Collapsetoggle()" [attr.aria-expanded]="!isCollapsed">
+                <i class="fe fe-chevron-{{ !isCollapsed ? 'up' : 'down'}}"></i>
+            </a>
+            <a class="card-options-remove" (click)="Closetoggle()" [attr.aria-expanded]="!isClosed">
+                <i class="fe fe-x"></i>
+            </a>
+        </div>
+    </div>
+
+    <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+        <div class="card-body">
+            <ul id="lightgallery" class="list-unstyled row">
+                <li class="col-xs-6 col-sm-4 col-md-3" *ngFor="let img of GalleryImage">
+                    <a href="javascript:void(0)">
+                        <img class="img-responsive" [src]="img.modal.img" alt="Thumb"
+                            (click)="openImageModalRowDescription(img)">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ks-modal-gallery [id]="1" [modalImages]="GalleryImage" [plainGalleryConfig]="customPlainGalleryRowDescConfig"
+        [currentImageConfig]="{downloadable : true}" [buttonsConfig]="buttonsConfigCustom">
+    </ks-modal-gallery>
+</div>
