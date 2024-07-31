@@ -40,7 +40,7 @@
     .cal-month-view .cal-header .cal-cell {
         padding: 10px 0;
     }
-    .cal-cell { 
+    .cal-cell {
         border-right: 1px solid #e3e4e9;
     }
     .cal-cell:last-child {
@@ -101,4 +101,34 @@
         background: #705ec8;
         color: #fff;
     }
+  .main-img-user-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;  /* Ajustez cette valeur selon vos besoins */
+  }
+
+  .main-img-user {
+    flex-shrink: 0;
+  }
+
+  .small-image {
+    width: 80px;  /* Ajustez cette valeur selon vos besoins */
+    height: 80px; /* Ajustez cette valeur selon vos besoins */
+    object-fit: cover;
+    border-radius: 50%; /* Assure que l'image reste arrondie */
+  }
+
+  .camera-icon {
+    margin-left: 10px; /* Ajustez cette valeur selon vos besoins */
+    cursor: pointer;
+  }
+
+  .small-upload {
+    display: flex;
+    align-items: center;
+    width: 100px; /* Ajustez cette valeur selon vos besoins */
+    height: 80px; /* Ajustez cette valeur selon vos besoins */
+  }
+
 }

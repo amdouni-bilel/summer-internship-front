@@ -9,6 +9,7 @@ export class Contacts {
   private post: string;
   private comment: string;
   private _image: string;
+  private _qr_code: string
 
   constructor(
     id: number,
@@ -20,7 +21,8 @@ export class Contacts {
     tlph: string,
     post: string,
     comment: string,
-    image: string
+    image: string,
+    qr_code: string
   ) {
     this.id = id;
     this.fname = fname;
@@ -32,6 +34,7 @@ export class Contacts {
     this.post = post;
     this.comment = comment;
     this._image = image;
+    this._qr_code = qr_code;
   }
 
   getId(): number {
@@ -112,5 +115,13 @@ export class Contacts {
 
   set image(value: string) {
     this._image = value;
+  }
+
+  get qr_code(): string {
+    return this._qr_code;
+  }
+
+  set qr_code(value: string) {
+    this._qr_code = value;
   }
 }
