@@ -5,6 +5,7 @@ import {Observable, Subject} from 'rxjs';
 import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import 'flatpickr/dist/flatpickr.css';
 import PerfectScrollbar from 'perfect-scrollbar';
+<<<<<<< HEAD
 import {ContactsService} from './contacts.service';
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
@@ -16,6 +17,11 @@ import Qrious from 'qrious';
 //import * as jsPDF from "jspdf";
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+=======
+import { ContactsService } from './contacts.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+>>>>>>> 247af12b6f843592d5eb07242e7e802a2c041c48
 
 const colors: any = {
   red: {
@@ -36,13 +42,18 @@ const colors: any = {
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss'],
+<<<<<<< HEAD
   encapsulation: ViewEncapsulation.None
+=======
+  // encapsulation: ViewEncapsulation.None
+>>>>>>> 247af12b6f843592d5eb07242e7e802a2c041c48
 })
 export class ContactsComponent implements OnInit {
   qrCodeImage: string;
   coordonneeGroup: FormGroup;
   contacts: any[] = [];
   filteredContacts: any[] = [];
+<<<<<<< HEAD
   displayedContact: any = {
     nom: "",
     prenom: "",
@@ -62,10 +73,15 @@ export class ContactsComponent implements OnInit {
 
   @ViewChild('fileInput') fileInput: ElementRef;
   private http: any;
+=======
+  displayedContact: any = {"nom":"","prenom":"","adresseSociete":"","commentaire":"","id":"","post":"","societe":"","telephone":"","telephoneSociete":""};
+  searchText: string = '';
+>>>>>>> 247af12b6f843592d5eb07242e7e802a2c041c48
 
   constructor(private modal: NgbModal,
               private contactService: ContactsService,
               private toaster: ToastrService,
+<<<<<<< HEAD
               private _formBuilder: FormBuilder) {
   }
 
@@ -206,6 +222,54 @@ export class ContactsComponent implements OnInit {
                 }
               })
             );
+=======
+              private _formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.loadContacts();
+    this.emptyForm();
+  }
+
+  loadContacts() {
+    this.contactService.getAllContacts().subscribe(
+      (data) => {
+        this.contacts = data;
+        this.filteredContacts = this.contacts;
+        console.log('Contacts:', this.contacts);
+      },
+      (error) => {
+        console.error('Error fetching contacts:', error);
+      }
+    );
+  }
+
+  searchContacts() {
+    this.filteredContacts = this.contacts.filter(contact =>
+      (contact.nom + ' ' + contact.prenom).toLowerCase().includes(this.searchText.trim().toLowerCase())
+    );
+  }
+
+  clearSearch() {
+    this.searchText = '';
+    this.filteredContacts = this.contacts;
+  }
+
+  saveContact() {
+    if (this.coordonneeGroup.valid) {
+      console.log('Form Value:', this.coordonneeGroup.value);
+
+      this.contactService.savecontact(this.coordonneeGroup.value)
+        .subscribe(
+          data => {
+            this.toaster.success('Contact ajouté avec succès');
+            this.closePopup();
+            this.emptyForm();
+            this.loadContacts();
+          },
+          error => {
+            console.error('Erreur lors de l\'ajout du contact:', error);
+            this.toaster.error('Erreur lors de l\'ajout du contact');
+>>>>>>> 247af12b6f843592d5eb07242e7e802a2c041c48
           }
         })
       ).subscribe();
@@ -215,6 +279,7 @@ export class ContactsComponent implements OnInit {
   }
 */
 
+<<<<<<< HEAD
   // contacts.component.ts
   saveContact() {
     if (this.coordonneeGroup.valid) {
@@ -348,6 +413,39 @@ export class ContactsComponent implements OnInit {
         error => {
           console.error('Error updating contact:', error);
           this.toaster.error('Error updating contact');
+=======
+  deleteContact(id: any) {
+    const confirmation = confirm("Êtes-vous sûr de vouloir supprimer ce contact ?");
+    if (confirmation) {
+      this.contactService.deletecontact(id).subscribe(
+        () => {
+          console.log("Delete successful");
+          this.loadContacts();
+        },
+        error => {
+          console.error("Delete failed:", error);
+          this.loadContacts();
+        }
+      );
+    } else {
+      console.log("Suppression annulée par l'utilisateur");
+    }
+  }
+
+  updateContact() {
+    if (this.coordonneeGroup.valid) {
+      const id = this.coordonneeGroup.value.id;
+      this.contactService.updateContact(id, this.coordonneeGroup.value).subscribe(
+        data => {
+          this.toaster.success('Successfully updated');
+          this.closePopup();
+          this.emptyForm();
+          this.loadContacts();
+        },
+        error => {
+          console.error('Update failed:', error);
+          this.toaster.error('Failed to update');
+>>>>>>> 247af12b6f843592d5eb07242e7e802a2c041c48
         }
       );
     } else {
@@ -355,6 +453,7 @@ export class ContactsComponent implements OnInit {
     }
   }
 
+<<<<<<< HEAD
 
   exportToPDF() {
     const doc = new jsPDF('p', 'mm', 'a4');
@@ -462,6 +561,12 @@ export class ContactsComponent implements OnInit {
     this.displayedContact = newDispContact;
   }
 
+=======
+  changeDisplayedContact(newDispContact: any) {
+    this.displayedContact = newDispContact;
+  }
+
+>>>>>>> 247af12b6f843592d5eb07242e7e802a2c041c48
   @ViewChild('modalContent') modalContent!: TemplateRef<any>;
   modalRef: NgbModalRef | undefined;
   modalData: {
@@ -509,6 +614,7 @@ export class ContactsComponent implements OnInit {
   ngAfterViewInit() {
     const scroll1 = document.querySelector('#mainContactList');
     let ps = new PerfectScrollbar(scroll1);
+<<<<<<< HEAD
   }
 
   onCameraClick() {
@@ -543,5 +649,7 @@ export class ContactsComponent implements OnInit {
         this.toaster.error('Please select a contact before uploading an image.');
       }
     }
+=======
+>>>>>>> 247af12b6f843592d5eb07242e7e802a2c041c48
   }
 }

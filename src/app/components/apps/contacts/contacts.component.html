@@ -33,8 +33,12 @@
           </div>
 
           <div class="input-group mb-3">
+<<<<<<< HEAD
             <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search contacts"
                    (input)="searchContacts()">
+=======
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search contacts" (input)="searchContacts()">
+>>>>>>> 247af12b6f843592d5eb07242e7e802a2c041c48
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="button" (click)="clearSearch()">Clear</button>
             </div>
@@ -48,8 +52,13 @@
                        alt="Contact Image" class="avatar avatar-md brround">
                 </div>
                 <div class="main-contact-body">
+<<<<<<< HEAD
                   <h6>{{ contact.fname }} {{ contact.lname }}</h6>
                   <span class="phone">{{ contact.tlph }}</span>
+=======
+                  <h6>{{contact.fname}} {{contact.lname}}</h6>
+                  <span class="phone">{{contact.tlph}}</span>
+>>>>>>> 247af12b6f843592d5eb07242e7e802a2c041c48
                 </div>
               </div>
             </div>
