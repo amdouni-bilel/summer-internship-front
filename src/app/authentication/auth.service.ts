@@ -90,4 +90,12 @@ export class AuthService {
   checkUsernameExists(username: string): Observable<{ exists: boolean }> {
     return this.http.get<{ exists: boolean }>(`${this.apiUrl}/usernameExists?username=${username}`);
   }
+
+
+  getCurrentUserRole(): string {
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log('Current user:', user); 
+    return user && user.roles ? user.roles : null;
+  }
+  
 }

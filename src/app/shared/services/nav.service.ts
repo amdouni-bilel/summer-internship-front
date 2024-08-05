@@ -82,7 +82,7 @@ export class NavService implements OnInit, OnDestroy {
       .subscribe(
         utilisateur => {
           this.utilisateur = utilisateur;
-          console.log(utilisateur); // Vous pouvez afficher ou traiter les données ici
+          console.log(utilisateur); 
         },
         error => {
           console.log(error);

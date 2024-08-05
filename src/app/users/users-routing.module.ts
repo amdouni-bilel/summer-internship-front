@@ -9,6 +9,8 @@ import { ModifyCongeComponent } from '../conges/modify-conge/modify-conge.compon
 import { ListMyCongesComponent } from '../myconges/list-myconges/list-myconges.component';
 import { ModifyMyCongeComponent } from '../myconges/modify-myconges/modify-myconges.component';
 import { AddMyCongeComponent } from '../myconges/add-myconges/add-myconges.component';
+import { AuthGuard } from '../auth.guard';
+import { NotAuthorizedComponent } from '../not-authorized/not-authorized.component';
 
 
 const routes: Routes = [ {
@@ -16,24 +18,38 @@ const routes: Routes = [ {
   children: [
     {
       path: 'list-users',
-      component: ListUsersComponent
+      component: ListUsersComponent,
+      canActivate: [AuthGuard],
+    data: { role: 'ADMIN' } 
       
     },
     {
       path : 'add-user',
-      component :AddUserComponent
+      component :AddUserComponent,
+      canActivate: [AuthGuard],
+    data: { role: 'ADMIN' } 
     },
-    { path: 'modify-user/:id', component: ModifyUserComponent },
+    { path: 'modify-user/:id', component: ModifyUserComponent ,
+      canActivate: [AuthGuard],
+    data: { role: 'ADMIN' } },
 
 
-    {path: 'list-conges', component: ListCongesComponent},
-    {path: 'add-conge', component: AddCongeComponent},
-    { path: 'modify-conge/:id', component: ModifyCongeComponent},
+    {path: 'list-conges', component: ListCongesComponent,
+      canActivate: [AuthGuard],
+    data: { role: 'ADMIN' } },
+    {path: 'add-conge', component: AddCongeComponent,
+      canActivate: [AuthGuard],
+    data: { role: 'ADMIN' } },
+    { path: 'modify-conge/:id', component: ModifyCongeComponent,
+      canActivate: [AuthGuard],
+    data: { role: 'ADMIN' } },
 
 
     {path: 'list-myconges' , component :ListMyCongesComponent},
     { path: 'modify-myconge/:id', component: ModifyMyCongeComponent},
     {path: 'add-myconge', component: AddMyCongeComponent},
+
+    {path : 'not-authorized', component: NotAuthorizedComponent}
 
 
 

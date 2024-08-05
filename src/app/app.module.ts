@@ -37,6 +37,7 @@ import { ModifyCongeComponent } from './conges/modify-conge/modify-conge.compone
 import { ListMyCongesComponent } from './myconges/list-myconges/list-myconges.component';
 import { ModifyMyCongeComponent } from './myconges/modify-myconges/modify-myconges.component';
 import { AddMyCongeComponent } from './myconges/add-myconges/add-myconges.component';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 // import { MailmanagerService } from './administration/mailmanager/mailmanager.service';
 
 
@@ -54,6 +55,7 @@ import { AddMyCongeComponent } from './myconges/add-myconges/add-myconges.compon
     ListMyCongesComponent,
     ModifyMyCongeComponent,
     AddMyCongeComponent,
+    NotAuthorizedComponent,
 
   ],
   imports: [
