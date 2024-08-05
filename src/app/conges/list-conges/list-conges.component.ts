@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CongesService } from '../conges.service';
+import { UsersService } from 'src/app/users/services/users.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Conges } from 'src/app/auth/models/conges';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { UserView } from '../../auth/models/user-view';
 
 @Component({
   selector: 'app-list-conges',
@@ -20,7 +22,8 @@ export class ListCongesComponent implements OnInit {
 
   constructor(
     private congesService: CongesService,
-    private toastr: ToastrService,
+    private usersService: UsersService, 
+    private toastrService: ToastrService, 
     private router: Router
   ) {}
 
@@ -33,7 +36,7 @@ export class ListCongesComponent implements OnInit {
         console.log("List of Conges:", this.conges);
       },
       error => {
-        this.toastr.error('Failed to load leaves');
+        this.toastrService.error('Failed to load leaves');
         console.error('Error loading leaves:', error);
       }
     );
@@ -61,9 +64,9 @@ export class ListCongesComponent implements OnInit {
         this.congesService.deleteConge(congeId).subscribe(() => {
           this.conges = this.conges.filter(conge => conge.id !== congeId);
           this.filteredConges = this.filteredConges.filter(conge => conge.id !== congeId);
-          this.toastr.success('Leave deleted successfully!');
+          this.toastrService.success('Leave deleted successfully!');
         }, error => {
-          this.toastr.error('Failed to delete leave');
+          this.toastrService.error('Failed to delete leave');
           console.error('Error deleting leave:', error);
         });
       }
@@ -95,16 +98,41 @@ export class ListCongesComponent implements OnInit {
             if (conge) {
               conge.confirmed = true;
             }
-            this.toastr.success('Congé confirmé !');
+            this.toastrService.success('Congé confirmé !');
           },
           error => {
-            this.toastr.error('Error confirming leave');
+            this.toastrService.error('Error confirming leave');
             console.error('Error confirming leave:', error);
           }
         );
       }
     });
   }
+
+  fetchUserDetails(userId: number) {
+    this.usersService.getUserById(userId).subscribe(
+      (user: UserView) => {
+        console.log('User Details:', user);
+        Swal.fire({
+          title: 'User Details',
+          html: `
+            <p><strong>Full Name:</strong> ${user.fullName}</p>
+            <p><strong>Email:</strong> ${user.username}</p>
+            <p><strong>Jours Congé:</strong> ${user.joursCong}</p>
+            <p><strong>Role:</strong> ${user.roles}</p>
+
+          `,
+          icon: 'info',
+          confirmButtonText: 'Close'
+        });
+      },
+      error => {
+        this.toastrService.error('Failed to load user details');
+        console.error('Error loading user details:', error);
+      }
+    );
+  }
+
   generatePdf() {
     const doc = new jsPDF();
 
@@ -144,5 +172,4 @@ export class ListCongesComponent implements OnInit {
 
     doc.save('conges-list.pdf');
   }
-
 }

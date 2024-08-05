@@ -97,5 +97,7 @@ export class AuthService {
     console.log('Current user:', user); 
     return user && user.roles ? user.roles : null;
   }
+
+  
   
 }
