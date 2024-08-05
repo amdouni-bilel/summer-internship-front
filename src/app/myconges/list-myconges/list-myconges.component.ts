@@ -18,6 +18,7 @@ export class ListMyCongesComponent implements OnInit {
   conges: Conges[] = [];
   filteredConges: Conges[] = [];
   searchTerm: string = '';
+  userJoursCong: number = 0;  // Add this property
 
   constructor(
     private congesService: MyCongesService,
@@ -30,6 +31,7 @@ export class ListMyCongesComponent implements OnInit {
     this.authService.getCurrentUser().subscribe(
       (currentUser) => {
         if (currentUser) {
+          this.userJoursCong = currentUser.joursCong;  // Fetch the joursCong of the connected user
           this.congesService.getCongesByUser(currentUser.id).subscribe(
             (conges: Conges[]) => {
               this.conges = conges;
