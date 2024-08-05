@@ -79,6 +79,13 @@ export class ListMyCongesComponent implements OnInit {
         this.congesService.deleteConge(congeId).subscribe(() => {
           this.conges = this.conges.filter(conge => conge.id !== congeId);
           this.filteredConges = this.filteredConges.filter(conge => conge.id !== congeId);
+  
+          this.authService.getCurrentUser().subscribe(
+            (currentUser) => {
+              this.userJoursCong = currentUser.joursCong;
+            }
+          );
+  
           this.toastr.success('Leave deleted successfully!');
         }, error => {
           this.toastr.error('Failed to delete leave');
@@ -87,6 +94,7 @@ export class ListMyCongesComponent implements OnInit {
       }
     });
   }
+  
 
   confirmConge(id: number) {
     Swal.fire({
