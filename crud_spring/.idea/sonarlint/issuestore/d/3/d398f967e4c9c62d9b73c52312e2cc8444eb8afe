@@ -1,14 +1,14 @@
 
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8©ï‹«2J$45a3c709-f1c7-47c9-9c80-6562d7c28522
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8©ï‹«2J$2dd22bdf-1416-479a-8510-e739fd279451
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8­ï‹«2J$868b1a75-8c3f-4961-bd90-f023b6cf6806
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8­ï‹«2J$9b9b01f3-89e8-4262-b0a5-0444ebdf7fe3
 n
-java:S1452,"&Remove usage of generic wildcard type.(ĞËØÉøÿÿÿÿ8ñı·­2J$9a69d8ec-448a-4380-a6d0-f04d881080cc
+java:S1452,"&Remove usage of generic wildcard type.(ĞËØÉøÿÿÿÿ8ñı·­2J$d57e2b68-feb9-4df6-8554-31e529a29f8a
 i
-java:S1452?"&Remove usage of generic wildcard type.(ÚÓÙü8õı·­2J$4a81d1b5-fa92-462f-9db4-eba7462d5a21
+java:S1452?"&Remove usage of generic wildcard type.(ÚÓÙü8õı·­2J$7281ad84-d081-416a-a728-08d09c4f2b8d
 n
-java:S1452I"&Remove usage of generic wildcard type.(‡ùŠŠüÿÿÿÿ8•ñÂ®2J$4a746fb8-4b66-48a7-ac93-f6bbb3c3387e
+java:S1452I"&Remove usage of generic wildcard type.(‡ùŠŠüÿÿÿÿ8•ñÂ®2J$2479e353-732e-45d1-af0c-053532774afd
 Œ
-java:S2147R"DCombine this catch with the one at line 78, which has the same body.(Æ†Ì•üÿÿÿÿ8²ñÂ®2J$24bf5bc2-be9d-444d-b5cf-2a29f96d44f8
-r	java:S106K"+Replace this use of System.out by a logger.(üò•şÿÿÿÿ8²ñÂ®2J$5c9bd07a-38bd-46fd-ab7f-02e615a6ab28
+java:S2147R"DCombine this catch with the one at line 78, which has the same body.(Æ†Ì•üÿÿÿÿ8²ñÂ®2J$99e49fcb-33af-4b44-971b-5e9909e88f02
+r	java:S106K"+Replace this use of System.out by a logger.(üò•şÿÿÿÿ8²ñÂ®2J$d921ac33-9df6-4a95-a37e-d32b4847dce8

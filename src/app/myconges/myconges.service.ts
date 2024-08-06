@@ -24,7 +24,7 @@ export class MyCongesService {
   }
 
   deleteConge(congeId: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/${congeId}`);
+    return this.http.delete<void>(`${this.baseUrl}/delete/${congeId}`);
   }
 
   confirmConge(congeId: number): Observable<Conges> {

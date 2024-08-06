@@ -120,7 +120,18 @@ public class CongesService {
       User user = conges.getUser();
       user.setJoursCong(user.getJoursCong() + conges.getJoursCong());
       userRepository.save(user);
+      emailClass.sendRejectionEmail(user.getUsername(), user.getFullName(), conges.getDateDebut(), conges.getDateFin());
     }
     congesRepository.delete(conges);
   }
+  public void deleteMyConges(Long id) {
+    Conges conges = getCongesById(id);
+    if (conges.getUser() != null) {
+      User user = conges.getUser();
+      user.setJoursCong(user.getJoursCong() + conges.getJoursCong());
+      userRepository.save(user);
+    }
+    congesRepository.delete(conges);
+  }
+
 }

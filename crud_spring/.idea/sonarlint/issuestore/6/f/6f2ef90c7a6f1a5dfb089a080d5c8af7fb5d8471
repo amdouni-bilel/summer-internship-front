@@ -1,16 +1,44 @@
 
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•µÝ®øÿÿÿÿ8“ì½Â’2
-g	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8˜ì½Â’2
-g	java:S112L"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8šì½Â’2
-r
-java:S1192	"UDefine a constant instead of duplicating this literal "Innohire45@gmail.com" 3 times.(­ì…’8žì½Â’2
-”
-java:S5527"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8¦ì½Â’2
-W
-java:S1161":Add the "@Override" annotation above this method signature(‡èú×8ªì½Â’2
-L	java:S106)"+Replace this use of System.out by a logger.(Òžë¨úÿÿÿÿ8±ì½Â’2
-”
-java:S55274"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8¶ì½Â’2
-W
-java:S1161<":Add the "@Override" annotation above this method signature(‡èú×8¸ì½Â’2
-G	java:S106J"+Replace this use of System.out by a logger.( ·»Å8¾ì½Â’2
+˜	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•µÝ®øÿÿÿÿ8â‰Æ’2J$ce779dc5-ea28-48f0-b197-b736fcbfe8f8
+	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¡â‰Æ’2J$3671782e-c88a-4330-a5a4-fdd613f9a62c
+	java:S112L"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢â‰Æ’2J$f8ef79f8-3724-4101-a3f3-a61b83e89588
+	java:S112m"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢â‰Æ’2J$0168f49c-f1ff-4d12-90e9-590479d9b09c
+˜
+java:S1192	"UDefine a constant instead of duplicating this literal "Innohire45@gmail.com" 4 times.(­ì…’8¤â‰Æ’2J$be4a615e-ef66-4fbb-9da4-d1e9fb9a5f3c
+¡
+java:S1192"^Define a constant instead of duplicating this literal "mail.smtp.socketFactory.class" 3 times.(’ß‡ƒ8¤â‰Æ’2J$e4b02b2d-234f-4da3-a49d-16e1b1cde1b7
+Ž
+java:S1192"FDefine a constant instead of duplicating this literal "false" 3 times.(´äÊ¢ýÿÿÿÿ8¥â‰Æ’2J$833419c6-5cec-432f-845b-d5524b22fc4b
+‘
+java:S1192"ODefine a constant instead of duplicating this literal "mail.smtp.port" 3 times.(îŸÞJ8¥â‰Æ’2J$b0b65a43-5c6b-487c-b9a1-f0f18b1168f9
+’
+java:S1192"ODefine a constant instead of duplicating this literal "mail.smtp.auth" 3 times.(†™Â‘8¥â‰Æ’2J$a36225d5-f94e-431e-920d-0499b425462a
+›
+java:S1192"XDefine a constant instead of duplicating this literal "mail.smtp.ssl.protocols" 3 times.(…ƒÃ8¦â‰Æ’2J$2ab013bd-18a7-4266-be73-824160418469
+—
+java:S1192"ODefine a constant instead of duplicating this literal "mail.smtp.host" 3 times.(Ê¡­øùÿÿÿÿ8¦â‰Æ’2J$5b913d87-9d94-4629-9215-7e8ce50d9740
+¢
+java:S1192"_Define a constant instead of duplicating this literal "javax.net.ssl.SSLSocketFactory" 3 times.(’ß‡ƒ8¦â‰Æ’2J$350eb1bf-83cb-4944-89d0-3a36f637b06e
+˜
+java:S1192"UDefine a constant instead of duplicating this literal "mail.smtp.ssl.enable" 3 times.(Âõ“Ë8§â‰Æ’2J$e25ae8aa-eb67-4b6e-9061-4da01eb85b96
+‹
+java:S1192"HDefine a constant instead of duplicating this literal "TLSv1.2" 3 times.(…ƒÃ8§â‰Æ’2J$ec8680bf-dceb-455e-91f0-7112d58c8c73
+—
+java:S1192"ODefine a constant instead of duplicating this literal "smtp.gmail.com" 3 times.(Ê¡­øùÿÿÿÿ8§â‰Æ’2J$66d4be35-c15d-4ece-b6c1-d07a602b5d05
+©
+java:S1192"aDefine a constant instead of duplicating this literal "mail.smtp.socketFactory.fallback" 3 times.(´äÊ¢ýÿÿÿÿ8¨â‰Æ’2J$6b847e68-1854-478b-8ed1-46d7df2e3545
+º
+java:S5527"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8ºâ‰Æ’2J$a232aa1c-3bf5-4d5d-b6c1-5c422e1f4a5a
+}
+java:S1161":Add the "@Override" annotation above this method signature(‡èú×8½â‰Æ’2J$994e22ed-46fe-4ef9-9008-7d1a3901c019
+r	java:S106)"+Replace this use of System.out by a logger.(Òžë¨úÿÿÿÿ8Ãâ‰Æ’2J$e14aa5c4-2072-4a0d-be35-2ee839a840f6
+º
+java:S55274"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8Êâ‰Æ’2J$024fd9fa-ebb3-4887-bc62-b41549ff4cd2
+}
+java:S1161<":Add the "@Override" annotation above this method signature(‡èú×8Ëâ‰Æ’2J$0ca8f286-c4ec-48c6-8777-34bfba650e12
+m	java:S106J"+Replace this use of System.out by a logger.( ·»Å8Íâ‰Æ’2J$44a8371e-e72b-4808-b4f4-70a1645c354c
+º
+java:S5527U"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8Îâ‰Æ’2J$f87bbe72-f99a-453f-b9b6-7830f54e4d51
+}
+java:S1161]":Add the "@Override" annotation above this method signature(‡èú×8Ðâ‰Æ’2J$22b90d3f-6348-4f60-85f6-ac5a4340391a
+m	java:S106k"+Replace this use of System.out by a logger.(ù¹ë…8Ñâ‰Æ’2J$eb283ffc-b6ca-4c53-a146-b67ef63bfc0f

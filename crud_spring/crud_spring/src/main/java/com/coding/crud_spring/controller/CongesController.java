@@ -93,4 +93,14 @@ public class CongesController {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
   }
+
+  @DeleteMapping("/delete/{id}")
+  public ResponseEntity<Void> deleteMyConges(@PathVariable Long id) {
+    try {
+      congesService.deleteMyConges(id);
+      return ResponseEntity.noContent().build();
+    } catch (ResourceNotFoundException e) {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+    }
+  }
 }
