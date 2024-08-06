@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MyCongesService } from '../myconges.service';
 import { ToastrService } from 'ngx-toastr';
@@ -13,8 +13,8 @@ import { Conges } from 'src/app/auth/models/conges';
 })
 export class ModifyMyCongeComponent implements OnInit {
   congeForm: FormGroup;
-  congeId: number;
   currentUser: any;
+  congeId: number;
 
   constructor(
     private fb: FormBuilder,
@@ -25,21 +25,22 @@ export class ModifyMyCongeComponent implements OnInit {
     private authService: AuthService
   ) {
     this.congeForm = this.fb.group({
-      joursCong: ['', [Validators.required, Validators.min(1)]],
-      dateDebut: ['', Validators.required]
-    });
+      joursCong: [{ value: '', disabled: true }, [Validators.required, Validators.min(1)]],
+      dateDebut: ['', Validators.required],
+      dateFin: ['', Validators.required],
+      type: ['', Validators.required]
+    }, { validators: dateLessThan('dateDebut', 'dateFin') });
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.congeId = +params.get('id');
-      console.log('Conge ID:', this.congeId);  
       this.loadCongeDetails(this.congeId);
     });
 
     this.authService.getCurrentUser().subscribe(
       (currentUser) => {
-        console.log('Current User:', currentUser);  
+        console.log('Current User:', currentUser);
         if (currentUser && currentUser.id) {
           this.currentUser = currentUser;
         } else {
@@ -53,15 +54,19 @@ export class ModifyMyCongeComponent implements OnInit {
         this.router.navigate(['/login']);
       }
     );
+
+    this.congeForm.get('dateDebut')?.valueChanges.subscribe(() => this.calculateDaysOff());
+    this.congeForm.get('dateFin')?.valueChanges.subscribe(() => this.calculateDaysOff());
   }
 
   loadCongeDetails(id: number) {
     this.congesService.getCongeById(id).subscribe(
       conge => {
-        console.log('Loaded Conges:', conge);  
         this.congeForm.patchValue({
           joursCong: conge.joursCong,
-          dateDebut: conge.dateDebut
+          dateDebut: conge.dateDebut,
+          dateFin: conge.dateFin,
+          type: conge.type
         });
       },
       error => {
@@ -71,15 +76,30 @@ export class ModifyMyCongeComponent implements OnInit {
     );
   }
 
+  calculateDaysOff() {
+    const dateDebut = this.congeForm.get('dateDebut')?.value;
+    const dateFin = this.congeForm.get('dateFin')?.value;
+
+    if (dateDebut && dateFin && dateDebut < dateFin) {
+      const diffInMs = new Date(dateFin).getTime() - new Date(dateDebut).getTime();
+      const diffInDays = diffInMs / (1000 * 60 * 60 * 24) + 1; // Adding 1 to include the start date
+      this.congeForm.get('joursCong')?.setValue(diffInDays);
+    } else {
+      this.congeForm.get('joursCong')?.setValue('');
+    }
+  }
+
   submit() {
     if (this.congeForm.valid) {
       const congeData: Partial<Conges> = {
-        user: { id: this.currentUser.id },  
-        joursCong: this.congeForm.value.joursCong,
-        dateDebut: this.congeForm.value.dateDebut
+        user: { id: this.currentUser.id },
+        joursCong: this.congeForm.get('joursCong')?.value,
+        dateDebut: this.congeForm.get('dateDebut')?.value,
+        dateFin: this.congeForm.get('dateFin')?.value,
+        type: this.congeForm.get('type')?.value
       };
 
-      console.log('Submitting congeData:', congeData);  
+      console.log('Submitting congeData:', congeData);
 
       this.congesService.updateConge(this.congeId, congeData).subscribe(
         response => {
@@ -96,11 +116,24 @@ export class ModifyMyCongeComponent implements OnInit {
         }
       );
     } else {
-      this.congeForm.markAllAsTouched();  
+      this.congeForm.markAllAsTouched();
     }
   }
 
   navigateToListMyConges() {
     this.router.navigate(['/users/list-myconges']);
   }
+}
+
+export function dateLessThan(startDateField: string, endDateField: string): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const startDate = control.get(startDateField)?.value;
+    const endDate = control.get(endDateField)?.value;
+
+    if (startDate && endDate && startDate >= endDate) {
+      control.get(endDateField)?.setErrors({ dateLessThan: true });
+      return { dateLessThan: true };
+    }
+    return null;
+  };
 }

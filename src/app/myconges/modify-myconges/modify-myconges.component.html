@@ -1,28 +1,45 @@
 <div class="container">
-    <div class="card mt-4">
-      <div class="card-header">
-        <h2>Modifier Mon Congé</h2>
-      </div>
-      <div class="card-body">
-        <form [formGroup]="congeForm" (ngSubmit)="submit()">
-          <div class="form-group">
-            <label for="joursCong">Days Off</label>
-            <input type="number" id="joursCong" formControlName="joursCong" class="form-control">
-            <div *ngIf="congeForm.get('joursCong').touched && congeForm.get('joursCong').invalid" class="text-danger">
-              <div *ngIf="congeForm.get('joursCong').errors.required">Days Off is required.</div>
-              <div *ngIf="congeForm.get('joursCong').errors.min">Days Off must be at least 1.</div>
-            </div>
+  <div class="card mt-4">
+    <div class="card-header">
+      <h2>Modifier Mon Congé</h2>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="congeForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="joursCong">Days Off</label>
+          <input type="number" id="joursCong" formControlName="joursCong" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+          <label for="dateDebut">Start Date</label>
+          <input type="date" id="dateDebut" formControlName="dateDebut" class="form-control">
+          <div *ngIf="congeForm.get('dateDebut').touched && congeForm.get('dateDebut').invalid" class="text-danger">
+            <div *ngIf="congeForm.get('dateDebut').errors.required">Start Date is required.</div>
           </div>
-          <div class="form-group">
-            <label for="dateDebut">Start Date</label>
-            <input type="date" id="dateDebut" formControlName="dateDebut" class="form-control">
-            <div *ngIf="congeForm.get('dateDebut').touched && congeForm.get('dateDebut').invalid" class="text-danger">
-              <div *ngIf="congeForm.get('dateDebut').errors.required">Start Date is required.</div>
-            </div>
+        </div>
+        <div class="form-group">
+          <label for="dateFin">End Date</label>
+          <input type="date" id="dateFin" formControlName="dateFin" class="form-control">
+          <div *ngIf="congeForm.get('dateFin').touched && congeForm.get('dateFin').invalid" class="text-danger">
+            <div *ngIf="congeForm.get('dateFin').errors.required">End Date is required.</div>
+            <div *ngIf="congeForm.errors?.dateLessThan">Start Date should be before End Date.</div>
           </div>
-          <button type="submit" class="btn btn-primary" [disabled]="congeForm.invalid">Submit</button>
-          <button type="button" class="btn btn-secondary" (click)="navigateToListMyConges()">Back to List</button>
-        </form>
-      </div>
+        </div>
+        <div class="form-group">
+          <label for="type">Type</label>
+          <select id="type" formControlName="type" class="form-control">
+            <option value="Congé maladie">Congé maladie</option>
+            <option value="Congé maternité">Congé maternité</option>
+            <option value="Congé annuel">Congé annuel</option>
+            <option value="Congé d'urgence">Congé d'urgence</option>
+            <option value="Congé pour études">Congé pour études</option>
+          </select>
+          <div *ngIf="congeForm.get('type').touched && congeForm.get('type').invalid" class="text-danger">
+            <div *ngIf="congeForm.get('type').errors.required">Type is required.</div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="congeForm.invalid">Submit</button>
+        <button type="button" class="btn btn-secondary" (click)="navigateToListMyConges()">Back to List</button>
+      </form>
     </div>
   </div>
+</div>

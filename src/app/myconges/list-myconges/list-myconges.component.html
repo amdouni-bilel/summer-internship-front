@@ -46,6 +46,8 @@
                             <th>User Full Name</th>
                             <th>Days Off</th>
                             <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Type</th>
                             <th>Confirmed</th>
                             <th>Actions</th>
                         </tr>
@@ -55,6 +57,8 @@
                             <td>{{ conge.user.fullName }}</td>
                             <td>{{ conge.joursCong }}</td>
                             <td>{{ conge.dateDebut }}</td>
+                            <td>{{ conge.dateFin }}</td>
+                            <td>{{ conge.type }}</td>
                             <td>{{ conge.confirmed ? 'Yes' : 'No' }}</td>
                             <td>
                                 <button class="btn btn-danger btn-sm" (click)="deleteConge(conge.id)" style="padding: 10px 8px; font-size: 12px; margin-right: 2px;">

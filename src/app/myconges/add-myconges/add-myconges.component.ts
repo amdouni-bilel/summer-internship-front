@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MyCongesService } from '../myconges.service';
 import { ToastrService } from 'ngx-toastr';
@@ -23,15 +23,17 @@ export class AddMyCongeComponent implements OnInit {
     private authService: AuthService
   ) {
     this.congeForm = this.fb.group({
-      joursCong: ['', [Validators.required, Validators.min(1)]],
-      dateDebut: ['', Validators.required]
-    });
+      joursCong: [{ value: '', disabled: true }, [Validators.required, Validators.min(1)]],
+      dateDebut: ['', Validators.required],
+      dateFin: ['', Validators.required],
+      type: ['', Validators.required]
+    }, { validators: dateLessThan('dateDebut', 'dateFin') });
   }
 
   ngOnInit() {
     this.authService.getCurrentUser().subscribe(
       (currentUser) => {
-        console.log('Current User:', currentUser);  
+        console.log('Current User:', currentUser);
         if (currentUser && currentUser.id) {
           this.currentUser = currentUser;
         } else {
@@ -45,14 +47,32 @@ export class AddMyCongeComponent implements OnInit {
         this.router.navigate(['/login']);
       }
     );
+
+    this.congeForm.get('dateDebut')?.valueChanges.subscribe(() => this.calculateDaysOff());
+    this.congeForm.get('dateFin')?.valueChanges.subscribe(() => this.calculateDaysOff());
+  }
+
+  calculateDaysOff() {
+    const dateDebut = this.congeForm.get('dateDebut')?.value;
+    const dateFin = this.congeForm.get('dateFin')?.value;
+
+    if (dateDebut && dateFin && dateDebut < dateFin) {
+      const diffInMs = new Date(dateFin).getTime() - new Date(dateDebut).getTime();
+      const diffInDays = diffInMs / (1000 * 60 * 60 * 24) + 1; // Adding 1 to include the start date
+      this.congeForm.get('joursCong')?.setValue(diffInDays);
+    } else {
+      this.congeForm.get('joursCong')?.setValue('');
+    }
   }
 
   submit() {
     if (this.congeForm.valid) {
       const congeData: Partial<Conges> = {
         user: { id: this.currentUser.id },
-        joursCong: this.congeForm.value.joursCong,
-        dateDebut: this.congeForm.value.dateDebut
+        joursCong: this.congeForm.get('joursCong')?.value,
+        dateDebut: this.congeForm.get('dateDebut')?.value,
+        dateFin: this.congeForm.get('dateFin')?.value,
+        type: this.congeForm.get('type')?.value
       };
 
       console.log('Submitting congeData:', congeData);
@@ -79,4 +99,17 @@ export class AddMyCongeComponent implements OnInit {
   navigateToListMyConges() {
     this.router.navigate(['/users/list-myconges']);
   }
+}
+
+export function dateLessThan(startDateField: string, endDateField: string): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const startDate = control.get(startDateField)?.value;
+    const endDate = control.get(endDateField)?.value;
+
+    if (startDate && endDate && startDate >= endDate) {
+      control.get(endDateField)?.setErrors({ dateLessThan: true });
+      return { dateLessThan: true };
+    }
+    return null;
+  };
 }

@@ -61,6 +61,8 @@ export class ListMyCongesComponent implements OnInit {
     const searchTerm = this.searchTerm.toLowerCase();
     this.filteredConges = this.conges.filter(conge =>
       conge.dateDebut.toLowerCase().includes(searchTerm) ||
+      conge.dateFin.toLowerCase().includes(searchTerm) ||
+      conge.type.toLowerCase().includes(searchTerm) ||
       (conge.confirmed ? 'Yes' : 'No').toLowerCase().includes(searchTerm)
     );
   }
@@ -94,42 +96,15 @@ export class ListMyCongesComponent implements OnInit {
       }
     });
   }
-  
-
-  confirmConge(id: number) {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: 'Do you really want to confirm this leave?',
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, confirm it!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.congesService.confirmConge(id).subscribe(
-          response => {
-            const conge = this.conges.find(c => c.id === id);
-            if (conge) {
-              conge.confirmed = true;
-            }
-            this.toastr.success('Leave confirmed successfully!');
-          },
-          error => {
-            this.toastr.error('Error confirming leave');
-            console.error('Error confirming leave:', error);
-          }
-        );
-      }
-    });
-  }
 
   navigateToModifyConge(id: number) {
     this.router.navigate(['/users/modify-myconge', id]);
   }
+  
   navigateToAddMyConge() {
     this.router.navigate(['/users/add-myconge']);
   }
+
   generatePdf() {
     const doc = new jsPDF();
 
@@ -138,11 +113,13 @@ export class ListMyCongesComponent implements OnInit {
 
     autoTable(doc, {
       startY: 30,
-      head: [['User', 'Days', 'Start Date', 'Confirmed']],
+      head: [['User', 'Days', 'Start Date', 'End Date', 'Type', 'Confirmed']],
       body: this.filteredConges.map(conge => [
         conge.user.fullName,
         conge.joursCong,
         conge.dateDebut,
+        conge.dateFin,
+        conge.type,
         conge.confirmed ? 'Yes' : 'No'
       ]),
       theme: 'grid',
