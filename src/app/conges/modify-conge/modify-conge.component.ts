@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CongesService } from '../conges.service';
 import { UsersService } from '../../users/services/users.service';
@@ -31,8 +31,10 @@ export class ModifyCongeComponent implements OnInit {
       userId: ['', Validators.required],
       joursCong: ['', [Validators.required, Validators.min(1)]],
       dateDebut: ['', Validators.required],
+      dateFin: ['', Validators.required],
+      type: ['', Validators.required],
       confirmed: [false]
-    });
+    }, { validators: dateLessThan('dateDebut', 'dateFin') });
   }
 
   ngOnInit() {
@@ -40,6 +42,7 @@ export class ModifyCongeComponent implements OnInit {
       this.congeId = +params.get('id');
       this.loadCongeDetails(this.congeId);
       this.loadUsers();
+      this.onDateChange();
     });
   }
 
@@ -50,6 +53,8 @@ export class ModifyCongeComponent implements OnInit {
           userId: conge.user.id,
           joursCong: conge.joursCong,
           dateDebut: conge.dateDebut,
+          dateFin: conge.dateFin,
+          type: conge.type,
           confirmed: conge.confirmed
         });
         this.userId = conge.user.id; // Store the user ID for reference
@@ -73,13 +78,44 @@ export class ModifyCongeComponent implements OnInit {
     );
   }
 
+  onDateChange() {
+    this.congeForm.get('dateDebut')?.valueChanges.subscribe(() => {
+      this.calculateDaysOff();
+    });
+    this.congeForm.get('dateFin')?.valueChanges.subscribe(() => {
+      this.calculateDaysOff();
+    });
+  }
+
+  calculateDaysOff() {
+    const dateDebut = this.congeForm.get('dateDebut')?.value;
+    const dateFin = this.congeForm.get('dateFin')?.value;
+
+    if (dateDebut && dateFin) {
+      const startDate = new Date(dateDebut);
+      const endDate = new Date(dateFin);
+      const timeDiff = endDate.getTime() - startDate.getTime();
+      const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1; // Adding 1 to include both start and end dates
+
+      if (daysDiff > 0) {
+        this.congeForm.get('joursCong')?.setValue(daysDiff);
+      } else {
+        this.congeForm.get('joursCong')?.setValue('');
+      }
+    } else {
+      this.congeForm.get('joursCong')?.setValue('');
+    }
+  }
+
   submit() {
     this.submitted = true;
     if (this.congeForm.valid) {
       const congeData = {
         user: { id: this.congeForm.value.userId },
-        joursCong: this.congeForm.value.joursCong,
+        joursCong: this.congeForm.get('joursCong')?.value,
         dateDebut: this.congeForm.value.dateDebut,
+        dateFin: this.congeForm.value.dateFin,
+        type: this.congeForm.value.type,
         confirmed: this.congeForm.value.confirmed
       };
 
@@ -99,4 +135,17 @@ export class ModifyCongeComponent implements OnInit {
   navigateToListConges() {
     this.router.navigate(['/users/list-conges']);
   }
+}
+
+export function dateLessThan(startDateField: string, endDateField: string): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const startDate = control.get(startDateField)?.value;
+    const endDate = control.get(endDateField)?.value;
+
+    if (startDate && endDate && startDate >= endDate) {
+      control.get(endDateField)?.setErrors({ dateLessThan: true });
+      return { dateLessThan: true };
+    }
+    return null;
+  };
 }

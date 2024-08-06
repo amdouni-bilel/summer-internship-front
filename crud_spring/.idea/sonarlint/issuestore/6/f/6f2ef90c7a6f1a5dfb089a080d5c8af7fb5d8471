@@ -1,19 +1,16 @@
 
-˜	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•µİ®øÿÿÿÿ8¤áÅŒ2J$25f73203-d04d-4f08-914a-1dc8a75b7941
-	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¨áÅŒ2J$1286cdab-3dda-4752-983a-eb257c189ee0
-	java:S112M"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8²¯¾²2J$eca03c67-53b5-4dac-89e3-0bb2e26a629f
-˜
-java:S1192
-"UDefine a constant instead of duplicating this literal "Innohire45@gmail.com" 3 times.(­ì…’8´¯¾²2J$ebb0acce-6e5a-435b-9a0e-e0717fa0e53b
-º
-java:S5527"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8²áÅŒ2J$289c925b-eb43-405f-92f1-babd4f0c2761
-}
-java:S1161":Add the "@Override" annotation above this method signature(‡èú×8ò„òÅŒ2J$f04f1f18-15a1-4634-9fd4-1e84ed4ed5bf
-r	java:S106*"+Replace this use of System.out by a logger.(Òë¨úÿÿÿÿ8µáÅŒ2J$1ce41b62-1489-4076-b655-aa91228dff38
-º
-java:S55275"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8Ê¯¾²2J$5e8e2a81-b4c1-4840-bfe3-482c3dd7e45c
-}
-java:S1161=":Add the "@Override" annotation above this method signature(‡èú×8Í¯¾²2J$3099fd2b-e6d6-40ad-9b6e-d10c42cc95f5
-m	java:S106K"+Replace this use of System.out by a logger.( ·»Å8Ï¯¾²2J$0d99af33-64fb-40f1-aae2-54309546d214
-a
-java:S1128"Remove this duplicated import.(¬µ²8·áÅŒ2J$6a1d5f32-ceb2-4fb7-b542-0418044730c0
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•µİ®øÿÿÿÿ8“ì½Â’2
+g	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8˜ì½Â’2
+g	java:S112L"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8šì½Â’2
+r
+java:S1192	"UDefine a constant instead of duplicating this literal "Innohire45@gmail.com" 3 times.(­ì…’8ì½Â’2
+”
+java:S5527"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8¦ì½Â’2
+W
+java:S1161":Add the "@Override" annotation above this method signature(‡èú×8ªì½Â’2
+L	java:S106)"+Replace this use of System.out by a logger.(Òë¨úÿÿÿÿ8±ì½Â’2
+”
+java:S55274"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(’ß‡ƒ8¶ì½Â’2
+W
+java:S1161<":Add the "@Override" annotation above this method signature(‡èú×8¸ì½Â’2
+G	java:S106J"+Replace this use of System.out by a logger.( ·»Å8¾ì½Â’2

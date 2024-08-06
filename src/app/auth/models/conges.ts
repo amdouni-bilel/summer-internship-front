@@ -3,5 +3,7 @@ export interface Conges {
   user: { id: number; fullName?: string }; 
   joursCong: number;
   dateDebut: string;
+  dateFin: string; 
+  type: string;     
   confirmed: boolean;
 }

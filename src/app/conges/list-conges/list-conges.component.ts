@@ -46,7 +46,8 @@ export class ListCongesComponent implements OnInit {
     const searchTerm = this.searchTerm.toLowerCase();
     this.filteredConges = this.conges.filter(conge =>
       conge.user.fullName.toLowerCase().includes(searchTerm) ||
-      conge.dateDebut.toLowerCase().includes(searchTerm)
+      conge.dateDebut.toLowerCase().includes(searchTerm) ||
+      conge.dateFin.toLowerCase().includes(searchTerm) // Add this line
     );
   }
 
@@ -120,7 +121,6 @@ export class ListCongesComponent implements OnInit {
             <p><strong>Email:</strong> ${user.username}</p>
             <p><strong>Jours Congé:</strong> ${user.joursCong}</p>
             <p><strong>Role:</strong> ${user.roles}</p>
-
           `,
           icon: 'info',
           confirmButtonText: 'Close'
@@ -141,11 +141,12 @@ export class ListCongesComponent implements OnInit {
 
     autoTable(doc, {
       startY: 30,
-      head: [['User', 'Days', 'Start Date', 'Confirmed']],
+      head: [['User', 'Days', 'Start Date', 'End Date', 'Confirmed']], // Add 'End Date' column
       body: this.filteredConges.map(conge => [
         conge.user.fullName,
         conge.joursCong,
         conge.dateDebut,
+        conge.dateFin, // Add this line
         conge.confirmed ? 'Yes' : 'No'
       ]),
       theme: 'grid',

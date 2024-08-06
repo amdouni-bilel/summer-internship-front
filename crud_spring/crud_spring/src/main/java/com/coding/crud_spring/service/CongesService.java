@@ -15,110 +15,112 @@ import java.util.List;
 @Service
 public class CongesService {
 
-    @Autowired
-    private CongesRepository congesRepository;
+  @Autowired
+  private CongesRepository congesRepository;
 
-    @Autowired
-    private UserRepository userRepository;
+  @Autowired
+  private UserRepository userRepository;
 
-    private EmailClass emailClass = new EmailClass();
+  private EmailClass emailClass = new EmailClass();
 
+  public List<Conges> getAllConges() {
+    return congesRepository.findAll();
+  }
 
-    public List<Conges> getAllConges() {
-        return congesRepository.findAll();
+  public Conges getCongesById(Long id) {
+    return congesRepository.findById(id)
+      .orElseThrow(() -> new ResourceNotFoundException("Conges not found with id: " + id));
+  }
+
+  public List<Conges> getCongesByUserId(Long userId) {
+    return congesRepository.findByUserId(userId);
+  }
+
+  public Conges createConges(Conges conges) {
+    if (conges.getUser() == null) {
+      throw new IllegalArgumentException("User must be provided");
     }
 
-    public Conges getCongesById(Long id) {
-        return congesRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Conges not found with id: " + id));
+    User user = userRepository.findById(conges.getUser().getId())
+      .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + conges.getUser().getId()));
+
+    if (user.getJoursCong() < conges.getJoursCong()) {
+      throw new InsufficientDaysException("User does not have enough days off");
     }
 
-    public List<Conges> getCongesByUserId(Long userId) {
-        return congesRepository.findByUserId(userId);
+    user.setJoursCong(user.getJoursCong() - conges.getJoursCong());
+    userRepository.save(user);
+    return congesRepository.save(conges);
+  }
+
+  public Conges confirmConges(Long id) {
+    Conges conges = getCongesById(id);
+    conges.setConfirmed(true);
+    Conges updatedConges = congesRepository.save(conges);
+
+    // Send confirmation email
+    User user = conges.getUser();
+    if (user != null) {
+      String email = user.getUsername();
+      String fullName = user.getFullName();
+      String dateDebut = conges.getDateDebut();
+      String dateFin = conges.getDateFin();
+      emailClass.sendConfirmationEmail(email, fullName, dateDebut, dateFin);
     }
 
-    public Conges createConges(Conges conges) {
-        if (conges.getUser() == null) {
-            throw new IllegalArgumentException("User must be provided");
-        }
+    return updatedConges;
+  }
 
-        User user = userRepository.findById(conges.getUser().getId())
-                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + conges.getUser().getId()));
+  public Conges updateConges(Long id, Conges congesDetails) {
+    Conges conges = getCongesById(id);
 
-        if (user.getJoursCong() < conges.getJoursCong()) {
-            throw new InsufficientDaysException("User does not have enough days off");
-        }
-
-        user.setJoursCong(user.getJoursCong() - conges.getJoursCong());
-        userRepository.save(user);
-        return congesRepository.save(conges);
+    if (congesDetails.getUser() == null || congesDetails.getUser().getId() == null) {
+      throw new IllegalArgumentException("Update Conges: User details must be provided");
     }
 
-    public Conges confirmConges(Long id) {
-        Conges conges = getCongesById(id);
-        conges.setConfirmed(true);
-        Conges updatedConges = congesRepository.save(conges);
+    if (!conges.getUser().getId().equals(congesDetails.getUser().getId())) {
+      User oldUser = conges.getUser();
+      oldUser.setJoursCong(oldUser.getJoursCong() + conges.getJoursCong());
+      userRepository.save(oldUser);
 
-        // Send confirmation email
+      User newUser = userRepository.findById(congesDetails.getUser().getId())
+        .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + congesDetails.getUser().getId()));
+
+      if (newUser.getJoursCong() < congesDetails.getJoursCong()) {
+        throw new InsufficientDaysException("User does not have enough days off");
+      }
+
+      newUser.setJoursCong(newUser.getJoursCong() - congesDetails.getJoursCong());
+      conges.setUser(newUser);
+      userRepository.save(newUser);
+    } else {
+      if (conges.getJoursCong() != congesDetails.getJoursCong()) {
         User user = conges.getUser();
-        if (user != null) {
-            String email = user.getUsername();
-            String fullName = user.getFullName();
-            String dateDebut = conges.getDateDebut();
-            emailClass.sendConfirmationEmail(email, fullName, dateDebut);
+        user.setJoursCong(user.getJoursCong() + conges.getJoursCong() - congesDetails.getJoursCong());
+
+        if (user.getJoursCong() < 0) {
+          throw new InsufficientDaysException("User does not have enough days off");
         }
 
-        return updatedConges;
+        userRepository.save(user);
+      }
     }
 
-    public Conges updateConges(Long id, Conges congesDetails) {
-        Conges conges = getCongesById(id);
+    conges.setJoursCong(congesDetails.getJoursCong());
+    conges.setDateDebut(congesDetails.getDateDebut());
+    conges.setDateFin(congesDetails.getDateFin());
+    conges.setType(congesDetails.getType());
+    conges.setConfirmed(congesDetails.isConfirmed());
+    return congesRepository.save(conges);
+  }
 
-        if (congesDetails.getUser() == null || congesDetails.getUser().getId() == null) {
-            throw new IllegalArgumentException("Update Conges: User details must be provided");
-        }
-
-        if (!conges.getUser().getId().equals(congesDetails.getUser().getId())) {
-            User oldUser = conges.getUser();
-            oldUser.setJoursCong(oldUser.getJoursCong() + conges.getJoursCong());
-            userRepository.save(oldUser);
-
-            User newUser = userRepository.findById(congesDetails.getUser().getId())
-                    .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + congesDetails.getUser().getId()));
-
-            if (newUser.getJoursCong() < congesDetails.getJoursCong()) {
-                throw new InsufficientDaysException("User does not have enough days off");
-            }
-
-            newUser.setJoursCong(newUser.getJoursCong() - congesDetails.getJoursCong());
-            conges.setUser(newUser);
-            userRepository.save(newUser);
-        } else {
-            if (conges.getJoursCong() != congesDetails.getJoursCong()) {
-                User user = conges.getUser();
-                user.setJoursCong(user.getJoursCong() + conges.getJoursCong() - congesDetails.getJoursCong());
-
-                if (user.getJoursCong() < 0) {
-                    throw new InsufficientDaysException("User does not have enough days off");
-                }
-
-                userRepository.save(user);
-            }
-        }
-
-        conges.setJoursCong(congesDetails.getJoursCong());
-        conges.setDateDebut(congesDetails.getDateDebut());
-        conges.setConfirmed(congesDetails.isConfirmed());
-        return congesRepository.save(conges);
+  public void deleteConges(Long id) {
+    Conges conges = getCongesById(id);
+    if (conges.getUser() != null) {
+      User user = conges.getUser();
+      user.setJoursCong(user.getJoursCong() + conges.getJoursCong());
+      userRepository.save(user);
     }
-
-    public void deleteConges(Long id) {
-        Conges conges = getCongesById(id);
-        if (conges.getUser() != null) {
-            User user = conges.getUser();
-            user.setJoursCong(user.getJoursCong() + conges.getJoursCong());
-            userRepository.save(user);
-        }
-        congesRepository.delete(conges);
-    }
+    congesRepository.delete(conges);
+  }
 }
