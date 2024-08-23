@@ -1,0 +1,114 @@
+::ng-deep {
+    .angular-editor-placeholder {
+        display: block;
+    }
+    .ck.ck-toolbar{
+        background: #f0f0f2;
+        border:0;
+        border-radius: 0;
+    }
+    .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused){
+        border: 0;
+    }
+    .ck.ck-editor__main>.ck-editor__editable{
+        outline: 0;
+        height: 200px;
+    }
+    .ck.ck-editor__main{
+        outline: 0;
+        border: 1px solid #ebecf1;
+    }
+    .ck.ck-button:not(.ck-disabled):active, a.ck.ck-button:not(.ck-disabled):active,
+    .ck.ck-button.ck-on, a.ck.ck-button.ck-on{
+        border:1px solid transparent;
+        background:transparent !important;
+        box-shadow: none;
+    }
+    .ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-focused{
+        border:0;
+        box-shadow: none;
+    }
+    .ck.ck-button{
+        padding:10px 15px !important;
+        min-width: inherit;
+        min-height: inherit;
+        margin: 0;
+        border-right: #e2e3e7 solid 1px;
+         border-radius: 0;
+         line-height: initial;
+    }
+    .ck.ck-dropdown, .ck.ck-toolbar>.ck-toolbar__items>*{
+        margin: 0;
+    }
+    .ck.ck-toolbar .ck.ck-toolbar__separator{
+        display: none;
+    }
+    .ck.ck-dropdown__panel{
+        border: 1px solid #ebecf1;
+        box-shadow: 0px 16px 18px rgba(4, 4, 7, 0.1);
+        border-radius: 4px;
+    }
+    .ck.ck-list__item .ck-button:hover:not(.ck-disabled){
+        background: #f0f0f2;
+    }
+    .ck.ck-list__item .ck-button.ck-on{
+       color: #1a1630;
+    }
+    .ck.ck-input-text:focus{
+        border:1px solid #ebecf1;
+        box-shadow: none;
+    }
+
+    //kolkov Custom Styles
+    .angular-editor-toolbar{
+        border:1px solid #e7eaf3 !important;
+        background: #f0f0f2;
+       font: 100 .8rem/8px Roboto,Arial,sans-serif !important;
+        padding: 0 !important;
+    }
+    .angular-editor-toolbar-set button{
+        padding: 10px 15px !important;
+        border-right: #e2e3e7 solid 1px !important;
+        background: #f0f0f2;
+    }
+    .angular-editor-textarea{
+        border: #e2e3e7 solid 1px !important;
+    }
+    .angular-editor-button, .ae-font .ae-picker-label, .angular-editor-button{
+        background: #f0f0f2 !important;
+        background-color: #f0f0f2 !important;
+    }
+    .ae-font .ae-picker-label:before{
+        background:linear-gradient(to right,#f0f0f2,#f0f0f2 100%) !important;
+    }
+    .ae-picker-label{
+        line-height: 12.5px !important;
+        border:0 !important;
+    }
+    .angular-editor-toolbar-set{
+        margin-right: 0 !important;
+    }
+    .angular-editor .angular-editor-wrapper .angular-editor-textarea{
+        outline: 0;
+        margin-top: 0;
+        border-top:0 !important;
+    }
+    .angular-editor-button{
+        border:0 !important;
+    }
+   .angular-editor-button.active{
+        background: #fff !important;
+    }
+    .ae-font.ae-expanded .ae-picker-options{
+        border: 1px solid #ebecf1 !important;
+        box-shadow: 0px 16px 18px rgba(4, 4, 7, 0.1);
+        border-radius: 4px;
+    }
+    .ae-font .ae-picker-options .ae-picker-item.focused, .ae-font .ae-picker-options .ae-picker-item:hover{
+        background: #f0f0f2 !important;
+        color: #1a1630 !important;
+    }
+    .modal-body .card{
+        box-shadow: none;
+    }
+}

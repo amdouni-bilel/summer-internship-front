@@ -1,0 +1,32 @@
+
+
+java:S1192\"HDefine a constant instead of duplicating this literal "message" 3 times.(ş¿§­üÿÿÿÿ8ûÏÕ¬2J$21504ea0-6133-45d8-84dd-063c28571d4c
+
+java:S1192Y"FDefine a constant instead of duplicating this literal "error" 3 times.(¢òËğùÿÿÿÿ8üÏÕ¬2J$89966395-2ef5-49f1-be89-0e1d2617a7b0
+‰
+java:S1192U"FDefine a constant instead of duplicating this literal "email" 3 times.(©·ÔÇ8üÏÕ¬2J$b1f254df-d003-4335-ba2d-7aefb870cbb1
+n
+java:S1452/"&Remove usage of generic wildcard type.(×ÀÓÏúÿÿÿÿ8‡ĞÕ¬2J$0ec27e39-59ef-4eb6-b6bd-299f4cc06875
+˜
+java:S62011"PReplace this instanceof check and cast with 'instanceof UserDetails userdetails'(ñ¢Ÿøÿÿÿÿ8‰ĞÕ¬2J$aa9a57bf-a80c-4b74-bf25-a597654f1a8f
+n
+java:S1452C"&Remove usage of generic wildcard type.(¨÷™ÿÿÿÿÿ8ĞÕ¬2J$a4fc755c-7908-4f4b-86ab-3ddc70604585
+m	java:S106G"+Replace this use of System.out by a logger.(›°˜Ä8ĞÕ¬2J$d55bba63-90e3-442b-933c-d2f604bd223b
+n
+java:S1452T"&Remove usage of generic wildcard type.(×œ›‰şÿÿÿÿ8“ĞÕ¬2J$f114641b-6668-4916-806c-75d8d37e5da6
+h
+java:S1452`"&Remove usage of generic wildcard type.(×Û¥8—ĞÕ¬2J$96b317e5-d6c3-454b-9415-73e4f12731d6
+i
+java:S1452p"&Remove usage of generic wildcard type.(´Œ¢ú8›ĞÕ¬2J$2d83997a-240b-4fe3-8730-1e622e62b773
+”
+java:S1128"LRemove this unused import 'com.coding.crud_spring.dto.ResetPasswordRequest'.(ïçı·şÿÿÿÿ8 ĞÕ¬2J$e78314f5-536f-4ce4-b96d-daa98bc2bee7
+ˆ
+java:S1128"FRemove this unused import 'com.coding.crud_spring.util.LoginResponse'.(¨ÛÛ68 ĞÕ¬2J$11e85b28-8492-42f2-99c1-9f6511272954
+˜
+java:S1128"PRemove this unused import 'io.swagger.v3.oas.annotations.responses.ApiResponse'.(ÑÁÔ¾ıÿÿÿÿ8¡ĞÕ¬2J$4ba66556-c96c-4762-9ec7-e55fa31abfa7
+¤
+java:S1128"aRemove this unused import 'org.springframework.security.core.annotation.AuthenticationPrincipal'.(Øù¢8¡ĞÕ¬2J$60cadc0d-b242-4a24-8a43-bcc350e92c8b
+w
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8£ĞÕ¬2J$de965d62-e08d-48b1-a56e-353b0355a4b2
+u
+java:S1068#"2Remove this unused "userRepository" private field.(¼²Æ÷8¤ĞÕ¬2J$f17e22d0-1407-49b5-857e-d15ed3845b41

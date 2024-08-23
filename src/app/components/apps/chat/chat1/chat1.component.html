@@ -1,0 +1,377 @@
+<!--Page header-->
+<div class="page-header">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">Chat 01</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-grid mr-2 fs-14"></i>Apps</a></li>
+      <li class="breadcrumb-item"><a href="javascript:void(0)">Chat</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Chat 01</a></li>
+    </ol>
+  </div>
+  <div class="page-rightheader">
+    <div class="btn btn-list">
+      <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+      <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+      <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+    </div>
+  </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="card overflow-hidden">
+      <div class="tile tile-alt mb-0" id="messages-main">
+        <div class="ms-menu">
+          <div class="tab-menu-heading border-top-0">
+            <div class="tabs-menu1">
+              <ul ngbNav #nav="ngbNav"  class="nav">
+                <!--[(activeId)]="active"-->
+                <li [ngbNavItem]="1"><a ngbNavLink>Chat</a>
+                  <ng-template ngbNavContent>
+                    <div class="tab-pane">
+                      <ul class="list-group lg-alt chat-conatct-list ChatList-scroll"
+                          id="ChatList1">
+                        <li class="list-group-item media p-4 mt-0 border-0">
+                          <a href="javascript:void(0)">
+                            <div class="float-left pr-2">
+                              <img src="../../assets/images/users/5.jpg" alt=""
+                                   class="avatar avatar-md brround">
+                            </div>
+                            <div class="media-body">
+                              <div
+                                class="list-group-item-heading text-default font-weight-semibold">
+                                Davil
+                                Parnell<span
+                                class="dot-label bg-danger ml-2 w-2 h-2"></span>
+                              </div>
+                              <small class="list-group-item-text text-muted">Fierent
+                                fastidii recteque ad
+                                pro</small>
+                            </div>
+                            <span class="chat-time text-muted">2 mins</span>
+                          </a>
+                        </li>
+                        <li class="list-group-item media p-4 border-top mt-0">
+                          <a href="javascript:void(0)">
+                            <div class="float-left pr-2">
+                              <img src="../../assets/images/users/2.jpg" alt=""
+                                   class="avatar avatar-md brround">
+                            </div>
+                            <div class="media-body">
+                              <div
+                                class="list-group-item-heading text-default font-weight-semibold">
+                                Ann
+                                Watkinson<span
+                                class="dot-label bg-success ml-2 w-2 h-2"></span>
+                              </div>
+                              <small class="list-group-item-text text-muted">Cum sociis
+                                natoque penatibus
+                              </small>
+                            </div>
+                            <span class="chat-time text-muted">10 mins</span>
+                          </a>
+                        </li>
+                        <li class="list-group-item media p-4 border-top mt-0">
+                          <a href="javascript:void(0)">
+                            <div class="float-left pr-2">
+                              <img src="../../assets/images/users/7.jpg" alt=""
+                                   class="avatar avatar-md brround">
+                            </div>
+                            <div class="media-body">
+                              <div
+                                class="list-group-item-heading text-default font-weight-semibold">
+                                Marse
+                                Walter<span
+                                class="dot-label bg-success ml-2 w-2 h-2"></span>
+                              </div>
+                              <small class="list-group-item-text text-muted">Suspendisse
+                                sapien
+                                ligula</small>
+                            </div>
+                            <span class="chat-time text-muted">15 mins</span>
+                          </a>
+                        </li>
+                        <li class="list-group-item media p-4 border-top mt-0">
+                          <a href="javascript:void(0)">
+                            <div class="lv-avatar float-left pr-2">
+                              <img src="../../assets/images/users/3.jpg" alt=""
+                                   class="avatar avatar-md brround">
+                            </div>
+                            <div class="media-body">
+                              <div
+                                class="list-group-item-heading text-default font-weight-semibold">
+                                Jeremy Robbins<span
+                                class="dot-label bg-danger ml-2 w-2 h-2"></span>
+                              </div>
+                              <small class="list-group-item-text text-muted">Phasellus
+                                porttitor tellus
+                                nec</small>
+                            </div>
+                            <span class="chat-time text-muted">30 mins</span>
+                          </a>
+                        </li>
+                        <li class="list-group-item media p-4 border-top mt-0">
+                          <a href="javascript:void(0)">
+                            <div class="lv-avatar float-left pr-2">
+                              <img src="../../assets/images/users/9.jpg" alt=""
+                                   class="avatar avatar-md brround">
+                            </div>
+                            <div class="media-body">
+                              <div
+                                class="list-group-item-heading text-default font-weight-semibold">
+                                Reginald Horace<span
+                                class="dot-label bg-danger ml-2 w-2 h-2"></span>
+                              </div>
+                              <small class="list-group-item-text text-muted">Quisque
+                                consequat arcu
+                                eget</small>
+                            </div>
+                            <span class="chat-time text-muted">50 min</span>
+                          </a>
+                        </li>
+                        <li class="list-group-item media p-4 border-top mt-0">
+                          <a href="javascript:void(0)">
+                            <div class="float-left pr-2">
+                              <img src="../../assets/images/users/6.jpg" alt=""
+                                   class="avatar avatar-md brround">
+                            </div>
+                            <div class="media-body">
+                              <div
+                                class="list-group-item-heading text-default font-weight-semibold">
+                                Shark
+                                Henry<span
+                                class="dot-label bg-success ml-2 w-2 h-2"></span>
+                              </div>
+                              <small class="list-group-item-text text-muted">Nam lobortis
+                                odio et leo
+                                maximu</small>
+                            </div>
+                            <span class="chat-time text-muted">1 day</span>
+                          </a>
+                        </li>
+                        <li class="list-group-item media p-4 border-top mt-0">
+                          <a href="javascript:void(0)">
+                            <div class="float-left pr-2">
+                              <img src="../../assets/images/users/7.jpg" alt=""
+                                   class="avatar avatar-md brround">
+                            </div>
+                            <div class="media-body">
+                              <div
+                                class="list-group-item-heading text-default font-weight-semibold">
+                                Paul
+                                Van Dack<span
+                                class="dot-label bg-danger ml-2 w-2 h-2"></span>
+                              </div>
+                              <small class="list-group-item-text text-muted">Nam posuere
+                                purus sed velit
+                                auctor sodales</small>
+                            </div>
+                            <span class="chat-time text-muted">2 days</span>
+                          </a>
+                        </li>
+                        <li class="list-group-item media p-4 border-top mt-0">
+                          <a href="javascript:void(0)">
+                            <div class="lv-avatar float-left pr-2">
+                              <img src="../../assets/images/users/5.jpg" alt=""
+                                   class="avatar avatar-md brround">
+                            </div>
+                            <div class="media-body">
+                              <div
+                                class="list-group-item-heading text-default font-weight-semibold">
+                                James
+                                Anderson<span
+                                class="dot-label bg-success ml-2 w-2 h-2"></span>
+                              </div>
+                              <small class="list-group-item-text text-muted">Vivamus
+                                imperdietsag</small>
+                            </div>
+                            <span class="chat-time text-muted">2 days</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="2" class="m-0"><a ngbNavLink>Contacts</a>
+                  <ng-template ngbNavContent>
+                    <div class="tab-pane">
+                      <ul class="list-group lg-alt chat-contact-list ChatList-scroll" id="ChatList2">
+                        <li *ngFor="let user of users" class="list-group-item media p-4 border-0 mt-0">
+                          <div class="float-left pr-2">
+                            <!-- Status Circle -->
+                            <span
+                              class="status-circle"
+                              [ngClass]="{
+    'status-online': user.isConnected,
+    'status-offline': !user.isConnected
+  }">
+</span>
+                            <!-- Debugging output to check isConnected value -->
+                            <span>{{ user.isConnected }}</span>
+
+
+                          </div>
+                          <div class="media-body">
+                            <div class="list-group-item-heading text-default font-weight-semibold">
+                              {{ user.fullName }}
+                            </div>
+                            <small class="list-group-item-text text-muted">{{ user.username }}</small>
+                          </div>
+                          <div class="ml-auto">
+                            <div ngbDropdown container="body">
+                              <a ngbDropdownToggle class="option-dots" href="javascript:void(0)">
+                                <i class="fe fe-more-vertical fs-18"></i>
+                              </a>
+                              <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+                                <li ngbDropdownItem>
+                                  <a href="javascript:void(0)" (click)="callUser(user)"><i class="fe fe-phone-call mr-1"></i> Call</a>
+                                </li>
+                                <li ngbDropdownItem>
+                                  <a href="javascript:void(0)" (click)="videoCallUser(user)"><i class="fe fe-video mr-1"></i> Videocall</a>
+                                </li>
+                                <li ngbDropdownItem>
+                                  <a href="javascript:void(0)" (click)="sendMessage(user)"><i class="fe fe-mail mr-1"></i> New Message</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </ng-template>
+
+                </li>
+
+
+              </ul>
+            </div>
+          </div>
+          <div [ngbNavOutlet]="nav" class="tab-content"></div>
+        </div>
+        <div class="ms-body">
+          <div class="action-header clearfix">
+            <a href="javascript:void(0)" class="ms-menu-trigger">
+              <i class="fe fe-align-left"></i>
+            </a>
+            <div class="float-left hidden-xs d-flex ml-4 chat-user">
+              <img src="../../assets/images/users/2.jpg" alt="" class="avatar avatar-lg brround mr-2">
+              <div class="align-items-center mt-1">
+                <p class="font-weight-bold mb-0 fs-16">Jessica</p>
+                <span><span class="dot-label bg-success mr-2 w-2 h-2"></span>online</span>
+              </div>
+            </div>
+            <ul class="ah-actions actions align-items-center">
+              <li>
+                <a ngbTooltip="Call" container="body"><i class="fe fe-phone"></i></a>
+              </li>
+              <li>
+                <a ngbTooltip="Archive" container="body"><i class="fe fe-folder-plus"></i></a>
+              </li>
+              <li>
+                <a ngbTooltip="Trash" container="body"><i class="fe fe-trash-2"></i></a>
+              </li>
+              <li>
+                <a ngbTooltip="View Info" container="body"><i class="fe fe-alert-octagon"></i></a>
+              </li>
+              <li ngbDropdown container="body">
+                <a href="javascript:void(0)" class="option-dots" ngbDropdownToggle>
+                  <i class="fe fe-more-vertical"></i>
+                </a>
+                <ul ngbDropdownMenu class="dropdown-menu-right">
+                  <li ngbDropdownItem><a href="">Refresh</a></li>
+                  <li ngbDropdownItem><a href="">Message Settings</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="chat-body-style" id="ChatBody">
+            <div class="message-feed media mt-0">
+              <div class="float-left pr-2">
+                <img src="../../assets/images/users/2.jpg" alt="" class="avatar avatar-md brround">
+              </div>
+              <div class="media-body">
+                <div class="mf-content">
+                  Quisque consequat arcu eget odio cursus, ut tempor arcu vestibulum. Etiam ex arcu,
+                  porta a urna non, lacinia pellentesque orci. Proin semper sagittis erat, eget
+                  condimentum sapien viverra et.
+                </div>
+                <small class="mf-date"><i class="fa fa-clock-o"></i> 20/05/2020 at 09:00</small>
+              </div>
+            </div>
+            <div class="message-feed right">
+              <div class="float-right pl-2">
+                <img src="../../assets/images/users/10.jpg" alt="" class="avatar avatar-md brround">
+              </div>
+              <div class="media-body">
+                <div class="mf-content">
+                  Etiam nec facilisis lacus. Nulla imperdiet augue ullamcorper dui ullamcorper, eu
+                  laoreet sem consectetur. Aenean et ligula risus. Praesent sed posuere sem. Cum
+                  sociis natoque penatibus et magnis dis parturient montes,
+                  <div class="row mt-2">
+                    <div class="col-4">
+                      <img class="img-fluid rounded" src="../../assets/images/photos/19.jpg"
+                           alt="banner image">
+                    </div>
+                    <div class="col-4">
+                      <img class="img-fluid rounded" src="../../assets/images/photos/11.jpg"
+                           alt="banner image">
+                    </div>
+                    <div class="col-4">
+                      <img class="img-fluid rounded" src="../../assets/images/photos/8.jpg "
+                           alt="banner image">
+                    </div>
+                  </div>
+                </div>
+                <small class="mf-date"><i class="fa fa-clock-o"></i> 20/05/2020 at 10:10</small>
+              </div>
+            </div>
+            <div class="message-feed media">
+              <div class="float-left pr-2">
+                <img src="../../assets/images/users/2.jpg" alt="" class="avatar avatar-md brround">
+              </div>
+              <div class="media-body">
+                <div class="mf-content">
+                  Etiam ex arcumentum
+                </div>
+                <small class="mf-date"><i class="fa fa-clock-o"></i> 20/05/2020 at 09:33</small>
+              </div>
+            </div>
+            <div class="message-feed right">
+              <div class="float-right pl-2">
+                <img src="../../assets/images/users/10.jpg" alt="" class="avatar avatar-md brround">
+              </div>
+              <div class="media-body">
+                <div class="mf-content">
+                  Etiam nec facilisis lacus. Nulla imperdiet augue ullamcorper dui ullamcorper, eu
+                  laoreet sem consectetur. Aenean et ligula risus. Praesent sed posuere sem. Cum
+                  sociis natoque penatibus et magnis dis parturient montes,
+                </div>
+                <small class="mf-date"><i class="fa fa-clock-o"></i> 20/05/2020 at 10:10</small>
+              </div>
+            </div>
+            <div class="message-feed media">
+              <div class="float-left pr-2">
+                <img src="../../assets/images/users/2.jpg" alt="" class="avatar avatar-md brround">
+              </div>
+              <div class="media-body">
+                <div class="mf-content">
+                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                  mus. Etiam ac tortor ut elit sodales varius. Mauris id ipsum id mauris malesuada
+                  tincidunt. Vestibulum elit massa, pulvinar at sapien sed, luctus vestibulum eros.
+                </div>
+                <small class="mf-date"><i class="fa fa-clock-o"></i> 20/05/2020 at 10:24</small>
+              </div>
+            </div>
+          </div>
+          <div class="msb-reply">
+            <textarea placeholder="What's on your mind..."></textarea>
+            <button style="cursor: pointer;"><i class="fa fa-paper-plane-o"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Row-->

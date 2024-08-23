@@ -1,0 +1,67 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Form Treeview</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-file-text mr-2 fs-14"></i>Forms</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Form Treeview</a>
+            </li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings
+            </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now
+            </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!--row open-->
+<div class="row">
+    <div class="col-sm-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Basic Treeview</h5>
+            </div>
+            <div class="card-body">
+                <div id="treeBasic">
+                    <ngx-treeview [config]="basicConfig" [items]="items1">
+                    </ngx-treeview>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>hasFilter</h5>
+            </div>
+            <div class="card-body">
+                <div id="treeBasic">
+                    <ngx-treeview [config]="filterConfig" [items]="items3">
+                    </ngx-treeview>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>hasCollapseExpand</h5>
+            </div>
+            <div class="card-body">
+                <div id="treeBasic">
+                    <ngx-treeview [config]="expandConfig" [items]="items4">
+                    </ngx-treeview>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

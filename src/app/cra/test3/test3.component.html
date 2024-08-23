@@ -1,0 +1,92 @@
+<!-------Begin Test ------->
+
+<div class="container">
+  <h1 class="title">Welcome to Angular WebSocket</h1>
+
+  <div class="user-connection">
+    <h2>Connexion Utilisateur au Topic</h2>
+
+    <div class="input-group">
+      <label>ID de l'émetteur :</label>
+      <input type="number" [(ngModel)]="senderUserId">
+    </div>
+
+    <div class="input-group">
+      <label>ID du récepteur :</label>
+      <input type="number" [(ngModel)]="recipientUserId">
+    </div>
+
+    <div class="input-group">
+      <label>Message :</label>
+      <input type="text" [(ngModel)]="message">
+    </div>
+
+    <div class="button-group">
+      <button (click)="loginUser()">Se Connecter</button>
+      <button (click)="sendNotification()">Envoyer Notification</button> <br><br>
+<!--      <button (click)="envoyerMessage()">Envoyer un message WebSocket</button>-->
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Ajoutez une section pour afficher les notifications -->
+<!-- Ajoutez une section pour afficher les notifications -->
+<div class="notifications">
+  <h3>Notifications</h3>
+  <div *ngFor="let notification of notifications">
+    {{ notification }}
+  </div>
+</div>
+
+
+
+
+<!--<div>
+  <h2>Chat</h2>
+  <div *ngFor="let message of messages">
+    {{ message }}
+  </div>
+  <input [(ngModel)]="messageToSend" placeholder="Saisissez votre message" /> <br><br>
+  <button (click)="sendMessage()">Envoyer</button>
+</div>-->
+
+
+
+
+
+<!-------End Test ------->
+
+
+<!-------Begin CRA ------->
+<!--<div class="page-header">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">Feuille de temps - </h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a><i class="fe fe-layout mr-2 fs-14"></i>Cra</a>
+      </li>
+      <li aria-current="page" class="breadcrumb-item active"><a href="javascript:void(0)">mes activités</a></li>
+    </ol>
+  </div>
+</div>
+<div class="page-header">
+</div>
+<div class="form-group mission-title">
+  <ng-select placeholder="Selectionnez une acivité" [(ngModel)]="selectedMission">
+    <ng-option *ngFor="let mission of missions" [value]="mission.id">{{mission.name}}</ng-option>
+  </ng-select>
+</div>
+<div class="date-input-container">
+  <div *ngFor="let jour  of datasfromback ; let i = index" class="input-wrapper">
+    <input type="text" [(ngModel)]="datasfromback[i].inputValue">
+  </div>
+</div><br>
+<button (click)="afficherDates()">Afficher en console</button>-->
+<!-------End CRA ------->
+
+
+
+
+
+

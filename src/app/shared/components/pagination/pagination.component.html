@@ -1,0 +1,27 @@
+<ul class="pagination justify-content-end">
+  <li class="page-item" [ngClass]="{'disabled': currentPage === 0}">
+    <button *ngIf="currentPage !== 0"
+            class="page-link custom-btn-color"
+            (click)="onPageChange(currentPage - 1)"
+            aria-label="Previous">
+      <span aria-hidden="true">&laquo;</span>
+      <span class="sr-only">Previous</span>
+    </button>
+  </li>
+  <ng-container *ngFor="let page of getPagesArray()">
+    <li class="page-item" [ngClass]="{'active': page === currentPage}">
+      <button class="page-link" (click)="onPageChange(page)" [ngClass]="{'custom-btn-color': page === currentPage}">
+        <span [ngClass]="{'text-white': page === currentPage}">{{ page + 1 }}</span>
+      </button>
+    </li>
+  </ng-container>
+  <li class="page-item" [ngClass]="{'disabled': currentPage === totalPages - 1}">
+    <button *ngIf="currentPage !== totalPages - 1"
+            class="page-link custom-btn-color"
+            (click)="onPageChange(currentPage + 1)"
+            aria-label="Next">
+      <span aria-hidden="true">&raquo;</span>
+      <span class="sr-only">Next</span>
+    </button>
+  </li>
+</ul>

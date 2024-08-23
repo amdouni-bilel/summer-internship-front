@@ -1,0 +1,47 @@
+.my-custom-class .popover-header{
+    color: #fff;
+    background-color: #705ec8;
+}
+
+.my-custom-header.bs-popover-bottom > .arrow::after{
+    border-bottom-color: #705ec8;
+}
+.my-custom-header .popover-header, .my-custom-primary .popover-header{
+    color: #fff;
+    background-color: #705ec8;
+}
+.my-custom-primary{
+    border: none;
+}
+.my-custom-primary .popover-header{
+    color: #fff;
+    background-color: #705ec8;
+    border: none;
+}
+.my-custom-primary.bs-popover-top > .arrow::after, .bs-popover-auto[x-placement^=top] > .arrow::after{
+    border-top-color: #705ec8;
+}
+.my-custom-primary .popover-body{
+    color: rgba(255, 255, 255, 0.75);
+    background-color: #705ec8;
+}
+
+.my-custom-secondary .popover-header{
+    color: #fff;
+    background-color: #f72d66 ;
+}
+.my-custom-secondary{
+    border: none;
+}
+.my-custom-secondary .popover-header{
+    color: #fff;
+    background-color:#f72d66 ;
+    border: none;
+}
+.my-custom-secondary.bs-popover-bottom > .arrow::after, .bs-popover-auto[x-placement^=bottom] > .arrow::after{
+    border-bottom-color:#f72d66 ;
+}
+.my-custom-secondary .popover-body{
+    color: rgba(255, 255, 255, 0.75);
+    background-color:#f72d66 ;
+}

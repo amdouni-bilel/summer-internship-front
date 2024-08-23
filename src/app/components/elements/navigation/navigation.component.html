@@ -1,0 +1,407 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Navigation</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-server mr-2 fs-14"></i>Elements</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Navigation</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Basic Nav</h3>
+            </div>
+            <div class="card-body">
+                <ul ngbNav class="nav1 br-7">
+                    <li ngbNavItem  class="nav-item1">
+                        <a ngbNavLink class="active" href="javascript:void(0)">Active</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem  class="nav-item1">
+                        <a ngbNavLink class="" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem  class="nav-item1">
+                        <a ngbNavLink class=" disabled" href="javascript:void(0)">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav1="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html1" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts1" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav1"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Nav Vertical</h3>
+            </div>
+            <div class="card-body">
+                <ul ngbNav class="nav1 flex-column br-7">
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="active">Active</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="disabled">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav2="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html2"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html2" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts2"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts2" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav2"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Color Navigation</h3>
+            </div>
+            <div class="card-body">
+                <ul ngbNav class="nav-pills">
+                    <li ngbNavItem class="m-2">
+                        <a ngbNavLink class="px-4 py-2" href="javascript:void(0)">Active</a>
+                    </li>
+                    <li ngbNavItem ngbDropdown class=" m-2">
+                        <a ngbNavLink class=" dropdown-toggle px-4 py-2" ngbDropdownToggle role="button">Dropdown</a>
+                        <div ngbDropdownMenu>
+                            <a ngbDropdownItem href="javascript:void(0)">Action</a>
+                            <a ngbDropdownItem href="javascript:void(0)">Another action</a>
+                            <a ngbDropdownItem href="javascript:void(0)">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a ngbDropdownItem href="javascript:void(0)">Separated link</a>
+                        </div>
+                    </li>
+                    <li ngbNavItem class="m-2">
+                        <a ngbNavLink class=" px-4 py-2" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="m-2">
+                        <a ngbNavLink class="disabled px-4 py-2" href="javascript:void(0)">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav3="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html3" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts3" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav3"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Icon Navigation</h3>
+            </div>
+            <div class="card-body">
+                <ul ngbNav class="nav-pills nav-pills-circle" id="tabs_2" role="tablist">
+                    <li ngbNavItem>
+                        <a ngbNavLink class="border py-3 px-5 m-2" id="tab1" data-toggle="tab" href="javascript:void(0)" role="tab"
+                            aria-selected="false">
+                            <span class="nav-link-icon d-block"><i class="fe fe-home"></i> Home</span>
+                        </a>
+                    </li>
+                    <li ngbNavItem>
+                        <a ngbNavLink class="border py-3 px-5 m-2" id="tab2" data-toggle="tab" href="javascript:void(0)" role="tab"
+                            aria-selected="false">
+                            <span class="nav-link-icon d-block"><i class="fe fe-unlock"></i> Lock </span>
+                        </a>
+                    </li>
+                    <li ngbNavItem>
+                        <a ngbNavLink class=" py-3 px-5 border m-2" id="tab3" data-toggle="tab"
+                            href="javascript:void(0)" role="tab" aria-selected="true">
+                            <span class="nav-link-icon d-block"><i class="fe fe-play"></i> Videos</span>
+                        </a>
+                    </li>
+                    <li ngbNavItem>
+                        <a  ngbNavLink class=" border py-3 px-5 m-2" id="tab4" data-toggle="tab" href="javascript:void(0)" role="tab"
+                            aria-selected="false">
+                            <span class="nav-link-icon d-block"><i class="fe fe-layers"></i> Severs</span>
+                        </a>
+                    </li>
+                    <li ngbNavItem >
+                        <a  ngbNavLink class=" border py-3 px-5 m-2" id="tab5" data-toggle="tab" href="javascript:void(0)" role="tab"
+                            aria-selected="false">
+                            <span class="nav-link-icon d-block"><i class="fe fe-image"></i> Gallery </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav4="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html4" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts4" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav4"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Icon Nav Bar</h3>
+            </div>
+            <div class="card-body">
+                <ul ngbNav class=" nav-pills nav-pills-circle" id="tabs_3" role="tablist">
+                    <li ngbNavItem>
+                        <a ngbNavLink class="nav-link border w-8 h-8 text-center br-100 m-2" id="tab21" data-toggle="tab"
+                            href="javascript:void(0)" role="tab" aria-controls="tab1" aria-selected="false">
+                            <span class="nav-link-icon d-block text-center mx-auto"><i
+                                    class="fe fe-home fs-20"></i></span>
+                        </a>
+                    </li>
+                    <li ngbNavItem>
+                        <a ngbNavLink class="nav-link border w-8 h-8 br-100 m-2" id="tab22" data-toggle="tab" href="javascript:void(0)"
+                            role="tab" aria-controls="tab2" aria-selected="false">
+                            <span class="nav-link-icon d-block text-center mx-auto"><i
+                                    class="fe fe-unlock fs-20"></i></span>
+                        </a>
+                    </li>
+                    <li ngbNavItem>
+                        <a ngbNavLink class="nav-link border w-8 h-8 br-100 m-2" id="tab23" data-toggle="tab"
+                            href="javascript:void(0)" role="tab" aria-controls="tab3" aria-selected="true">
+                            <span class="nav-link-icon d-block text-center mx-auto"><i
+                                    class="fe fe-play fs-20"></i></span>
+                        </a>
+                    </li>
+                    <li ngbNavItem>
+                        <a ngbNavLink class="nav-link border w-8 h-8 br-100 m-2" id="tab24" data-toggle="tab" href="javascript:void(0)"
+                            role="tab" aria-controls="tab4" aria-selected="false">
+                            <span class="nav-link-icon d-block text-center mx-auto"><i
+                                    class="fe fe-layers fs-20"></i></span>
+                        </a>
+                    </li>
+                    <li ngbNavItem>
+                        <a ngbNavLink class="nav-link border  w-8 h-8 br-100 m-2" id="tab25" data-toggle="tab" href="javascript:void(0)"
+                            role="tab" aria-controls="tab5" aria-selected="false">
+                            <span class="nav-link-icon d-block text-center mx-auto"><i class="fe fe-image fs-20"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav5="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html5"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html5" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts5"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts5" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav5"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Navigation backgrounds</h3>
+            </div>
+            <div class="card-body">
+                <ul ngbNav class="nav1 bg-primary br-7">
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white active" href="javascript:void(0)">Active</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="disabled text-white-50" href="javascript:void(0)">Disabled</a>
+                    </li>
+                </ul>
+                <ul ngbNav class="nav1 bg-info mt-4 br-7">
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white active" href="javascript:void(0)">Active</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="disabled text-white-50" href="javascript:void(0)">Disabled</a>
+                    </li>
+                </ul>
+                <ul ngbNav class="nav1 bg-success mt-4 br-7">
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white active" href="javascript:void(0)">Active</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="disabled text-white-50" href="javascript:void(0)">Disabled</a>
+                    </li>
+                </ul>
+                <ul ngbNav class="nav1 bg-danger mt-4 br-7">
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white active" href="javascript:void(0)">Active</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="disabled text-white-50" href="javascript:void(0)">Disabled</a>
+                    </li>
+                </ul>
+                <ul ngbNav class="nav1 bg-secondary mt-4 br-7">
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white active" href="javascript:void(0)">Active</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="disabled text-white-50" href="javascript:void(0)">Disabled</a>
+                    </li>
+                </ul>
+                <ul ngbNav class="nav1 bg-yellow mt-4 br-7">
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white active" href="javascript:void(0)">Active</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="text-white" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li ngbNavItem class="nav-item1">
+                        <a ngbNavLink class="disabled text-white-50" href="javascript:void(0)">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav6="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html6"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html6" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts6"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts6" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav6"></div>
+                
+                
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End Row -->

@@ -1,0 +1,78 @@
+<!-- Row open -->
+<!-- Page header -->
+<div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Mes Congés</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layout mr-2 fs-14"></i>Congés</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Mes Congés</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader d-flex">
+        <button class="btn btn-success mr-2" (click)="navigateToAddMyConge()">
+            <i class="fas fa-user-plus mr-1"></i> Ajouter Congé
+        </button>
+        <button class="btn btn-info" (click)="generatePdf()">
+            <i class="fas fa-file-pdf mr-1"></i> Generate PDF
+        </button>
+    </div>
+</div>
+<!-- End Page header -->
+
+<!-- User Days Off -->
+<div class="row mb-3">
+    <div class="col-md-6">
+        <div class="alert alert-info d-flex align-items-center" style="background-color: #e9f7fd; border-color: #d6ecf7;">
+            <i class="fas fa-calendar-day fa-2x mr-3" style="color: #17a2b8;"></i>
+            <div>
+                <strong style="color: #117a8b; font-size: 1.2rem;">Vos jours de congés restants:  </strong>
+                <span style="color: #117a8b; font-size: 1.2rem;">{{ userJoursCong }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Conges Table -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Liste des congés</div>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>User Full Name</th>
+                            <th>Days Off</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Type</th>
+                            <th>Confirmed</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let conge of filteredConges">
+                            <td>{{ conge.user.fullName }}</td>
+                            <td>{{ conge.joursCong }}</td>
+                            <td>{{ conge.dateDebut }}</td>
+                            <td>{{ conge.dateFin }}</td>
+                            <td>{{ conge.type }}</td>
+                            <td>{{ conge.confirmed ? 'Yes' : 'No' }}</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm" (click)="deleteConge(conge.id)" style="padding: 10px 8px; font-size: 12px; margin-right: 2px;">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                                <button class="btn btn-warning btn-sm" (click)="navigateToModifyConge(conge.id)" style="padding: 10px 8px; font-size: 12px; margin-right: 2px;">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row closed -->

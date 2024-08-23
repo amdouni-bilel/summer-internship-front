@@ -1,0 +1,22 @@
+.ms-menu .tab-menu-heading .tabs-menu1 ul li{
+    min-width: 0;
+    display: initial;
+}
+.chat-conatct-list .option-dots{
+    top: 0;
+}
+.status-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-online {
+  background-color: green;
+}
+
+.status-offline {
+  background-color: red;
+}
+

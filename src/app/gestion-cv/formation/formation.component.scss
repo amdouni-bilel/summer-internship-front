@@ -1,0 +1,76 @@
+/* Formation Container */
+.formation-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.title h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.formation-list {
+  margin-bottom: 20px;
+}
+
+.formation-item {
+  margin-bottom: 15px;
+}
+
+.field-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.field-value {
+  margin: 0;
+
+}
+
+.field-value span {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.field-input {
+  width: 100%;
+  padding: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* General Button Styles */
+button {
+  padding: 8px 16px;
+  background-color: #818381;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Modifier Button */
+button.modifier-button {
+  background-color: #007bff;
+  margin-right: 10px;
+}
+
+/* Add Button */
+button.add-button {
+  background-color: #17a2b8;
+}
+
+.ligne {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}

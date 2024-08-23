@@ -1,0 +1,88 @@
+<div style="display: flex; justify-content: flex-end;">
+  <div class="dropdown">
+    <button class="dropbtn" (click)="toggleDropdown()">
+      <i class="fe fe-secondary mr-1"></i>
+      TELECHARGER
+    </button>
+    <div class="dropdown-content" [class.show]="showDropdown">
+      <p class="option" (click)="selectFormat('word')">PDF</p>
+      <hr>
+      <p class="option" (click)="selectFormat('word')">Word</p>
+    </div>
+  </div>
+</div>
+
+<div >
+  <button class="up-buttom" (click)="sendDataToBackendcv()">ENREGISTRE</button>
+</div>
+
+
+<div class="w3-container" style="display: flex; flex-wrap: wrap;">
+  <section class="experience-container" style="flex: 1; margin-right: 10px;">
+    <div class="experience">
+
+      <div class="title">
+        <h2>Experiences</h2>
+      </div>
+
+      <div class="experience-list">
+        <div class="experience-item" *ngFor="let exp of resume.experience">
+
+
+          <div class="field-group">
+            <p *ngIf="!isEditMode" class="field-value"><span>Titre :</span>  {{ exp.titre_E  }}</p>
+            <input *ngIf="isEditMode" class="field-input" id="titreInput" [(ngModel)]="exp.titre_E " placeholder="Titre experience" />
+          </div>
+
+          <div class="field-group">
+            <p *ngIf="!isEditMode" class="field-value"><span>Nom societe :</span>  {{ exp.societe  }}</p>
+            <input *ngIf="isEditMode" class="field-input" id="titreInput" [(ngModel)]="exp.societe " placeholder="Name societe"/>
+          </div>
+
+          <div class="field-group">
+            <p *ngIf="!isEditMode" class="field-value"><span>Tâches :</span></p>
+            <ng-container *ngIf="!isEditMode">
+              <p class="field-value" style="white-space: pre-line;">
+                {{ formatTasks(exp.tache).join('') }}
+              </p>
+            </ng-container>
+            <textarea *ngIf="isEditMode" class="field-input" id="titreInput" [(ngModel)]="exp.tache" placeholder="Taches experiences"></textarea>
+          </div>
+
+
+
+
+
+
+          <div class="field-group">
+            <p *ngIf="!isEditMode" class="field-value"><span>Environnement :</span> {{ exp.environnement  }}</p>
+            <textarea *ngIf="isEditMode" class="field-input" id="titreInput" [(ngModel)]="exp.environnement" placeholder="Environnement du travail"></textarea>
+          </div>
+
+          <div class="field-group">
+            <p *ngIf="!isEditMode" class="field-value"><span>Dates :</span> {{ exp.date_debut_E }} - {{ exp.date_fin_E }}</p>
+            <input *ngIf="isEditMode" class="field-input" id="titreInput" [(ngModel)]="exp.date_debut_E " placeholder="Date debut d'experience"/>
+            <input *ngIf="isEditMode" class="field-input" id="titreInput" [(ngModel)]="exp.date_fin_E " placeholder="Date fin d'experience"/>
+          </div>
+
+          <button *ngIf="isEditMode" (click)="deleteExperience(exp)">Supprimer</button>
+          <hr class="ligne">
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: row; width:100%;">
+        <button class="modifier-button" (click)="toggleEditMode()">
+          {{ isEditMode ? 'Valider' : 'Modifier' }}
+        </button>
+        <button class="add-button" *ngIf="isEditMode" (click)="addExperience()" style="margin-left: 10px;">Add Experience</button>
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+  <app-formation style="flex: 1;"></app-formation>
+
+</div>
+

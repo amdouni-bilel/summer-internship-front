@@ -1,0 +1,69 @@
+<!-- Page header -->
+<div class="page-header d-flex justify-content-between align-items-center">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">Liste des congés</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layout mr-2 fs-14"></i>Congés</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Liste des congés</a></li>
+    </ol>
+  </div>
+  <div class="page-rightheader d-flex">
+    <button class="btn btn-success mr-2" (click)="navigateToAddConge()">
+      <i class="fas fa-user-plus mr-1"></i> Ajouter Congé
+    </button>
+    <button class="btn btn-info" (click)="generatePdf()">
+      <i class="fas fa-file-pdf mr-1"></i> Generate PDF
+    </button>
+  </div>
+</div>
+<!-- End Page header -->
+
+<!-- Conges Table -->
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Liste des congés</div>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>User Full Name</th>
+              <th>Days Off</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Type</th> <!-- Added Type column -->
+              <th>Confirmed</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let conge of filteredConges">
+              <td>{{ conge.user.fullName }}</td>
+              <td>{{ conge.joursCong }}</td>
+              <td>{{ conge.dateDebut }}</td>
+              <td>{{ conge.dateFin }}</td>
+              <td>{{ conge.type }}</td> 
+              <td>{{ conge.confirmed ? 'Yes' : 'No' }}</td>
+              <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteConge(conge.id)" style="padding: 10px 8px; font-size: 12px; margin-right: 2px;">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+                <button class="btn btn-warning btn-sm" (click)="navigateToModifyConge(conge.id)" style="padding: 10px 8px; font-size: 12px; margin-right: 2px;">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn btn-success btn-sm" (click)="confirmConge(conge.id)" style="padding: 10px 8px; font-size: 12px;">
+                  <i class="fas fa-check"></i>
+                </button>
+                <button class="btn btn-info btn-sm" (click)="fetchUserDetails(conge.user.id)" style="padding: 10px 8px; font-size: 12px;">
+                  <i class="fas fa-info-circle"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

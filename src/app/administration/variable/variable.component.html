@@ -1,0 +1,90 @@
+<div class="row row-cards">
+    <div class="col-md-12">
+      <div class="card">
+        <form [formGroup]="coordonneeModel">
+          <div class="card-header">
+            <h3 class="card-title">Créer un nouveau modèle</h3>
+            <div class="form-group">
+  
+              <div class="col-md-9">
+                <input class="form-control" type="text" name="compte" formControlName="nom">
+              </div>
+            </div>
+          </div>
+  
+  
+          <div style="width: 800px;" class="card-body">
+  
+            <!-- <ck-editor name="editor1" [(ngModel)]="ckEditor" skin="moono-lisa" language="en" [fullPage]="true"></ck-editor> -->
+            <table>
+              <tr>
+                  <td style="width: 700px; height: 400px;" class="card-body">
+  
+              <!-- <ck-editor name="editor1" [(ngModel)]="ckEditor" skin="moono-lisa" language="en" [fullPage]="true"></ck-editor> -->
+  
+  
+                <div class="editor-container"  >
+                  <angular-editor [config]="editorConfig" (drop)="onDrop($event)" [(ngModel)]="editorContent" class="custom-editor" formControlName="description"></angular-editor>
+                </div>
+  
+      </td>
+      <td>
+        <div class="card mt-2 ">
+          <div class="card-header">
+          <h3 class="card-title">Variables</h3>
+      </div>
+      <div class="variables">
+          <ul class="list-group" style="height: 360px; overflow-y: auto;">
+            <li class="list-group-item"  *ngFor="let variable of variables" draggable="true" cdkDropList (cdkDropListDropped)="onItemDrop($event)" (dragstart)="onDragStart($event, variable)">
+              {{ variable.nom }}
+            </li>
+          </ul>
+        </div>
+      <!-- <div class="tags">
+        <span class="tag" *ngFor="let variable of variables" draggable="true" (dragstart)="onDragStart($event, variable)"></span>
+      </div> -->
+  
+      </div>
+  
+    </td>
+      </tr>
+            </table>
+  
+          </div>
+          <button *ngIf="Sauvegarder==true" type="button" class="btn btn-primary" (click)="addModel()">
+            Sauvegarder
+          </button>
+          <button *ngIf="Sauvegarder==false" type="button" class="btn btn-primary" (click)="update()">
+            Update
+          </button>
+        </form>
+        <div class="table-wrapper">
+          <table class="table table-bordered text-nowrap" id="myTable1">
+            <thead>
+              <tr>
+                <th class="wd-15p border-bottom-0">Model name</th>
+                <th class="wd-15p border-bottom-0">Description</th>
+  
+              </tr>
+            </thead>
+  
+            <tbody>
+              <tr *ngFor="let m of model ">
+                <td>{{m.nom}}</td>
+                <td>{{m.description}}</td>
+                <td>
+                  <a  class="btn btn-success"><i class="fa fa-repeat" aria-hidden="true"
+                      (click)="patch(m.idmodel)"></i></a>
+                  <a  class="btn btn-danger"> <i class="fe fe-trash" (click)="delete(m.idmodel)"></i></a>
+                </td>
+  
+              </tr>
+  
+            </tbody>
+  
+          </table>
+        </div>
+      </div>
+    </div>
+  
+  </div>

@@ -1,0 +1,73 @@
+<!-- Row open -->
+<!-- Page header -->
+<div class="page-header">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">Liste des utilisateurs</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layout mr-2 fs-14"></i>Utilisateurs</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Liste des utilisateurs</a></li>
+    </ol>
+  </div>
+  <div class="page-rightheader ml-auto d-lg-flex d-none">
+    <button class="btn btn-success" (click)="navigateToAddUser()">
+      <i class="fas fa-user-plus mr-1"></i> Ajouter Utilisateur
+    </button>
+    <button class="btn btn-secondary ml-2" (click)="generatePdf()">
+      <i class="fe fe-printer mr-1"></i> Print PDF
+    </button>
+  </div>
+</div>
+<!-- End Page header -->
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <input type="text" class="form-control" placeholder="Search by email or full name" [(ngModel)]="searchTerm" (input)="applyFilter()"
+           style="border-radius: 10px; border-color: #ccc; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+  </div>
+</div>
+
+<!-- Users Table -->
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Liste des utilisateurs</div>
+      </div>
+      <div class="card-body">
+        <ngx-datatable class="bootstrap"
+                       [rows]="filteredUsers"
+                       [loadingIndicator]="loadingIndicator"
+                       [columns]="columns"
+                       [columnMode]="'force'"
+                       [headerHeight]="40"
+                       [summaryPosition]="'bottom'"
+                       [footerHeight]="40"
+                       [rowHeight]="'auto'"
+                       [reorderable]="reorderable">
+          <ngx-datatable-column *ngFor="let column of columns" [name]="column.name" [prop]="column.prop"></ngx-datatable-column>
+          <ngx-datatable-column name="Actions">
+            <ng-template ngx-datatable-cell-template let-row="row">
+              <button class="btn btn-danger btn-sm" (click)="deleteUser(row.id)"
+                      style="padding: 10px 8px; font-size: 12px; margin-right: 2px;">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+              <button class="btn btn-warning btn-sm" (click)="navigateToModifyUser(row.id)"
+                      style="padding: 10px 8px; font-size: 12px; margin-right: 2px;">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-primary btn-sm" (click)="assignMission(row.id)"
+                      style="padding: 10px 8px; font-size: 12px; margin-right: 2px;">
+                <i class="fas fa-tasks"></i>
+              </button>
+              <button class="btn btn-info btn-sm" (click)="showAssignedMissions(row.id)"
+                      style="padding: 10px 8px; font-size: 12px;">
+                <i class="fas fa-eye"></i>
+              </button>
+            </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Row closed -->

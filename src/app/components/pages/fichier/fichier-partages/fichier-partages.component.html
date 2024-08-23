@@ -1,0 +1,181 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <!-- <h4 class="page-title mb-0">File Manager 01</h4> -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Gestion des fichiers</a></li>
+        </ol>
+    </div>
+    
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+
+
+    <div class="col-lg-9 col-xl-10">
+        <div class="row">
+            <div class="col-6 mb-4">
+                <div class="btn-list">
+                    <a href="javascript:void(0)" class="btn btn-outline-secondary" (click)="openOrgModal(newFolderModel,null,null,null,null)"><i class="fe fe-folder"></i> Nouveau dossier</a>
+                   <form>
+                    <div class="form-group">
+                        <input class="form-control" style="background-color: transparent;" type="file" (change)="onFileSelected($event)" *ngIf="canSelectFile" > 
+                        <button (click)="upload()" *ngIf="canSelectFile && selectedFile!=undefined " class="btn btn-primary"><i class="fe fe-check"></i> </button>
+                    </div>
+                   </form>
+                   
+                </div>
+            </div>
+            <div class="col-6 col-auto">
+                <div class="form-group">
+                    <div class="input-icon">
+                        <span class="input-icon-addon">
+                            <i class="fe fe-search"></i>
+                        </span>
+                        <input type="text" class="form-control" [(ngModel)]="searchQuery" (ngModelChange)="applyFilter()" placeholder="Chercher...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="filteredObject$ | async as filteredObject">
+          <div class="row">
+          <div class="col-xl-3 col-md-6 col-sm-6" *ngFor="let folder of filteredObject | keyvalue">
+            <div *ngIf="folder.value.sender==username">
+            <div class="card border p-0 shadow-none">
+              <div class="d-flex align-items-center px-6 pt-6">
+                 <div ngbDropdown class="float-right ml-auto" *ngIf="!cming" >
+                  <a href="javascript:void(0)" class="option-dots" ngbDropdownToggle><i class="fe fe-more-vertical"></i></a>
+                  <div ngbDropdownMenu class="dropdown-menu-right">
+                    <a ngbDropdownItem  (click)="openOrgModal(shareFileModal,folder.key,null,null,folder.key)"><i class="fe fe-share mr-2"></i> Share</a>
+                    <a ngbDropdownItem (click)="downloadZip(folder.key)"><i class="fe fe-download mr-2" ></i> Download</a>
+                    <a ngbDropdownItem (click)="openOrgModal(deleteModal,folder.key,null,null,null)"><i class="fe fe-trash mr-2"></i> Delete</a>
+                    <a ngbDropdownItem *ngIf="folder.value.size!=undefined" (click)="startcming('copy',folder.key)"><i class="fe fe-copy mr-2"></i> Copy</a>
+                    <a ngbDropdownItem *ngIf="folder.value.size!=undefined" (click)="startcming('move',folder.key)"><i class="fe fe-move mr-2"></i> Move</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body pt-0 text-center">
+                <div class="file-manger-icon">
+                  <img src="../../assets/images/files/file.png" alt="img" class="br-7">
+                </div>
+                <h6 class="mb-1 font-weight-semibold mt-4">{{ folder.key }}</h6>
+                <!-- <span class="text-muted">23kb</span> -->
+             <button class="btn btn-outline-light" *ngIf="folder.value.size==undefined" (click)="navigateToSubFolder(folder.key)">   <i   class="fa fa-folder-open-o" ></i></button>
+             <button type="submit" *ngIf="cming && folder.value.size==undefined" (click)="copyOrMoveFile(folder.key)" class="btn btn-primary"><i class="fe fe-check"></i> </button>
+            </div>
+            </div>
+
+        </div>
+          </div>
+        </div>
+        <i *ngIf="objectStructure !== null" class="fe fe-corner-down-left" (click)="goBack()"></i>
+      </div>
+      
+
+    </div>
+</div>
+<!-- End Row -->
+
+ <!--MODAL HERE-->
+ <div id="newFolderModel">
+    <ng-template #newFolderModel let-modal>
+      <div class="modal-body p-4">
+
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="modal.dismiss('Cross click')"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+       
+
+        <div class="container">
+            <form [formGroup]="newFolderCoord" (ngSubmit)="upload()">
+              <div class="form-group">
+                <input type="text" placeholder="Nom du dossier..." class="form-control" formControlName="name" />
+               <br>  <button type="submit"  class="btn btn-primary"><i class="fe fe-check"></i> </button>
+                <br /></div></form></div>
+
+      </div>
+    </ng-template>
+  </div>
+
+
+
+  <!-- delete modal --><div id="deleteModal">
+    <ng-template #deleteModal let-modal>
+        <div class="modal-body p-4">
+          <h3>Voulez-vous vraiment le supprimer ?</h3>
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <br>
+          <button class="btn btn-info" (click)="deleteObject()" >Oui</button>
+          <button class="btn btn-outline-secondary" (click)="modal.dismiss('Cross click')" >Non</button>
+  
+          </div>
+      </ng-template>
+    </div>
+
+
+
+    <!-- copy and move modal -->
+
+    <!--MODAL HERE-->
+ <div id="cmModal">
+  <ng-template #cmModal let-modal>
+    <div class="modal-body p-4">
+
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+     
+
+      <div class="container">
+            <div class="form-group">
+              <input type="text" placeholder="Nom du dossier..." class="form-control" [(ngModel)]="cmTo" />
+             <br>  <button (click)="copyOrMoveFile()"  class="btn btn-primary"><i class="fe fe-check"></i> </button>
+              <br /></div></div>
+
+    </div>
+  </ng-template>
+</div>
+
+
+<div id="shareFileModal">
+  <ng-template #shareFileModal let-modal>
+    <div class="modal-body p-4">
+
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+     
+
+      <div class="container">
+            <div class="form-group">
+              <input type="text" placeholder="Destination: " class="form-control" [(ngModel)]="fileRecieverEmail" />
+             <br>  <button (click)="shareFile()"  class="btn btn-primary"><i class="fe fe-check"></i> </button>
+              <br /></div></div>
+
+    </div>
+  </ng-template>
+</div>

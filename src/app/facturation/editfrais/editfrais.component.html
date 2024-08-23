@@ -1,0 +1,15 @@
+<div class="edit-fields">
+  <label for="sum">Frais Réels:</label>
+  <input [(ngModel)]="frais.sum" id="sum" placeholder="Sum">
+
+  <label for="avance">Avance à rependre:</label>
+  <input [(ngModel)]="frais.avance" id="avance" placeholder="Avance">
+
+  <label for="tobepayed">Être payé:</label>
+  <input [(ngModel)]="frais.tobepayed" id="tobepayed" placeholder="To Be Paid">
+
+  <button (click)="save()">Enregistrer</button>
+  <button (click)="cancel()">Annuler</button>
+</div>
+
+  

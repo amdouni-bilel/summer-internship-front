@@ -1,0 +1,324 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Form-wizard</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><i class="fe fe-file-text mr-2 fs-14"></i>Forms</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="#">Form-Wizard</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="#" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="#" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="#" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!--row open-->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Form Wizard Using Dots</h3>
+            </div>
+            <div class="card-body">
+                <ng-wizard [config]="config1" (stepChanged)="stepChanged($event)">
+
+                    <ng-wizard-step [title]="'Login'" [description]="'Step1'" [canEnter]="isValidTypeBoolean"
+                        [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+                        <form>
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail6"
+                                    placeholder="Enter email address">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword7"
+                                    placeholder="Password">
+                            </div>
+                            <div class="checkbox">
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                        id="checkbox-4">
+                                    <label for="checkbox-4" class="custom-control-label">Check me Out</label>
+                                </div>
+                            </div>
+                        </form>
+                    </ng-wizard-step>
+
+                    <ng-wizard-step [title]="'New User'" [description]="'Step2'"
+                        [canEnter]="isValidFunctionReturnsObservable.bind(this)"
+                        [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+                        <form>
+                            <div class="form-group">
+                                <label>User Name</label>
+                                <input type="text" class="form-control" id="inputtext" placeholder="Enter User Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail8"
+                                    placeholder="Enter email address">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword9"
+                                    placeholder="Password">
+                            </div>
+                            <div class="checkbox">
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                        id="checkbox-3">
+                                    <label for="checkbox-3" class="custom-control-label">Check me Out</label>
+                                </div>
+                            </div>
+                        </form>
+                    </ng-wizard-step>
+
+                    <ng-wizard-step [title]="'End'" [description]="'Step3'">
+                        <div class="checkbox">
+                            <div class="custom-checkbox custom-control">
+                                <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                    id="checkbox2">
+                                <label for="checkbox2" class="custom-control-label">I agree terms &
+                                    Conditions</label>
+                            </div>
+                        </div>
+                    </ng-wizard-step>
+                </ng-wizard>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row closed-->
+
+<!--row open-->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Form Wizard Using Arrows</h3>
+            </div>
+            <div class="card-body">
+                <ng-wizard [config]="config2" (stepChanged)="stepChanged($event)">
+
+                    <ng-wizard-step [title]="'Login'" [description]="'Step1'" [canEnter]="isValidTypeBoolean"
+                        [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+                        <form>
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail6"
+                                    placeholder="Enter email address">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword7"
+                                    placeholder="Password">
+                            </div>
+                            <div class="checkbox">
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                        id="checkbox-6">
+                                    <label for="checkbox-6" class="custom-control-label">Check me Out</label>
+                                </div>
+                            </div>
+                        </form>
+                    </ng-wizard-step>
+
+
+                    <ng-wizard-step [title]="'New User'" [description]="'Step2'"
+                        [canEnter]="isValidFunctionReturnsObservable.bind(this)"
+                        [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+                        <form>
+                            <div class="form-group">
+                                <label>User Name</label>
+                                <input type="text" class="form-control" id="inputtext" placeholder="Enter User Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail8"
+                                    placeholder="Enter email address">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword9"
+                                    placeholder="Password">
+                            </div>
+                            <div class="checkbox">
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                        id="checkbox-5">
+                                    <label for="checkbox-5" class="custom-control-label">Check me Out</label>
+                                </div>
+                            </div>
+                        </form>
+                    </ng-wizard-step>
+
+                    <ng-wizard-step [title]="'End'" [description]="'Step3'">
+                        <div class="checkbox">
+                            <div class="custom-checkbox custom-control">
+                                <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                    id="checkbox2">
+                                <label for="checkbox2" class="custom-control-label">I agree terms &
+                                    Conditions</label>
+                            </div>
+                        </div>
+                    </ng-wizard-step>
+
+
+                </ng-wizard>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row closed-->
+
+<!--row open-->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Simple Form Wizard</h3>
+            </div>
+            <div class="card-body">
+                <form class="form-wizard" id="regForm">
+                    <aw-wizard [disableNavigationBar]='true'>
+                        <aw-wizard-step>
+                            <form [formGroup]="firstFormGroup">
+                                <div class="form-group">
+                                    <label for="name">First Name</label>
+                                    <input class="form-control" id="name" type="text" placeholder="Johan"
+                                        required="required" formControlName="firstName" onlyAlphabets>
+                                    <ng-container class="invalid"
+                                        *ngIf="firstFormGroup.get('firstName').hasError('required') && firstFormGroup.get('firstName').touched">
+                                        First Name is required</ng-container>
+                                </div>
+                                <div *ngIf=""></div>
+                                <div class="form-group">
+                                    <label for="lname">Last Name</label>
+                                    <input class="form-control" id="lname" type="text" placeholder="Deo"
+                                        formControlName="lastName" onlyAlphabets>
+                                    <ng-container class="invalid"
+                                        *ngIf="firstFormGroup.get('lastName').hasError('required') && firstFormGroup.get('lastName').touched">
+                                        Last Name is required</ng-container>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact">Contact No.</label>
+                                    <input class="form-control digits" id="contact" type="text" placeholder="123456789"
+                                        formControlName="contactNumber" onlyNumbers>
+                                    <ng-container class="invalid"
+                                        *ngIf="firstFormGroup.get('contactNumber').hasError('required') && firstFormGroup.get('contactNumber').touched">
+                                        Contact is required</ng-container>
+                                </div>
+                                <button class="btn btn-primary pull-right" type="submit" awNextStep
+                                    [disabled]="!firstFormGroup.valid">Next</button>
+                            </form>
+                        </aw-wizard-step>
+                        <aw-wizard-step>
+                            <form [formGroup]="secondFormGroup">
+                                <div class="form-group m-t-15">
+                                    <label for="exampleFormControlInput1">Email address</label>
+                                    <input class="form-control" id="exampleFormControlInput1" type="email"
+                                        placeholder="name@example.com" formControlName="email">
+                                    <ng-container class="invalid"
+                                        *ngIf="secondFormGroup.get('email').hasError('required') && secondFormGroup.get('email').touched">
+                                        Email is required</ng-container>
+                                    <ng-container class="invalid"
+                                        *ngIf="secondFormGroup.get('email').hasError('email') && secondFormGroup.get('email').touched">
+                                        Email is not Proper</ng-container>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input class="form-control" id="exampleInputPassword1" type="password"
+                                        placeholder="Password" formControlName="password">
+                                    <ng-container class="invalid"
+                                        *ngIf="secondFormGroup.get('password').hasError('required') && secondFormGroup.get('password').touched">
+                                        Password is required</ng-container>
+                                </div>
+                                <div class="form-group" *ngIf="secondFormGroup.get('password').valid">
+                                    <label for="exampleInputPassword1">Confirm Password</label>
+                                    <input class="form-control" id="exampleInputcPassword1" type="password"
+                                        placeholder="Enter again" formControlName="cnfPassword">
+                                    <ng-container class="invalid"
+                                        *ngIf="secondFormGroup.get('cnfPassword').hasError('required') && secondFormGroup.get('cnfPassword').touched">
+                                        Confirm Password is required</ng-container>
+                                    <ng-container class="invalid"
+                                        *ngIf="secondFormGroup.get('cnfPassword').hasError('mustMatch') && secondFormGroup.get('cnfPassword').touched">
+                                        Passwords Doesnt match</ng-container>
+                                </div>
+                                <button class="btn btn-primary pull-right" type="button" awNextStep
+                                    [disabled]="!secondFormGroup.valid">Next</button>
+                                <button class="btn btn-secondary pull-right mr-1" type="button"
+                                    awPreviousStep>Previous</button>
+                            </form>
+                        </aw-wizard-step>
+                        <aw-wizard-step>
+                            <form [formGroup]="thirdFormGroup">
+                                <div class="form-group custom-datepicker-dropdown custom-datepicker">
+                                    <label for="exampleFormControlInput1">Birthday:</label>
+                                    <input class="form-control digits" type="text" formControlName="birthdate"
+                                        ngbDatepicker #dob="ngbDatepicker" [maxDate]="maxDate" (click)="dob.toggle()">
+                                    <ng-container class="invalid"
+                                        *ngIf="thirdFormGroup.get('birthdate').hasError('required') && thirdFormGroup.get('birthdate').touched">
+                                        Birth Date is required</ng-container>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Age</label>
+                                    <input class="form-control digits" placeholder="Age" type="text"
+                                        formControlName="age">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Have Passport</label>
+                                    <input class="form-control digits" placeholder="Yes/No" type="text"
+                                        formControlName="hasPassport">
+                                    <ng-container class="invalid"
+                                        *ngIf="thirdFormGroup.get('hasPassport').hasError('required') && thirdFormGroup.get('hasPassport').touched">
+                                        Passport field is required</ng-container>
+                                </div>
+                                <button class="btn btn-primary pull-right" type="button" awNextStep>Next</button>
+                                <button class="btn btn-secondary pull-right mr-1" type="button"
+                                    awPreviousStep>Previous</button>
+                            </form>
+                        </aw-wizard-step>
+                        <aw-wizard-completion-step awEnableBackLinks>
+                            <form [formGroup]="fourthFormGroup">
+                                <div class="form-group">
+                                    <label class="control-label">Country</label>
+                                    <input class="form-control mt-1" type="text" placeholder="Country"
+                                        required="required" formControlName="country">
+                                    <ng-container class="invalid"
+                                        *ngIf="fourthFormGroup.get('country').hasError('required') && fourthFormGroup.get('country').touched">
+                                        Country is required</ng-container>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">State</label>
+                                    <input class="form-control mt-1" type="text" placeholder="State" required="required"
+                                        formControlName="state">
+                                    <ng-container class="invalid"
+                                        *ngIf="fourthFormGroup.get('state').hasError('required') && fourthFormGroup.get('state').touched">
+                                        State is required</ng-container>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">City</label>
+                                    <input class="form-control mt-1" type="text" placeholder="City" required="required"
+                                        formControlName="city">
+                                    <ng-container class="invalid"
+                                        *ngIf="fourthFormGroup.get('city').hasError('required') && fourthFormGroup.get('city').touched">
+                                        City is required</ng-container>
+                                </div>
+                                <button class="btn btn-success pull-right" type="button" (click)="finish()"
+                                    [disabled]="!fourthFormGroup.valid">Finish</button>
+                                <button class="btn btn-secondary pull-right mr-1" type="button"
+                                    awPreviousStep>Previous</button>
+                            </form>
+                        </aw-wizard-completion-step>
+                    </aw-wizard>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row closed-->

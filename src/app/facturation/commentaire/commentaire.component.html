@@ -1,0 +1,117 @@
+<br>
+<br>
+
+  <div class="clickable-text" (click)="togglePopup()">
+    <img class="plus-icon" width="15px" height="15px" src="./assets/images/facture/plus.png" alt="Image Icon">
+    <span class="blue-text">Ajouter des frais de forfaitaires</span>
+  </div>
+
+<br>
+
+
+
+<app-forfaitaires></app-forfaitaires>
+
+<br>
+<br>
+<br>
+
+
+<!-- Commentaire -->
+<div class="flex-container">
+  <div class="flex-item scrollable">
+    <div class="container">
+      <!-- Content for the first container -->
+      <h2 style="margin-left: 50px;margin-top: 10px;">Commentaires</h2>
+      <div style="align-items: center; padding-top: 20px;padding-left: 20px;padding-right: 20px;">
+        <textarea [(ngModel)]="userText" placeholder="Rédiger vos commentaires..."></textarea>
+        <button (click)="saveComment()">Save</button>
+
+      </div>
+      <app-listcomment></app-listcomment>
+
+
+    </div>
+  </div>
+
+
+    <div class="flex-item scrollable">
+      <div class="container" >
+        <!-- Content for the second container -->
+        <h2 style="margin-left: 50px;margin-top: 10px;">Autres Pièces jointes</h2>
+        <br>
+        <!-- Rest of the code -->
+        <div class="image-upload-container" (drop)="onFileDropped($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+            <label for="upload-input" class="upload-area">
+              <img src="./assets/images/facture/gallery.png" class="uploaded-image" alt="Uploaded Image">
+              <input type="file" id="upload-input" class="upload-button" accept="image/*" (change)="onFileSelected($event)">
+            </label>
+            <label for="upload-input">Faiter glisser vos fichiers ou Cliquez sur la zone pour les importer</label>
+          </div>
+          <p style="margin-left: 19%;">(Fichier de 15mo max.)</p>
+          <div class="uploaded-images-list">
+
+
+
+
+              <ul>
+                <li *ngFor="let file of uploadedFiles" class="uploaded-image-item">
+                  <div class="image-info">
+                    <img src="./assets/images/facture/img.png" class="uploaded-image" alt="Uploaded Image">
+                    <div class="image-details">
+                      <span class="image-name">{{ file.name.length > 10 ? file.name.substring(0, 10) + '...' : file.name }}</span>
+
+                      <button class="delete-button" (click)="onDeleteImage(file)">
+                        <img  width="20px" height="20px" src="./assets/images/facture/trash.png" class="uploaded-image2" alt="Uploaded Image">
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+
+
+          </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+<br>
+
+
+<div class="container" style="max-width: 100%;">
+
+  <h2 style="margin-left: 50px;margin-top: 10px;">Factures</h2>
+  <div class="container-list">
+    <div *ngFor="let container of containers" class="item-container">
+      <div class="container-header">
+        <h3 class="container-title">Facture</h3>
+
+        <img src="./assets/images/facture/trash.png" alt="Delete" width="25px" height="25px" (click)="deleteContainer(container)">
+
+      </div>
+      <div class="container-content">
+        <h3 class="container-name">{{ container.frais.sum }} $</h3>
+       <br>
+        <div class="container-footer">
+          <p class="container-date">Date: {{ container.date }}</p>
+          <p class="container-signature">State:   {{container.facture_etat }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

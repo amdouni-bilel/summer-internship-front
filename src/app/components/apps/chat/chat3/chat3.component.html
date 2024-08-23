@@ -1,0 +1,122 @@
+<!--Page header-->
+<div class="page-header">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">Chart 03 (Pop up Chat)</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-grid mr-2 fs-14"></i>Apps</a></li>
+      <li class="breadcrumb-item"><a href="javascript:void(0)">Chart</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Chart 03</a></li>
+    </ol>
+  </div>
+  <div class="page-rightheader">
+    <div class="btn btn-list">
+      <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+      <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+      <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+    </div>
+  </div>
+</div>
+<!--End Page header-->
+
+<!-- Row -->
+<div class="row">
+  <div class="col-md-12 col-lg-12">
+    <div class="row">
+      <!-- col -->
+      <div class="col-xl-6" *ngFor="let data of chatData1">
+        <div class="card">
+          <div class="card-body p-0">
+            <div class="chat-widget-header d-flex p-5">
+              <div class="font-weight-bold d-flex">
+                <div class="mt-1 d-none d-sm-block">
+                  <h6 class="font-weight-semibold mb-0">{{ data.fullName }}</h6>
+                  <small>{{ data.username }}</small>
+                </div>
+                <span *ngIf="unreadMessages[data.username] > 0" class="badge badge-danger ml-2">
+                  {{ unreadMessages[data.username] }}
+                </span>
+
+              </div>
+              <div class="ml-auto">
+                <div class="d-flex">
+                  <a class="option-dots new-list2" (click)="ChatOpen(messagemodal, data)">
+                    <i class="fe fe-message-square"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /col -->
+    </div>
+  </div>
+</div>
+<!-- Message Modal -->
+<ng-template #messagemodal let-modal>
+  <div class="chatbox">
+    <div class="chat">
+      <div class="card overflow-hidden mb-0 border-0">
+        <!-- action-header -->
+        <div class="modal-header action-header">
+          <!-- Affichage du fullname du selectedUser en blanc et en gras -->
+          <h5 class="modal-title text-white font-weight-bold">
+            {{ selectedUser.fullName || 'Nom non défini' }}
+          </h5>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <!-- Inside the chat box, under the messages -->
+        <div class="card-body msg_card_body">
+          <div *ngFor="let message of messages">
+            <!-- Messages from currentUser -->
+            <div *ngIf="message.sender === currentUser.username" class="msg_wrapper msg_send">
+              <div class="msg_cotainer_send">
+                {{ message.content }}
+              </div>
+            </div>
+
+            <!-- Messages from selectedUser -->
+            <div *ngIf="message.sender === selectedUser.username" class="msg_wrapper msg_received">
+              <div class="msg_cotainer">
+                {{ message.content }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Typing indicator -->
+          <div *ngIf="isTyping" class="msg_wrapper msg_received">
+            <div class="msg_cotainer">
+              Typing...
+            </div>
+          </div>
+        </div>
+
+        <!-- card-footer -->
+        <div class="card-footer">
+          <div class="msb-reply-button d-flex">
+            <div class="input-group">
+              <input type="text" [(ngModel)]="newMessage" class="form-control bg-white" placeholder="Typing....">
+              <div class="input-group-append">
+                <button type="button" class="btn btn-secondary" (click)="toggleEmojiPicker()">
+                  😀
+                </button>
+                <button type="button" (click)="sendMessage()" class="btn btn-primary">
+                  <i class="fa fa-paper-plane-o"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Emoji Picker -->
+          <emoji-mart *ngIf="showEmojiPicker" (emojiSelect)="addEmoji($event)" class="emoji-mart"></emoji-mart>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+<!-- End Page -->

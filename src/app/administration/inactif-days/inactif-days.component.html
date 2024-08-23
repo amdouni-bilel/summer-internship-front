@@ -1,0 +1,64 @@
+<!--  <form  [formGroup]="form">-->
+
+<div class="row">
+<div class="col-lg-14 col-xl-6 col-md-14 col-sm-14">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Ajouter Inactif days</h4>
+    </div>
+    <div class="card-body">
+      <form  [formGroup]="form" (ngSubmit)="onAddInactif()">
+        <div class="row">
+        <div class="col-lg-4 col-md-12">
+
+          <div class="form-group  ">
+            <label class=" form-label">Saisir le type de inactif day</label>
+          </div>
+
+       </div>
+        <div class="col-lg-5 col-md-12">
+
+          <div class="form-group  ">
+            <input class="form-control" formControlName="name" name="name" type="text">
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12">
+
+          <div class="form-group  ">
+            <button type="submit" class="btn btn-primary"> <i class="fe fe-plus mr-2"> </i> Ajouter </button>
+          </div>
+
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--  </form>-->
+<div class="col-lg-14 col-xl-6 col-md-14 col-sm-14">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Liste des inactifs days</h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table card-table table-vcenter text-nowrap">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of inactiveDays">
+          <td>{{data.id}}</td>
+          <td>{{data.name}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- table-responsive -->
+  </div>
+</div>
+
+</div>

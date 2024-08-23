@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Les Factures</h3>
+             
+            </div>
+            <div class="card-body">
+                <form [formGroup]="yourFormGroup">
+                    <!-- Other form sections -->
+                  
+
+                    <div class="cards-container">
+                        <div *ngFor="let item of data" class="card">
+                          <div class="card-header">
+                            <h4 class="card-title">{{ item.user }}</h4>
+                            <ng-container *ngIf="item.facture_etat === 'En Cours'; else enCours">
+                              <div class="card-buttons">
+                                <button class="accept-button" (click)="Accept(item)">Accept</button>
+                                <button class="refuse-button" (click)="Refuse(item)">Refuse</button>
+                              </div>
+                            </ng-container>
+                            
+                            <ng-template #enCours>
+                              <div>{{ item.facture_etat }}</div>
+                            </ng-template>
+                            
+                            
+                          </div>
+                          <div class="card-body">
+                            <div class="form-group">
+                              <label for="user">Date : {{ item.date }}</label>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="frais">Frais :{{item.frais.sum}}</label>
+                                
+                              </div>
+                          
+                              <div class="form-group">
+                                <label for="images">Images :</label>
+                                <div class="image-list">
+                                  <table class="image-table">
+                                    <tr>
+                                      <ng-container *ngFor="let image of item.images; let i = index">
+                                        <td>
+                                          <img [src]="image" (click)="openImagePopup(image)" alt="Image {{ i }}" class="image-cell">
+                                        </td>
+                                      </ng-container>
+                                      <ng-container *ngIf="item.images.length === 0">
+                                        <td colspan="1" class="no-images-cell">
+                                          No images
+                                        </td>
+                                      </ng-container>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              
+                           <!-- 
+                              <div class="form-group">
+                                <label for="comments">Comments :</label>
+                                
+                                <ng-container *ngIf="item.comments.length > 0">
+                                    <div class="comment-container">
+                                      <div class="comment">
+                                        {{ item.comments[0] }}
+                                      </div>
+                                      <button class="show-comments-button" (click)="openCommentModal(item)">More</button>
+                                    </div>
+                                  </ng-container>
+                                  
+                                
+                                <ng-container *ngIf="item.comments.length === 0">
+                                <div class="comment-container">
+                                  <div class="no-comments">
+                                    No comments
+                                  </div>
+                                </div>
+                                </ng-container>
+                              </div>
+                                  Other form sections -->
+                  
+                              
+                              
+
+                          </div>
+                        </div>
+                      </div>
+                    
+
+                  
+                  
+               
+                  </form>
+                  
+                  
+            </div>
+        </div>
+    </div>
+  </div>
+  

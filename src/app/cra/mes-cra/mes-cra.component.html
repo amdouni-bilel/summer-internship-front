@@ -1,0 +1,174 @@
+<div class="page-header">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">CRA</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layout mr-2 fs-14"></i>CRA</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">mes CRA</a></li>
+    </ol>
+  </div>
+  <!-- <div class="page-rightheader">
+     <div class="btn btn-list">
+       <a  routerLink="/mission/create"class="btn btn-warning"><i class="si si-plus"></i>Ajouter une acitivité</a>
+     </div>
+   </div>-->
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">mes CRA</div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered text-nowrap" id="myTable1">
+            <thead>
+            <tr>
+              <th class="wd-15p border-bottom-0">User</th>
+              <th class="wd-25p border-bottom-0">Month</th>
+              <th class="wd-25p border-bottom-0">Status</th>
+<!--              <th class="wd-25p border-bottom-0">Actions</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let activity of activities">
+
+              <td>{{ getUserFullName(activity.idUser) }}</td>
+              <td>{{ activity.month }}</td>
+              <td>
+                <div class="progress h-2 mt-1">
+                  <div *ngIf="activity.status === 'EN_ATTENTE'" class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: 100%">En Attente</div>
+                  <div *ngIf="activity.status === 'EN_PROGRESSION'" class="progress-bar progress-bar-striped progress-bar-animated bg-info" style="width: 100%">En Progression</div>
+                  <div *ngIf="activity.status === 'VALIDE'" class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 100%">Validé</div>
+                </div>
+              </td>
+
+   <!--           <td width="100" style="align-items: center">
+&lt;!&ndash;                <button class="btn btn-primary" (click)="redirectToUserCRA(activity.idUser)"><i  class="fas fa-eye"></i></button>&ndash;&gt;
+                <button class="btn btn-primary" (click)="goToActivities()"><i  class="fas fa-eye"></i></button>
+                <button class="btn btn-primary" (click)="goToActivities1(activity)"><i class="fas fa-eye"></i></button>
+              </td>-->
+            </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<!--     <button class="btn btn-primary" (click)="goToActivities()"><i  class="fas fa-eye"></i></button>
+              <button class="btn btn-success" [routerLink]="['../cra/mes-cra', activity.idperson]" ><i class="fas fa-check"></i></button>
+              <button class="btn btn-danger" (click)="goToActivities1()"><i class="fas fa-times"></i></button>
+           -->
+<!--
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Mes CRA</div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered text-nowrap" id="myTable1">
+            <thead>
+            <tr>
+              <th class="wd-15p border-bottom-0">ID</th>
+              <th class="wd-15p border-bottom-0">User</th>
+              <th class="wd-25p border-bottom-0">Month</th>
+              <th class="wd-25p border-bottom-0">Status</th>
+              <th class="wd-25p border-bottom-0">Actions</th>
+
+             &lt;!&ndash; <th class="wd-15p border-bottom-0">Jour</th>
+              <th class="wd-20p border-bottom-0">Mission</th>
+              <th class="wd-10p border-bottom-0">idInactiveDay</th>
+              <th class="wd-25p border-bottom-0">idWorkedDay</th>
+              <th class="wd-25p border-bottom-0">IsActive</th>&ndash;&gt;
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let activity of activities">
+              <td>{{ activity.id }}</td>
+              <td>{{ this.fullName }}</td>
+              <td>{{ activity.month }}</td>
+              <td>
+                <div class="progress h-2 mt-1">
+                  <div *ngIf="activity.status === 'EN_ATTENTE'" class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: 100%">En Attente</div>
+                  <div *ngIf="activity.status === 'EN_PROGRESSION'" class="progress-bar progress-bar-striped progress-bar-animated bg-info" style="width: 100%">En Progression</div>
+                  <div *ngIf="activity.status === 'VALIDE'" class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 100%">Validé</div>
+                </div>
+              </td>
+
+              <td width="170" style="align-items: center">
+                <button class="btn btn-warning" ><i class="fa-solid fa-envelope"></i></button>
+&lt;!&ndash;                <button class="btn btn-warning" [routerLink]="['../edit', p.idtel]"  ><i class="fas fa-edit"></i></button>&ndash;&gt;
+                <button class="btn btn-danger" ><i class="fas fa-trash"></i></button>
+&lt;!&ndash;                <button class="btn btn-danger" (click)="deletePhone(p.idtel)"><i class="fas fa-trash"></i></button>&ndash;&gt;
+              </td>
+
+             &lt;!&ndash; <td>{{ activity.days }}</td>
+              <td>{{ activity.mission }}</td>
+              <td>{{ activity.idInactiveDay }}</td>
+              <td>{{ activity.idWorkedDay }}</td>
+              <td>{{ activity.active }}</td>&ndash;&gt;
+            </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Mes CRA</div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered text-nowrap" id="myTable1">
+            <thead>
+            <tr>
+              <th class="wd-15p border-bottom-0">ID</th>
+              <th class="wd-15p border-bottom-0">Jour</th>
+              <th class="wd-20p border-bottom-0">Mission</th>
+              <th class="wd-15p border-bottom-0">User</th>
+              <th class="wd-10p border-bottom-0">idInactiveDay</th>
+              <th class="wd-25p border-bottom-0">idWorkedDay</th>
+              <th class="wd-25p border-bottom-0">Month</th>
+              <th class="wd-25p border-bottom-0">Status</th>
+              <th class="wd-25p border-bottom-0">IsActive</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let activity of activities">
+              <td>{{ activity.id }}</td>
+              <td>{{ activity.days }}</td>
+              <td>{{ activity.mission }}</td>
+              <td>{{ activity.idUser }}</td>
+              <td>{{ activity.idInactiveDay }}</td>
+              <td>{{ activity.idWorkedDay }}</td>
+              <td>{{ activity.month }}</td>
+              <td>{{ activity.status }}</td>
+              <td>{{ activity.active }}</td>
+            </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->

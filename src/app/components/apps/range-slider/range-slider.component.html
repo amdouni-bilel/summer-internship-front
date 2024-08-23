@@ -1,0 +1,92 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Range Slider</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-grid mr-2 fs-14"></i>Apps</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Range Slider</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!--div-->
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            Range Slider
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row row-sm">
+            <div class="col-lg-12">
+                <!-- <input class="rangeslider1" name="example_name" type="text" value=""> -->
+                
+                <form>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="default">Simple slider</label>
+                        <div class="col-md-10">
+                            <ngx-slider [value]="defvalue" [options]="DefaultSliderOptions"></ngx-slider>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2" for="Min-Max Value">Range slider( Min-Max Value)</label>
+                        <div class="col-md-10">
+                            <ngx-slider [value]="minValue" [highValue]="maxValue" [options]="MinMaxOptions"></ngx-slider>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2" for="Slider custom">Slider with custom style</label>
+                        <div class="col-md-10 custom-slider">
+                            <ngx-slider [value]="customMinValue" [highValue]="customMaxValue" [options]="CustomSliderOptions"></ngx-slider>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2" for="Prefix">Slider with Prefix Display</label>
+                        <div class="col-md-10">
+                            <ngx-slider [value]="prefixMinValue" [highValue]="prefixMaxValue" [options]="CustomPrefixOptions"></ngx-slider>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2" for="Prefix">Slider with Prefix Display</label>
+                        <div class="col-md-10">
+                            <ngx-slider [value]="htmlMinValue" [highValue]="htmlMaxValue" [options]="HtmlPrefixOptions"></ngx-slider>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2" for="Prefix">Slider with Nagative value</label>
+                        <div class="col-md-10">
+                            <ngx-slider [value]="NegValue" [options]="NegativeOptions"></ngx-slider>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2" for="Prefix">Custom Slider Value</label>
+                        <div class="col-md-10">
+                            <ngx-slider [value]="Value" [options]="CustomValuesOptions"></ngx-slider>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--
+
+
+    <ngx-slider [options]="options" [formControl]="sliderControl"></ngx-slider>
+-->

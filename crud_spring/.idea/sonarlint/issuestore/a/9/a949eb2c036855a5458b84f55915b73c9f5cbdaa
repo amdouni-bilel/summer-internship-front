@@ -1,0 +1,6 @@
+
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Ï²ûÿÿÿÿ8ÅëÚ¾2
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÃ–¾8ÆëÚ¾2
+}	java:S116"\Rename this field "MissionRepository" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‘Àùÿÿÿÿ8ÌëÚ¾2
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÍëÚ¾2

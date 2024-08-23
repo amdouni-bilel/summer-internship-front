@@ -1,0 +1,31 @@
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+@import "~material-icons/iconfont/material-icons.scss";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~angular-notifier/styles.scss";
+@import "~angular-calendar/css/angular-calendar.css";
+@import "~flatpickr/dist/flatpickr.css";
+@import "~leaflet/dist/leaflet.css";
+@import "~c3/c3.min.css";
+@import "~chartist/dist/scss/chartist.scss";
+@import "~chartist/dist/scss/settings/_chartist-settings.scss";
+@import '~angular-archwizard/archwizard.css';
+@import '~ngx-toastr/toastr.css';
+// @import '~ng-wizard/themes/ng_wizard.css';
+@import '~ng-wizard/themes/ng_wizard_theme_arrows.min.css';
+@import '~ng-wizard/themes/ng_wizard_theme_circles.min.css';
+@import '~ng-wizard/themes/ng_wizard_theme_dots.min.css';
+@import "~dropzone/dist/min/dropzone.min.css";
+@import "~angular2-multiselect-dropdown/themes/default.theme.css";
+@import "~intl-tel-input/build/css/intlTelInput.css";
+@import "~simple-datatables/dist/style.css";
+@import "~@swimlane/ngx-datatable/index.css";
+@import "~@swimlane/ngx-datatable/themes/bootstrap.css";
+@import "~@swimlane/ngx-datatable/assets/icons.css";
+@import '~highlight.js/styles/github.css';
+
+
+/* Customized SCSS files*/
+@import "app.scss";
+@import "../css-rtl/sidemenu.scss";

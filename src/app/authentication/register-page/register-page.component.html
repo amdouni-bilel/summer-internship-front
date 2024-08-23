@@ -1,0 +1,151 @@
+<div class="page">
+  <div class="page-single">
+    <div class="p-5" style="width: -webkit-fill-available;">
+      <div class="row">
+        <div class="col mx-auto">
+          <div class="row justify-content-center">
+            <div class="col-lg-9 col-xl-8">
+              <div class="card-group mb-0">
+                <div class="card p-4">
+                  <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="Submit()">
+                      <div class="text-center title-style mb-6">
+                        <h1 class="mb-2">Register</h1>
+                        <hr>
+                        <p class="text-muted">Créer un nouveau compte</p>
+                      </div>
+                      <!--<div class="btn-list d-flex">
+                        <a href="https://www.google.com/gmail/" class="btn btn-google btn-block">
+                          <i class="fa-brands fa-google"></i> Google</a>
+
+                        <a href="https://twitter.com/" class="btn btn-twitter">
+                          <i class="fa-brands fa-twitter"></i></a>
+
+                        <a href="https://www.facebook.com/" class="btn btn-facebook">
+                          <i class="fa-brands fa-facebook"></i></a>
+
+                      </div>
+                      <hr class="divider my-6">-->
+
+                      <div class="form-group">
+                        <div class="input-group mb-4">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fe fe-mail"></i>
+                            </div>
+                          </div>
+                          <input type="text" formControlName="username" class="form-control"
+                                 placeholder="Email">
+                        </div>
+                        <div *ngIf="registerForm.get('username').errors?.required && registerForm.get('username').touched"
+                          class="text-danger">Email obligatoire </div>
+                        <div *ngIf="registerForm.get('username').errors?.email && registerForm.get('username').touched"
+                             class="text-danger">Veuillez entrer une adresse email valide
+                        </div>
+
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group mb-4">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fe fe-user"></i>
+                            </div>
+                          </div>
+                          <input type="text" formControlName="fullName" class="form-control"
+                                 placeholder="Nom d'utilisateur">
+                        </div>
+                        <div
+                          *ngIf="registerForm.get('fullName').errors?.required && registerForm.get('fullName').touched"
+                          class="text-danger">Nom d'utilisateur obligatoire
+                        </div>
+
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group mb-4">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fe fe-lock"></i>
+                            </div>
+                          </div>
+                          <input type="{{ hidePassword ? 'password' : 'text' }}" formControlName="password"
+                                 class="form-control" placeholder="Saisir un mot de passe">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button"
+                                    (click)="togglePasswordVisibility()">
+                              <i class="fe" [ngClass]="{'fe-eye': hidePassword, 'fe-eye-off': !hidePassword}"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div
+                          *ngIf="registerForm.get('password').errors?.required && registerForm.get('password').touched"
+                          class="text-danger">Mot de passe obligatoire
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group mb-4">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fe fe-lock"></i>
+                            </div>
+                          </div>
+                          <input type="{{ hiderePassword ? 'password' : 'text' }}" formControlName="rePassword"
+                                 class="form-control" placeholder="Retapez le mot de passe">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button"
+                                    (click)="togglerePasswordVisibility()">
+                              <i class="fe" [ngClass]="{'fe-eye': hiderePassword, 'fe-eye-off': !hiderePassword}"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div
+                          *ngIf="registerForm.get('rePassword').errors?.required && registerForm.get('rePassword').touched"
+                          class="text-danger">Mot de passe obligatoire
+                        </div>
+                        <div *ngIf="form['rePassword'].getError('Mustmatch')!=null" class="text-danger">Mot de passe non
+                          identiques
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-12">
+                          <button type="submit" class="btn btn-primary btn-block px-4"
+                                  [disabled]="registerForm.invalid">Connexion
+                          </button>
+                        </div>
+                        <div class="col-12 text-center">
+                          <a href="javascript:void(0)" class="btn btn-link box-shadow-0 px-0">Mot de passe oublié ?</a>
+                        </div>
+                      </div>
+                      <div class="text-center pt-4">
+                        <div class="font-weight-normal fs-16">Vous avez déja un compte?
+                          <a class="btn-link font-weight-normal" [routerLink]="['/auth/login']">Connectez ici</a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="card text-white bg-primary py-5 d-md-down-none page-content mt-0">
+                  <div class="text-center justify-content-center page-single-content">
+                    <div class="bgbox">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <img src="../../assets/images/png/logo_facture.png" alt="img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

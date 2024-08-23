@@ -1,0 +1,284 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Date Picker</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-server mr-2 fs-14"></i>Elements</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Date Picker</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<div class="row">
+    <div class="col-xl-6 col-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Single Calendar DatePicker</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                        <h6>Simple Popup</h6>
+                        <form >
+                            <div class="form-group mb-2">
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="dd/mm/yyyy" name="d2" #c2="ngModel"
+                                        [(ngModel)]="model2" ngbDatepicker #d2="ngbDatepicker">
+                                        <span class="input-group-append" (click)="d2.toggle()">
+                                            <button class="btn btn-light" type="button">
+                                                <svg class="svg-icon" 
+                                                xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24"
+                                                width="18">
+                                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                                <path
+                                                    d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 2v3H4V5h16zM4 21V10h16v11H4z" />
+                                                <path d="M4 5.01h16V8H4z" opacity=".3" />
+                                            </svg>
+                                            </button>
+                                        </span>
+                                </div>
+                            </div>
+                        </form>
+                        <br>
+                        <code class="hljs">Selected Date: {{ model2 | json }}</code><br>
+                        <button class="btn btn-primary btn-block" (click)="model2 = today">Select Today</button>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                        <h6 class="mt-xl-0 mt-sm-5">Simple Calendar</h6>
+                        <ngb-datepicker #d1 [(ngModel)]="model1" #c1="ngModel" class="sample-calender"></ngb-datepicker>
+                        <br><br>
+                        <code class="hljs">Selected Date: {{ model1 | json }}</code><br>
+                        <button class="btn btn-primary btn-block" (click)="model1 = today">Select Today</button>
+
+                    </div>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav1="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html1" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts1" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav1"></div>
+                
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Disable DatePicker</div>
+            </div>
+            <div class="card-body">
+                <ngb-datepicker [(ngModel)]="modelDisable" [disabled]="disabled"></ngb-datepicker>
+                <div class="mt-4">
+                    <button class="btn btn-{{disabled ? 'danger' : 'success'}}"
+                        (click)="disabled = !disabled">
+                        {{ disabled ? "Disabled" : "Enabled"}}
+                    </button>
+                </div>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav5="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html5"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html5" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts5"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts5" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav5"></div>
+                
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    
+    <div class="col-xl-12 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Range Selection</div>
+            </div>
+            <div class="card-body">
+                <ngb-datepicker #dateRange (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
+                    outsideDays="hidden" class="rangedatepicker mb-4">
+                </ngb-datepicker>
+
+                <ng-template #t let-date let-focused="focused">
+                    <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                        [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                        (mouseleave)="hoveredDate = null">
+                        {{ date.day }}
+                    </span>
+                </ng-template>
+                <code class="hljs">From: {{ fromDate | json }} </code><br>
+                <code class="hljs">To: {{ toDate | json }} </code>
+
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav4="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html4" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts4" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav4"></div>
+                
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Multiple Calendar</div>
+        </div>
+        <div class="card-body">
+            <ngb-datepicker [displayMonths]="displayMonths" [navigation]="navigation"
+                [showWeekNumbers]="showWeekNumbers" [outsideDays]="outsideDays">
+            </ngb-datepicker>
+            <div class="d-flex flex-wrap align-content-between p-2">
+                <select class="custom-select" [(ngModel)]="displayMonths">
+                    <option [ngValue]="1">One month</option>
+                    <option [ngValue]="2">Two months</option>
+                    <option [ngValue]="3">Three months</option>
+                </select>
+
+                <select class="custom-select" [(ngModel)]="navigation">
+                    <option value="none">Without navigation</option>
+                    <option value="select">With select boxes</option>
+                    <option value="arrows">Without select boxes</option>
+                </select>
+
+                <select class="custom-select" [(ngModel)]="showWeekNumbers">
+                    <option [ngValue]="true">Week numbers</option>
+                    <option [ngValue]="false">No week numbers</option>
+                </select>
+
+                <select class="custom-select" [(ngModel)]="outsideDays">
+                    <option value="visible">Visible outside days</option>
+                    <option value="hidden">Hidden outside days</option>
+                    <option value="collapsed">Collapsed outside days</option>
+                </select>
+            </div>
+        </div>
+        <!---Prism Pre code-->
+        <figure class="highlight mb-0" id="element1">
+            <ul ngbNav #nav2="ngbNav" class="nav nav-tabs">
+                <li [ngbNavItem]="1">
+                    <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                    <ng-template ngbNavContent>
+                        <pre><code [highlight]="html2"></code></pre>
+                        <div ngxClipboard class="clipboard-icon" [cbContent]="html2" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="2">
+                    <a ngbNavLink class="html-code">TS</a>
+                    <ng-template ngbNavContent>
+                        <pre><code [highlight]="ts2"></code></pre>
+                        <div ngxClipboard class="clipboard-icon" [cbContent]="ts2" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                    </ng-template>
+                </li>
+            </ul>
+            <div [ngbNavOutlet]="nav2"></div>
+            
+
+        </figure>
+        <!---Prism Pre code-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Basic DatePicker</div>
+            </div>
+            <div class="card-body">
+                <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+                <div class="btn-list mt-5">
+                    <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
+                    <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current month</button>
+                    <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2013, month: 2})">To
+                        Feb 2013</button>
+                </div><br>
+                <code class="hljs">Month/Year: {{ date.month }}-{{ date.year }}</code><br>
+                <code class="hljs">Selected Date: {{ model | json }}</code>
+            </div>
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav3="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html3" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts3" placement="top" ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav3"></div>
+                
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8©ï‹«2J$2dd22bdf-1416-479a-8510-e739fd279451
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8­ï‹«2J$9b9b01f3-89e8-4262-b0a5-0444ebdf7fe3
+n
+java:S1452,"&Remove usage of generic wildcard type.(ĞËØÉøÿÿÿÿ8ñı·­2J$d57e2b68-feb9-4df6-8554-31e529a29f8a
+i
+java:S1452?"&Remove usage of generic wildcard type.(ÚÓÙü8õı·­2J$7281ad84-d081-416a-a728-08d09c4f2b8d
+n
+java:S1452I"&Remove usage of generic wildcard type.(‡ùŠŠüÿÿÿÿ8•ñÂ®2J$2479e353-732e-45d1-af0c-053532774afd
+Œ
+java:S2147R"DCombine this catch with the one at line 78, which has the same body.(Æ†Ì•üÿÿÿÿ8²ñÂ®2J$99e49fcb-33af-4b44-971b-5e9909e88f02
+r	java:S106K"+Replace this use of System.out by a logger.(üò•şÿÿÿÿ8²ñÂ®2J$d921ac33-9df6-4a95-a37e-d32b4847dce8

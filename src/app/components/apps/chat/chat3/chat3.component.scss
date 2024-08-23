@@ -1,0 +1,85 @@
+::ng-deep {
+  .modal-content {
+    border: 0;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .chat .actions > li {
+    margin: 0 0 0 5px;
+  }
+
+  .dropdown-menu-right.dropdown-menu.show {
+    transform: translate(-120px, 50px) !important;
+  }
+
+  ::ng-deep {
+    /* Conteneur pour les messages envoyés par currentUser (bleu, aligné à droite) */
+    .msg_cotainer_send {
+      background-color: #007bff; /* Bleu */
+      color: white;
+      padding: 8px 16px;
+      border-radius: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+      white-space: normal;
+      word-wrap: break-word;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 70%;
+      text-align: left;
+    }
+
+    /* Conteneur pour les messages envoyés par selectedUser (blanc, aligné à gauche) */
+    .msg_cotainer {
+      background-color: #f1f1f1; /* Gris clair */
+      color: black;
+      padding: 8px 16px;
+      border-radius: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+      white-space: normal;
+      word-wrap: break-word;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 70%;
+      text-align: left;
+    }
+
+    /* Alignement des messages du currentUser */
+    .msg_send {
+      justify-content: flex-end; /* Pousse le message à droite */
+      margin-left: auto;
+    }
+
+    /* Alignement des messages du selectedUser */
+    .msg_received {
+      justify-content: flex-start; /* Pousse le message à gauche */
+      margin-right: auto;
+    }
+
+    /* Conteneur pour chaque message */
+    .msg_wrapper {
+      display: flex;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  }
+  /* Center the emoji picker with specific width and height */
+  .emoji-mart {
+    height: 150px; /* Set a fixed height */
+    width: 500px; /* Set a wider width */
+    overflow-y: auto; /* Enable vertical scrolling */
+
+    /* Center the picker horizontally and vertically */
+    position: relative;
+    top: 20%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+  }
+
+
+
+  /* Ensure the content area fits within the picker’s height */
+  .emoji-mart .emoji-mart-bar {
+  }
+
+}

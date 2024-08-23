@@ -1,0 +1,570 @@
+<!--Page header-->
+<div class="page-header">
+    <div class="page-leftheader">
+        <h4 class="page-title mb-0">Avatars</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-server mr-2 fs-14"></i>Elements</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Avatars</a></li>
+        </ol>
+    </div>
+    <div class="page-rightheader">
+        <div class="btn btn-list">
+            <a href="javascript:void(0)" class="btn btn-info"><i class="fe fe-settings mr-1"></i> General Settings </a>
+            <a href="javascript:void(0)" class="btn btn-danger"><i class="fe fe-printer mr-1"></i> Print </a>
+            <a href="javascript:void(0)" class="btn btn-warning"><i class="fe fe-shopping-cart mr-1"></i> Buy Now </a>
+        </div>
+    </div>
+</div>
+<!--End Page header-->
+
+<!--Row-->
+<div class="row">
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Simple Square Avatar</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list">
+                    <span class="avatar" style="background-image: url(../../assets/images/users/1.jpg)"></span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/2.jpg)"></span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/1.jpg)"></span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/2.jpg)"></span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/3.jpg)"></span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav1="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html1" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts1"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts1" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav1"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Simple Round Avatar</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list">
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/1.jpg)"></span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/2.jpg)"></span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/1.jpg)"></span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/2.jpg)"></span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/3.jpg)"></span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav2="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html2"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html2" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts2"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts2" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav2"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Simple Radius Avatar</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list">
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/1.jpg)"></span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/2.jpg)"></span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/1.jpg)"></span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/2.jpg)"></span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/3.jpg)"></span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav3="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html3" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts3"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts3" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav3"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Avatar Size</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list">
+                    <span class="avatar avatar-sm"
+                        style="background-image: url(../../assets/images/users/4.jpg)"></span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/3.jpg)"></span>
+                    <span class="avatar avatar-md"
+                        style="background-image: url(../../assets/images/users/5.jpg)"></span>
+                    <span class="avatar avatar-lg"
+                        style="background-image: url(../../assets/images/users/6.jpg)"></span>
+                    <span class="avatar avatar-xl"
+                        style="background-image: url(../../assets/images/users/4.jpg)"></span>
+                    <span class="avatar avatar-xxl"
+                        style="background-image: url(../../assets/images/users/7.jpg)"></span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav4="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html4" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts4"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts4" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav4"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Rounded Avatar Size</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list">
+                    <span class="avatar avatar-sm brround"
+                        style="background-image: url(../../assets/images/users/15.jpg)"></span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/13.jpg)"></span>
+                    <span class="avatar avatar-md brround"
+                        style="background-image: url(../../assets/images/users/16.jpg)"></span>
+                    <span class="avatar avatar-lg brround"
+                        style="background-image: url(../../assets/images/users/7.jpg)"></span>
+                    <span class="avatar avatar-xl brround"
+                        style="background-image: url(../../assets/images/users/14.jpg)"></span>
+                    <span class="avatar avatar-xxl brround"
+                        style="background-image: url(../../assets/images/users/8.jpg)"></span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav5="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html5"></code></pre>
+
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts5"></code></pre>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav5"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Radius Avatar Size</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list">
+                    <span class="avatar avatar-sm bradius"
+                        style="background-image: url(../../assets/images/users/15.jpg)"></span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/13.jpg)"></span>
+                    <span class="avatar avatar-md bradius"
+                        style="background-image: url(../../assets/images/users/16.jpg)"></span>
+                    <span class="avatar avatar-lg bradius"
+                        style="background-image: url(../../assets/images/users/7.jpg)"></span>
+                    <span class="avatar avatar-xl bradius"
+                        style="background-image: url(../../assets/images/users/14.jpg)"></span>
+                    <span class="avatar avatar-xxl bradius"
+                        style="background-image: url(../../assets/images/users/8.jpg)"></span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav6="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html6"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html6" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts6"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts6" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav6"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Avatar Status</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list">
+                    <span class="avatar" style="background-image: url(../../assets/images/users/8.jpg)"></span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/5.jpg)">
+                        <span class="avatar-status"></span>
+                    </span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/9.jpg)">
+                        <span class="avatar-status bg-red"></span>
+                    </span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/6.jpg)">
+                        <span class="avatar-status bg-green"></span>
+                    </span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/7.jpg)">
+                        <span class="avatar-status bg-yellow"></span>
+                    </span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav7="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html7"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html7" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts7"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts7" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav7"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Rounded Avatar Status</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list">
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/9.jpg)"></span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/15.jpg)">
+                        <span class="avatar-status"></span>
+                    </span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/2.jpg)">
+                        <span class="avatar-status bg-red"></span>
+                    </span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/16.jpg)">
+                        <span class="avatar-status bg-green"></span>
+                    </span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/7.jpg)">
+                        <span class="avatar-status bg-yellow"></span>
+                    </span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav8="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html8"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html8" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts8"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts8" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav8"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Radius Avatar Status</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list">
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/9.jpg)"></span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/15.jpg)">
+                        <span class="avatar-status"></span>
+                    </span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/2.jpg)">
+                        <span class="avatar-status bg-red"></span>
+                    </span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/16.jpg)">
+                        <span class="avatar-status bg-green"></span>
+                    </span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/7.jpg)">
+                        <span class="avatar-status bg-yellow"></span>
+                    </span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav9="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html9"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html9" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts9"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts9" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav9"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Avatars List</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list avatar-list-stacked">
+                    <span class="avatar" style="background-image: url(../../assets/images/users/10.jpg)"></span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/8.jpg)"></span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/9.jpg)"></span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/10.jpg)"></span>
+                    <span class="avatar" style="background-image: url(../../assets/images/users/11.jpg)"></span>
+                    <span class="avatar">+8</span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav10="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html10"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html10" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts10"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts10" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav10"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Rounded Avatars List</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list avatar-list-stacked">
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/12.jpg)"></span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/2.jpg)"></span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/9.jpg)"></span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/2.jpg)"></span>
+                    <span class="avatar brround" style="background-image: url(../../assets/images/users/4.jpg)"></span>
+                    <span class="avatar brround">+8</span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav11="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html11"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html11" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts11"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts11" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav11"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Radius Avatars List</h4>
+            </div>
+            <div class="card-body">
+                <div class="avatar-list avatar-list-stacked">
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/12.jpg)"></span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/2.jpg)"></span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/9.jpg)"></span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/2.jpg)"></span>
+                    <span class="avatar bradius" style="background-image: url(../../assets/images/users/4.jpg)"></span>
+                    <span class="avatar bradius">+8</span>
+                </div>
+            </div>
+
+            <!---Prism Pre code-->
+            <figure class="highlight mb-0" id="element1">
+                <ul ngbNav #nav12="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink class="html-code"><i class="las la-code mr-2"></i> HTML</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="html12"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="html12" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink class="html-code">TS</a>
+                        <ng-template ngbNavContent>
+                            <pre><code [highlight]="ts12"></code></pre>
+                            <div ngxClipboard class="clipboard-icon" [cbContent]="ts12" placement="top"
+                                ngbTooltip="Copy To Clipboard"><i class="las la-paste"></i></div>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav12"></div>
+
+
+            </figure>
+            <!---Prism Pre code-->
+        </div>
+    </div>
+</div>
+<!-- End Row-->

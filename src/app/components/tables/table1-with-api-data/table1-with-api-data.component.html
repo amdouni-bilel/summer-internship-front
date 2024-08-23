@@ -1,0 +1,47 @@
+<div class="page-header">
+  <div class="page-leftheader">
+    <h4 class="page-title mb-0">CRA</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fe fe-layout mr-2 fs-14"></i>Missions</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="javascript:void(0)">Liste des missions</a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Simple DataTable</div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered text-nowrap table-striped" id="myTable1">
+            <thead>
+            <tr>
+              <th class="wd-15p border-bottom-0">Titre de mission</th>
+              <th class="wd-15p border-bottom-0">Société</th>
+              <th class="wd-20p border-bottom-0">Client</th>
+              <th class="wd-20p border-bottom-0">T.J.M</th>
+              <th class="wd-20p border-bottom-0">Date de démarrage</th>
+              <th class="wd-20p border-bottom-0">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let mission of missions">
+              <td>{{ mission.title }}</td>
+              <td>{{ mission.companyResponse.name }}</td>
+              <td>{{ mission.client.nameClient }}</td>
+              <td>{{ mission.tjm }}</td>
+              <td>{{ mission.startDate }}</td>
+              <td class="button-cell"><a class="custom-button" [routerLink]="['/missions/upload-cv/mission/', mission.id]">
+                Détails</a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

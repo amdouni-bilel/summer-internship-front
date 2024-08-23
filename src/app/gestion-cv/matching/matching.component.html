@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<input class="textarea" [(ngModel)]="searchText" placeholder="Enter text for the match" type="text" />
+<button class="fetch-button" (click)="fetchSortedList()">Match</button>
+
+<ul class="result-list">
+  <li *ngFor="let result of resultList" class="result-item">
+    <span class="result-name">Name: {{ result.name }}</span>
+    <span class="result-id">ID: {{ result.id }}</span>
+    <span class="result-note">Note:
+      <ng-container *ngFor="let star of getStars(result.note)">
+        &#9733;
+      </ng-container>
+    </span>
+    <i class="fas fa-download" (click)="downloadCV(result.id)"></i>
+  </li>
+</ul>
+
+

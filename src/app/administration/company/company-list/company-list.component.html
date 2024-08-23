@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Liste des Sociétés</div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered text-nowrap" id="myTable1">
+        <thead class="border-top">
+        <tr>
+          <th class="wd-15p border-bottom-0">ID</th>
+          <th class="wd-15p border-bottom-0">Nom</th>
+          <th class="wd-20p border-bottom-0">Email</th>
+          <th class="wd-15p border-bottom-0">Téléphone</th>
+          <th class="wd-10p border-bottom-0">Addresse</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let company of companies">
+            <td>{{ company.id }}</td>
+            <td>{{ company.name }}</td>
+            <td>{{ company.email }}</td>
+            <td>{{ company.phone }}</td>
+            <td>{{ company.address }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
