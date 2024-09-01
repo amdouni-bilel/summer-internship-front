@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, fromEvent, Subject } from 'rxjs';
 import { takeUntil, debounceTime } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { AuthService } from "../../authentication/auth.service";
-import { UsersService } from "../../users/services/users.service";
+import { AuthService } from '../../authentication/auth.service';
+import { UsersService } from '../../users/services/users.service';
 
 // Menu Bar
 export interface Menu {
@@ -82,7 +82,7 @@ export class NavService implements OnInit, OnDestroy {
       .subscribe(
         utilisateur => {
           this.utilisateur = utilisateur;
-          console.log(utilisateur); 
+          console.log(utilisateur);
         },
         error => {
           console.log(error);
@@ -155,6 +155,11 @@ export class NavService implements OnInit, OnDestroy {
     {
       path: '/apps/contacts', title: 'Gestion des contacts', type: 'link', icon: 'Contacts', roles: ['ADMIN']
     },
+    { headTitle: 'Chat' },
+    {
+      path: '/apps/chat/chat-3', title: 'Chat Instantannée', type: 'link', icon: 'Chats', roles: ['ADMIN', 'USER']
+    },
+    { headTitle: 'Réseaux Sociaux' },
     {
       title: 'Email', type: 'sub', active: false, icon: 'Mail', roles: ['ADMIN'],
       children: [

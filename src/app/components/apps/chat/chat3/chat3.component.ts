@@ -1,11 +1,11 @@
 import {Component, OnInit, AfterViewChecked, ElementRef, ViewChild, ChangeDetectorRef, TemplateRef} from '@angular/core';
-import { UserView } from '../../../../auth/models/user-view';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { UsersService } from '../../../../users/services/users.service';
-import { AuthService } from '../../../../authentication/auth.service';
-import { ChatService } from './chat.service';
-import { WebSocketService } from './WebSocketService';
-import { EmojiEvent } from '@ctrl/ngx-emoji-mart/ngx-emoji';
+import {UserView} from '../../../../auth/models/user-view';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {UsersService} from '../../../../users/services/users.service';
+import {AuthService} from '../../../../authentication/auth.service';
+import {ChatService} from './chat.service';
+import {WebSocketService} from './WebSocketService';
+import {EmojiEvent} from '@ctrl/ngx-emoji-mart/ngx-emoji';
 
 @Component({
   selector: 'app-chat3',
@@ -22,7 +22,8 @@ export class Chat3Component implements OnInit, AfterViewChecked {
   showEmojiPicker = false;
   isTyping = false;
   unreadMessages: { [username: string]: number } = {}; // Nombre de messages non vus
-
+  filteredUsers: UserView[] = [];  // Liste filtrée d'utilisateurs
+  searchTerm = '';  // Terme de recherche
   constructor(
     private modalService: NgbModal,
     private usersService: UsersService,
@@ -30,8 +31,12 @@ export class Chat3Component implements OnInit, AfterViewChecked {
     private chatService: ChatService,
     private websocketservice: WebSocketService,
     private cdr: ChangeDetectorRef // Inject ChangeDetectorRef
-  ) {}
-
+  ) {
+  }
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngOnChanges(): void {
+    this.filterUsers();
+  }
   ngOnInit(): void {
     this.currentUser = this.authService.getCurrentUserFromLocalStorage();
     if (this.currentUser) {
@@ -41,12 +46,14 @@ export class Chat3Component implements OnInit, AfterViewChecked {
     }
     this.listenForMessages();
   }
+
   // tslint:disable-next-line:typedef
   ChatOpen(content: TemplateRef<any>, user: any) {
     this.selectedUser = user;
     this.loadMessages(user.username);
-    this.modalService.open(content, { size: 'lg' });
+    this.modalService.open(content, {size: 'lg'});
   }
+
   ngAfterViewChecked(): void {
     this.scrollToBottom();
   }
@@ -91,6 +98,8 @@ export class Chat3Component implements OnInit, AfterViewChecked {
     this.usersService.getUsers().subscribe((data: UserView[]) => {
       if (this.currentUser) {
         this.chatData1 = data.filter(user => user.username !== this.currentUser.username);
+        this.filteredUsers = this.chatData1;
+        this.filterUsers();  // Appliquer le filtre lors du chargement des utilisateurs
       }
     });
   }
@@ -105,7 +114,7 @@ export class Chat3Component implements OnInit, AfterViewChecked {
             );
             this.messages.push(...newMessages);
           } else {
-              this.messages = data.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+            this.messages = data.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
           }
           this.scrollToBottom();
         },
@@ -144,7 +153,11 @@ export class Chat3Component implements OnInit, AfterViewChecked {
     this.messages = [];
     this.loadMessages();
   }
-
+  filterUsers(): void {
+    this.filteredUsers = this.chatData1.filter(user =>
+      user.fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
   handleTyping(event: any): void {
     const isTyping = event.target.value.length > 0;
     this.chatService.notifyTyping(isTyping, this.selectedUser.username);

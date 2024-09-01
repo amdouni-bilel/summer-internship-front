@@ -1,0 +1,16 @@
+package com.coding.crud_spring.repository;
+
+import com.coding.crud_spring.entity.Contact;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface ContactRepository extends JpaRepository<Contact, Long> {
+    List<Contact> findByFnameContainingOrLnameContaining(String fname, String lname);
+
+    boolean existsByTlphOrSoctlph(String tlph, String soctlph);
+
+}

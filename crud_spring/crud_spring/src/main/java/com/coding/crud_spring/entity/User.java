@@ -38,6 +38,9 @@ public class User implements UserDetails {
 
     @Column(name = "joursCong", nullable = false)
     private int joursCong = 14;
+    @Column(name = "is_connected", nullable = false)
+
+    private boolean is_connected; // Add this field
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Conges> conges;
@@ -67,6 +70,13 @@ public class User implements UserDetails {
         return true;
     }
 
+    public boolean isConnected() {
+        return is_connected;
+    }
+
+    public void setConnected(boolean connected) {
+        is_connected = connected;
+    }
 
     public User(Long id) {
         this.id = id;

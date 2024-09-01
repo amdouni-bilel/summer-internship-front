@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserView } from '../../auth/models/user-view';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +19,17 @@ export class UsersService {
   getUsers(): Observable<UserView[]> {
     return this.http.get<UserView[]>(this.baseUrl);
   }
-  getUserById(id: number): Observable<UserView> {
+  /*getUserById(id: number): Observable<UserView> {
     return this.http.get<UserView>(`${this.baseUrl}/${id}`);
+  }*/
+  getUserById(id: number): Observable<UserView> {
+    return this.http.get<UserView>(`${this.baseUrl}/${id}`).pipe(
+      map(user => {
+        user.isConnected = Boolean(user.isConnected); // Conversion en Boolean
+        return user;
+      })
+    );
   }
-
   createUser(user: UserView): Observable<UserView> {
     return this.http.post<UserView>(`${this.baseUrl}`, user);
   }

@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -49,12 +49,13 @@ export class ChatService {
 
   notifyTyping(isTyping: boolean, recipient: string): void {
     if (this.connected) {
-      const typingMessage = { isTyping, sender: recipient };
+      const typingMessage = {isTyping, sender: recipient};
       this.stompClient.send('/app/chat.typing', {}, JSON.stringify(typingMessage));
     } else {
       console.error('WebSocket is not connected.');
     }
   }
+
   onMessage(username: string): Observable<any> {
     return new Observable(observer => {
       if (this.connected) {
@@ -67,10 +68,12 @@ export class ChatService {
       }
     });
   }
+
   getMessageHistory(userId: string, currentUser: string): Observable<any[]> {
     const params = new HttpParams().set('currentUser', currentUser);
-    return this.http.get<any[]>(`${this.apiUrl}/messages/history/${userId}`, { params });
+    return this.http.get<any[]>(`${this.apiUrl}/messages/history/${userId}`, {params});
   }
+
   onTyping(recipient: string): Observable<boolean> {
     return new Observable(observer => {
       if (this.connected) {
@@ -87,6 +90,7 @@ export class ChatService {
   sendMessage(message: any, recipient: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/messages/send/${recipient}`, message);
   }
+
   broadcastMessage(message: any): void {
     if (this.connected) {
       this.stompClient.send('/app/chat.broadcast', {}, JSON.stringify(message));

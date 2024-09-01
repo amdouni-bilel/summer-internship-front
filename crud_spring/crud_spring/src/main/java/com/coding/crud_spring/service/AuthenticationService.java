@@ -20,7 +20,6 @@ public class AuthenticationService {
         return userRepository.findByUsername(email).isPresent();
     }
 
-
     public AuthenticationService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -30,10 +29,10 @@ public class AuthenticationService {
         user.setFullName(registerUserDto.getFullName());
         user.setUsername(registerUserDto.getUsername());
         user.setPassword(registerUserDto.getPassword());
+       user.setConnected(false);  // Set isConnected to true on signup
         user.setRoles("USER");
         return userRepository.save(user);
     }
-
     public User authenticate(LoginUserDto loginUserDto) {
         User user = userRepository.findByUsername(loginUserDto.getUsername())
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
@@ -41,11 +40,9 @@ public class AuthenticationService {
         if (!user.getPassword().equals(loginUserDto.getPassword())) {
             throw new RuntimeException("Invalid password");
         }
-
+        user.setConnected(true);
         return user;
     }
-
-
     public boolean resetPassword(String email, String newPassword) {
         Optional<User> userOptional = userRepository.findByUsername(email);
         if (userOptional.isPresent()) {

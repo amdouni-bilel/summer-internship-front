@@ -46,6 +46,7 @@ public class UserService {
         user.setPassword(userDetails.getPassword());
         user.setRoles(userDetails.getRoles());
         user.setJoursCong(userDetails.getJoursCong());
+        user.setConnected(userDetails.isConnected());
         return userRepository.save(user);
     }
 
@@ -53,5 +54,8 @@ public class UserService {
         userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
         userRepository.deleteById(id);
+    }
+    public User getUserById1(Long userId) {
+        return userRepository.findById(userId).orElse(null);
     }
 }

@@ -63,6 +63,7 @@
       margin-bottom: 8px;
     }
   }
+
   /* Center the emoji picker with specific width and height */
   .emoji-mart {
     height: 150px; /* Set a fixed height */
@@ -77,9 +78,59 @@
   }
 
 
-
   /* Ensure the content area fits within the picker’s height */
   .emoji-mart .emoji-mart-bar {
   }
+
+  .badge-danger {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+  }
+
+  .unread-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+
+  .connected {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+
+  .disconnected {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+
+  .online-circle {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .offline-circle {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
 
 }

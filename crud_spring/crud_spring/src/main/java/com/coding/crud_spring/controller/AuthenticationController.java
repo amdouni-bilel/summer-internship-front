@@ -74,6 +74,10 @@ public class AuthenticationController {
             response.put("fullName", authenticatedUser.getFullName());
             response.put("username", authenticatedUser.getUsername());
             response.put("roles", authenticatedUser.getRoles());
+            response.put("is_connected",authenticatedUser.isConnected());
+            authenticatedUser.setConnected(true);
+            System.out.println("User isConnected status: " + authenticatedUser.isConnected());  // Debug log
+
             return ResponseEntity.ok(response);
         } catch (AuthenticationException ex) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)

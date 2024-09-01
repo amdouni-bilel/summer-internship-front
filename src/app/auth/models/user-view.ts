@@ -11,6 +11,7 @@ export interface UserView {
   roles?: string[];
   joursCong?: number;
   isConnected?:boolean;
+  hasUnreadMessages?:boolean;
 }
 
 

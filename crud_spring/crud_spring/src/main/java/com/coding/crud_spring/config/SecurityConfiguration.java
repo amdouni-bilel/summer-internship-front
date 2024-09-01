@@ -39,8 +39,10 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/mission/**").permitAll()
                         .requestMatchers("/api/mission-user/**").authenticated()
                         .requestMatchers("/api/conges/**").permitAll()
+                        .requestMatchers("/chat-websocket/**").permitAll()  // Allow access to WebSocket endpoints
+                        .anyRequest().permitAll()  // Authenticate all other requests
                         //.requestMatchers("/swagger-ui/**").permitAll()
-                        .anyRequest().permitAll()
+                        //.anyRequest().permitAll()
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

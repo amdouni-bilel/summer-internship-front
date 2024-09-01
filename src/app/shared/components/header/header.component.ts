@@ -137,8 +137,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.authStateService.setAuthState(false);
     this.tokenService.removeToken();
     this.tokenService.removeUser();
-  //  const user = this.users.find((u) => u.fullName === this.fullname);
-   // user.isConnected = false;
+    //  const user = this.users.find((u) => u.fullName === this.fullname);
+    // user.isConnected = false;
     this.router.navigate(['auth/login']);
   }
 
